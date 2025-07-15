@@ -23,13 +23,7 @@ export default function TimePickerViews({ disabled }: { disabled: boolean }) {
 					>
 						<DemoItem>
 							<DatePicker
-								onChange={(newValue) => {
-									if (newValue === null) {
-										setDate(null);
-									} else {
-										setDate(newValue as Dayjs);
-									}
-								}}
+								onChange={(newValue) => setDate(newValue as unknown as Dayjs)}
 								disabled={disabled}
 								value={date}
 								// defaultValue={dayjs("2022-04-17")}
@@ -46,13 +40,7 @@ export default function TimePickerViews({ disabled }: { disabled: boolean }) {
 						<DemoItem>
 							<TimePicker
 								value={time}
-								onChange={(newValue) => {
-									if (newValue === null) {
-										setTime(null);
-									} else {
-										setTime(newValue as Dayjs);
-									}
-								}}
+								onChange={(newValue) => setTime(newValue as unknown as Dayjs)}
 								disabled={disabled}
 								views={["hours", "minutes"]}
 							/>
