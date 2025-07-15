@@ -1,0 +1,61 @@
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.dashboard__container {
+  width: 100%;
+  max-width: 1234px;
+  padding: 24px 24px 0 24px;
+}
+.dashboard__block {
+  padding: 24px;
+  background: #E6EFF3;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.dashboard__lineDiagram {
+  gap: 20px;
+  display: flex;
+}
+.dashboard__currentRevenueCard {
+  flex-basis: 50%;
+}
+.dashboard__balanceOverviewChart {
+  width: 100%;
+}
+.dashboard__popularProducts {
+  display: flex;
+  gap: 20px;
+}
+.dashboard__popularProductsTable {
+  width: 100%;
+}
+.dashboard__donutChart {
+  flex-basis: 50%;
+}
+@media (max-width: 1024px) {
+  .dashboard {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1336px) {
+  .dashboard__lineDiagram {
+    flex-direction: column;
+  }
+  .dashboard__popularProducts {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .dashboard__container {
+    padding: 24px 0 24px 0;
+  }
+}
+@media (max-width: 425px) {
+  .dashboard .dashboard__block {
+    padding: 16px;
+  }
+}/*# sourceMappingURL=D_Sale_manager_Dashboard.module.css.map */

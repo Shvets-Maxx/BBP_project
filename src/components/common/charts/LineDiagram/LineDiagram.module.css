@@ -1,0 +1,67 @@
+.diagram {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  padding: 24px;
+  background: #fff;
+}
+.diagram__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.diagram__header h2 {
+  margin: 0;
+  font: 400 24px "PT Serif";
+}
+.diagram__header :global(.MuiSelect-select) {
+  padding-bottom: 0 !important;
+}
+.diagram__header :global(.MuiSvgIcon-root) {
+  top: 0 !important;
+}
+.diagram__main {
+  display: flex;
+  gap: 8px;
+}
+.diagram__block-circle {
+  padding-top: 15px;
+}
+.diagram__circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+.diagram__number {
+  font: 400 32px "Open Sans";
+  margin: 0;
+}
+.diagram__description {
+  text-align: center;
+  margin: 0;
+  font: 400 14px "Open Sans";
+  color: grey;
+}
+.diagram__container {
+  text-align: center;
+  display: flex;
+  gap: 32px;
+  margin-bottom: 16px;
+  justify-content: space-evenly;
+}
+@media (max-width: 1024px) {
+  .diagram {
+    padding: 16px;
+  }
+}
+@media (max-width: 425px) {
+  .diagram .diagram__header h2 {
+    font-size: 20px;
+  }
+  .diagram .diagram__number {
+    font-size: 24px;
+  }
+  .diagram .diagram__container {
+    gap: 10px;
+  }
+}/*# sourceMappingURL=LineDiagram.module.css.map */

@@ -1,0 +1,53 @@
+
+
+
+    
+.dashboard
+    display: flex
+    flex-direction: row
+    justify-content: center
+    &__container
+        width: 100%
+        max-width: 1234px
+        padding: 24px 24px  0 24px
+    &__block
+        padding: 24px
+        background: #E6EFF3
+        border-radius: 8px
+        display: flex
+        flex-direction: column
+        gap: 16px
+
+    
+    &__lineDiagram
+        gap: 20px
+        display: flex
+    &__currentRevenueCard
+        flex-basis: 50%
+    &__balanceOverviewChart
+        width: 100%
+    &__popularProducts
+        display: flex
+        gap: 20px
+    &__popularProductsTable
+        width: 100%
+    &__donutChart
+        flex-basis: 50%
+
+    @media (max-width: 1024px) 
+        flex-direction: column
+
+    @media (max-width: 1336px) 
+        &__lineDiagram
+            flex-direction: column
+        &__popularProducts
+            flex-direction: column
+            
+    @media (max-width: 768px) 
+        &__container
+            padding: 24px 0 24px 0
+    @media (max-width: 425px) 
+        .dashboard__block
+            padding: 16px
+
+    

@@ -1,0 +1,131 @@
+.information__container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  min-width: 330px;
+}
+.information__header {
+  margin-bottom: 24px;
+}
+.information__header h1 {
+  font: 400 24px "PT Serif";
+  color: #000;
+}
+.information__info {
+  display: flex;
+  flex-direction: column;
+}
+.information__info-block {
+  min-height: 35px;
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  font: 400 14px "Open Sans";
+}
+.information__adress p {
+  font: 400 14px "Open Sans";
+  text-align: start;
+}
+.information__edit {
+  align-items: center;
+  position: relative;
+  display: flex;
+}
+.information__avatar-block {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.information__change-active {
+  display: flex;
+  gap: 5px;
+}
+.information__edit-icon {
+  display: flex;
+  align-items: center;
+}
+.information__picker-block {
+  background: #EBEBED !important;
+  margin-top: 0 !important;
+  border-radius: 8px;
+}
+.information__text {
+  margin: 0 !important;
+}
+.information__text p {
+  color: #8D8D8E;
+  font: 400 12px "Open Sans";
+}
+.information__time-block {
+  display: flex;
+  gap: 5px;
+}
+.information :global(.MuiFormControl-root) {
+  background: none !important;
+  max-width: none !important;
+  width: -moz-min-content !important;
+  width: min-content !important;
+}
+.information :global(.MuiInputAdornment-root) {
+  margin-left: 0 !important;
+}
+.information :global(.MuiPickersTextField-root) {
+  min-width: auto !important;
+}
+.information :global(.MuiPickersSectionList-root) {
+  width: auto !important;
+  padding: 4px 0 !important;
+}
+.information :global(.MuiPickersOutlinedInput-notchedOutline) {
+  display: none !important;
+}
+.information :global(.MuiStack-root) {
+  align-items: center !important;
+  gap: 5px !important;
+  display: flex;
+  flex-direction: row !important;
+}
+.information :global(.MuiStepper-root > .MuiStep-root:nth-of-type(1) .MuiStack-root) {
+  justify-content: start !important;
+}
+.information :global(.MuiStepper-root > .MuiStep-root:nth-of-type(2) .MuiStack-root) {
+  justify-content: center !important;
+}
+.information :global(.MuiStepper-root > .MuiStep-root:nth-of-type(3) .MuiStack-root) {
+  justify-content: end !important;
+}
+.information :global(.MuiPickersOutlinedInput-root) {
+  padding: 0 8px !important;
+}
+.information__time :global(.MuiSvgIcon-root) {
+  display: none !important;
+}
+.information__time :global(.MuiIconButton-root) {
+  border-radius: 8px !important;
+  margin: 0 !important;
+  padding: 0px !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0;
+}
+.information__change-block :global(.MuiIconButton-root) {
+  display: flex;
+  border-radius: 8px !important;
+}
+.information :global(.MuiPickersSectionList-root) {
+  font: 400 14px "Open Sans" !important;
+  color: #8D8D8E;
+}
+@media (max-width: 425px) {
+  .information .information__header h1 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .information .information__container {
+    padding: 16px;
+    min-width: auto;
+  }
+}/*# sourceMappingURL=OrderInformation.module.css.map */

@@ -1,0 +1,71 @@
+
+
+
+.revenue
+    border: 1px solid #ccc
+    border-radius: 12px
+    padding: 24px
+    background-color: #fff
+    height: 100%
+    &__header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 16px
+        :global(.MuiSelect-select)
+            padding-bottom:  0 !important
+        :global(.MuiSvgIcon-root)
+            top: 0 !important
+        h3
+            font: 400 24px "PT Serif sans-serif"
+            margin: 0
+    &__total
+        h2
+            font: 400 24px 'Open Sans sans-serif'
+            margin-bottom: 8px
+        p
+            color: #777
+            margin-bottom: 16px
+    &__progress
+        display: flex
+        height: 15px
+        border-radius: 5px
+        overflow: hidden
+        margin-bottom: 16px
+    &__labels
+        display: flex
+        flex-direction: column
+        gap: 8px
+    &__labels-block
+        display: flex
+        gap: 8px
+        align-items: center
+    &__labels-circle , &__nested-circle
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        border: 2px solid #fff
+        flex-shrink: 0
+    &__labels-label , &__nested-label
+        font: 400 14px 'Open Sans'
+        flex: 1
+        color: #000
+    &__nested
+        padding-left: 32px
+        margin-top: 8px
+    &__nested-block
+        margin-bottom: 4px
+        gap: 8px
+        display: flex
+        align-items: center
+
+    @media (max-width: 1024px) 
+        padding: 16px
+
+        
+    @media (max-width: 425px) 
+        .revenue__header h3
+            font-size: 20px
+        
+
+

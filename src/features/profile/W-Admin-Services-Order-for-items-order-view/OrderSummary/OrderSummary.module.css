@@ -1,0 +1,50 @@
+.summary {
+  width: 100%;
+}
+.summary__container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+}
+.summary__header {
+  margin-bottom: 24px;
+}
+.summary__header h1 {
+  font: 400 24px "PT Serif";
+  color: #000;
+}
+.summary__price {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #92A1A8;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.summary__price-block {
+  display: flex;
+  justify-content: space-between;
+}
+.summary__total {
+  display: flex;
+  justify-content: space-between;
+}
+.summary__total p {
+  font: 400 24px "Open Sans";
+}
+.summary__total p:last-child {
+  font-weight: 700;
+}
+.summary__discount {
+  color: grey;
+}
+@media (max-width: 425px) {
+  .summary .summary__header h1 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .summary .summary__container {
+    padding: 16px;
+  }
+}/*# sourceMappingURL=OrderSummary.module.css.map */

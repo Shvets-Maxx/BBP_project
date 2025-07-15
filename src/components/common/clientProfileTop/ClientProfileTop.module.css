@@ -2,13 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 32px;
+  padding-bottom: 16px;
 }
 .core h1 {
   font-weight: 400;
   font-size: 32px;
   line-height: 100%;
-  color: #1D1D1F;
+  color: #1d1d1f;
   font-family: "PT serif", serif;
 }
 .core > div {
@@ -19,7 +19,7 @@
 .core > div > div:first-child {
   width: 32px;
   height: 32px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +30,7 @@
   height: 32px;
   display: flex;
   background: #fff;
-  color: #1D1D1F;
+  color: #1d1d1f;
   align-items: center;
   font-weight: 400;
   font-size: 12px;
@@ -38,7 +38,12 @@
   border-radius: 4px;
   padding-left: 4px;
 }
+@media (max-width: 1024px) {
+  .core .actions {
+    display: none;
+  }
+}
 
 .grey {
-  color: #92A1A8;
+  color: #92a1a8;
 }/*# sourceMappingURL=ClientProfileTop.module.css.map */

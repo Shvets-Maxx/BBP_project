@@ -1,0 +1,92 @@
+
+.product
+    border: 1px solid #ddd
+    border-radius: 12px
+    padding: 24px
+    background: #fff
+    div
+        font: 400 14px 'Open Sans'
+    &__header
+        padding-bottom: 16px
+        border-bottom: 1px solid #92A1A8
+        
+        h1
+            font: 400 24px 'PT Serif'
+            margin-bottom: 16px
+            color: #000
+        p
+            font: 400 14px 'Open Sans'
+            color: #92A1A8
+
+    &__header-table, &__content
+        justify-content: space-between
+        width: 100%
+        display: flex
+        align-items: center
+        border-bottom: 1px solid #eee
+        // padding: 12px 0
+   
+
+    &__header-table
+        padding: 16px 8px 16px 8px
+        font-weight: 600
+        color: #999
+        div:nth-child(n+2)
+            text-align: center
+    &__content-block
+        width: 100%
+        display: flex
+        flex-direction: column
+        gap: 12px
+    &__content 
+        border-radius: 8px
+        padding: 8px
+        background: #EBEBED
+        p
+            margin: 0
+            color: #333
+        div:nth-child(n+2)
+            justify-content: center
+            text-align: center
+    
+
+    .pagination
+        display: flex
+        justify-content: space-between
+        align-items: center
+        font-size: 14px
+        color: #555
+        margin-top: 16px
+
+    .pagination button
+        background: none
+        border-radius: 4px
+        padding: 5px 8px
+        cursor: pointer
+        display: flex
+
+    .pagination button:disabled
+        opacity: 0.4
+        cursor: not-allowed
+
+    .view
+        background: #9D9D9D
+        color: #000
+        padding: 5px 0 
+        width: 70px
+        border-radius: 8px
+    .view:hover
+        cursor: pointer
+    
+
+    @media (max-width: 1024px)
+        padding: 16px
+    @media (max-width: 465px)
+        .pagination
+            display: flex
+            flex-direction: column-reverse
+            gap: 10px
+    
+
+
+        

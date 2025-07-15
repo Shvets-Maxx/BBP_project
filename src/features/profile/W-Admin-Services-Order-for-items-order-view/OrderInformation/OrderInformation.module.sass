@@ -1,0 +1,118 @@
+.information
+    &__container
+        background: #fff
+        border-radius: 8px
+        padding: 24px
+        min-width: 330px
+    &__header
+        margin-bottom: 24px
+        h1
+            font: 400 24px 'PT Serif'
+            color: #000
+    &__info
+        display: flex
+        flex-direction: column
+    &__info-block
+        min-height: 35px
+        align-items: flex-start
+        display: flex
+        gap: 10px
+        justify-content: space-between
+        font: 400 14px 'Open Sans'
+    &__adress p
+        font: 400 14px 'Open Sans'
+        text-align: start
+    &__edit
+        align-items: center
+        position: relative
+        display: flex
+    &__avatar-block
+        display: flex
+        gap: 10px
+        align-items: center
+    &__change-active
+        display: flex
+        gap: 5px
+    &__change-block
+    &__edit-icon
+        display: flex
+        align-items: center
+
+    &__picker-block
+        background: #EBEBED !important
+        margin-top: 0 !important
+        border-radius: 8px 
+    &__text
+        margin: 0 !important
+        p
+            color: #8D8D8E
+            font: 400 12px 'Open Sans'
+    &__time-block
+        display: flex
+        gap: 5px
+
+    & :global(.MuiFormControl-root)
+        background: none !important
+        max-width: none !important
+        width: min-content !important
+    & :global(.MuiInputAdornment-root)
+        margin-left: 0 !important
+        // display: none !important
+    & :global(.MuiPickersTextField-root)
+        min-width: auto !important
+    & :global(.MuiPickersSectionList-root)
+        width: auto !important
+        padding: 4px 0 !important
+    & :global(.MuiPickersOutlinedInput-notchedOutline)
+        display: none !important
+    & :global(.MuiStack-root)
+        align-items: center !important
+        gap: 5px !important
+        display: flex
+        flex-direction: row !important
+    
+
+    & :global(.MuiStepper-root > .MuiStep-root:nth-of-type(1) .MuiStack-root)
+        justify-content: start !important
+    & :global(.MuiStepper-root > .MuiStep-root:nth-of-type(2) .MuiStack-root)
+        justify-content: center !important
+    & :global(.MuiStepper-root > .MuiStep-root:nth-of-type(3) .MuiStack-root)
+        justify-content: end !important
+
+
+
+    & :global(.MuiPickersOutlinedInput-root)
+        padding: 0 8px !important
+    &__time :global(.MuiSvgIcon-root)
+        display: none !important
+    
+    &__time :global(.MuiIconButton-root)
+        border-radius: 8px !important
+        margin: 0 !important
+        padding: 0px !important
+        position: absolute
+        width: 100%
+        height: 100%
+        right: 0
+    &__change-block :global(.MuiIconButton-root)
+        display: flex
+        border-radius: 8px !important
+    & :global(.MuiPickersSectionList-root)
+        font: 400 14px 'Open Sans' !important
+        color: #8D8D8E
+
+
+    @media (max-width: 425px)
+        .information__header h1
+            font-size: 20px
+    @media (max-width: 1024px)
+        .information__container
+            padding: 16px 
+            min-width: auto
+
+
+        
+
+
+
+

@@ -1,0 +1,80 @@
+.revenue {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 24px;
+  background-color: #fff;
+  height: 100%;
+}
+.revenue__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.revenue__header :global(.MuiSelect-select) {
+  padding-bottom: 0 !important;
+}
+.revenue__header :global(.MuiSvgIcon-root) {
+  top: 0 !important;
+}
+.revenue__header h3 {
+  font: 400 24px "PT Serif sans-serif";
+  margin: 0;
+}
+.revenue__total h2 {
+  font: 400 24px "Open Sans sans-serif";
+  margin-bottom: 8px;
+}
+.revenue__total p {
+  color: #777;
+  margin-bottom: 16px;
+}
+.revenue__progress {
+  display: flex;
+  height: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.revenue__labels {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.revenue__labels-block {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.revenue__labels-circle, .revenue__nested-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  flex-shrink: 0;
+}
+.revenue__labels-label, .revenue__nested-label {
+  font: 400 14px "Open Sans";
+  flex: 1;
+  color: #000;
+}
+.revenue__nested {
+  padding-left: 32px;
+  margin-top: 8px;
+}
+.revenue__nested-block {
+  margin-bottom: 4px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 1024px) {
+  .revenue {
+    padding: 16px;
+  }
+}
+@media (max-width: 425px) {
+  .revenue .revenue__header h3 {
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=CurrentRevenueCard.module.css.map */

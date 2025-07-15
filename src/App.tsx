@@ -27,6 +27,7 @@ import Pop_up_Preview_info_admin from "./features/profile/Pop-up-Preview-info-ad
 import D_Client_Buy_more_items_Catalog_Product_preview from "./features/profile/D-Client-Buy-more-items-Catalog-Product-preview/Root/D-Client-Buy-more-items-Catalog-Product-preview.tsx";
 import W_Admin_Services_Order_for_items from "./features/profile/W-Admin-Services-Order-for-items/Root/W-Admin-Services-Order-for-items.tsx";
 import D_Admin_Services_Order_for_items from "./features/profile/D-Admin-Services-Order-for-items/Root/D-Admin-Services-Order-for-items.tsx";
+import W_Admin_Services_Order_for_items_order_view from "./features/profile/W-Admin-Services-Order-for-items-order-view/Root/W-Admin-Services-Order-for-items-order-view.tsx";
 function App() {
 	return (
 		<Router>
@@ -36,6 +37,10 @@ function App() {
 				<Route path="/profile/tickets" element={<Tickets />} />
 				<Route path="/profile/Agent-Dashboard" element={<D_Agent_dashboard />} />
 				<Route path="/profile/Admin_Dashboard" element={<D_Admin_Dashboard />} />
+				<Route
+					path="/profile/W_Admin_Services_Order_for_items_order_view"
+					element={<W_Admin_Services_Order_for_items_order_view />}
+				/>
 				<Route
 					path="/profile/D_Client_Buy_more_items_Catalog_Product_preview"
 					element={<D_Client_Buy_more_items_Catalog_Product_preview />}
@@ -116,7 +121,6 @@ function App() {
 					element={<W_Admin_Services_Catalog />}
 				/>
 			</Routes>
-			/
 		</Router>
 	);
 }

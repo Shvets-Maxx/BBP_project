@@ -1,0 +1,152 @@
+.stepper
+    display: flex
+    background: #fff
+    border-radius: 8px
+    max-width: 750px
+    width: 100%
+    &__step
+        display: flex
+        justify-content: center
+        :global(.MuiStack-root)
+            padding-top: 0 !important
+    &__button
+        display: flex
+        gap: 5px
+        p
+            font: 400 14px 'Open Sans'
+    &__change-active
+        display: flex
+        justify-content: end
+        flex-wrap: wrap
+        gap: 8px
+    &__change
+        height: 38.5px
+        :global(.MuiIconButton-root)
+            border-radius: 8px !important
+            padding: 8px !important
+    &__time
+        // all: initial
+        margin-top: 10px
+        width: 100%
+        p
+            font: 400 14px 'Open Sans'
+        & :global(.MuiStack-root)
+            width: 100% !important
+        .align_0
+            text-align: start
+        .align_1
+            text-align: center
+        .align_2
+            text-align: end
+  
+ 
+    
+
+
+    &__container
+        background: #fff
+        padding: 24px 
+        width: 100%
+        border-radius: 8px
+    &__header
+        margin-bottom: 32px
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &__title
+        h1
+            font: 400 24px 'PT Serif'
+    & :global(.MuiStep-root)
+        padding: 0 !important
+    // & :global(.MuiStack-root)
+    //     width: 95% !important
+
+    & :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(2) .MuiStepConnector-root)
+        left: calc( -90% + 16px ) !important
+    & :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(3) .MuiStepConnector-root)
+        right: calc( 10% + 16px ) !important
+
+    & :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(1) .MuiStepLabel-root) 
+        align-items: flex-start !important
+    & :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(3) .MuiStepLabel-root) 
+        align-items: flex-end !important
+
+    & :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(1) .MuiStepLabel-labelContainer) 
+        text-align: start !important
+    & :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(3) .MuiStepLabel-labelContainer) 
+        text-align: end !important
+
+    & :global(.MuiStepper-root > .MuiStep-root:nth-of-type(1) .MuiStack-root)
+        justify-content: flex-start !important
+
+    & :global(.MuiStepper-root > .MuiStep-root:nth-of-type(2) .MuiStack-root)
+        justify-content: center !important
+
+    & :global(.MuiStepper-root > .MuiStep-root:nth-of-type(3) .MuiStack-root)
+        justify-content: flex-end !important
+
+    @media (max-width: 425px) 
+        .stepper__title h1
+            font-size: 20px
+        .stepper__change-active
+            gap: 0
+        .stepper__header
+            margin-bottom: 42px
+        
+
+    @media (max-width: 685px) 
+        :global(.MuiStepper-root)
+            align-items: center
+            display: flex
+            flex-direction: column !important
+        
+        :global(.MuiStep-root)
+            min-height: 150px !important
+            display: flex
+        & :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(2) .MuiStepConnector-root)
+            width: 88%
+            top: -20% !important
+            transform: rotate(90deg)
+            left: -82px !important
+        & :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(3) .MuiStepConnector-root)
+            width: 88%
+            top: 25px !important
+            left: -82px !important
+            transform: rotate(90deg)
+        .stepper__time
+            margin-top: 0
+            padding-left: 20px
+            .align_0 , .align_1 , .align_2
+                text-align: center
+        .stepper__time--1
+            display: flex
+            flex-direction: column
+            justify-content: center
+        .stepper__time--2
+            display: flex
+            flex-direction: column
+            justify-content: end
+        & :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(1) .MuiStepLabel-root) 
+            justify-content: start !important
+        & :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(2) .MuiStepLabel-root) 
+            justify-content:  center !important
+        & :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(3) .MuiStepLabel-root) 
+            justify-content: end !important
+    
+    @media (max-width: 1024px) 
+        .stepper__container
+            padding: 16px
+
+
+
+    // & :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(1) .MuiStepLabel-iconContainer) 
+    //     padding-left: 30px !important
+    // & :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(3) .MuiStepLabel-iconContainer) 
+    //     padding-right: 30px !important
+
+
+
+
+
+
+

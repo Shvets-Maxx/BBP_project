@@ -1,0 +1,55 @@
+
+
+.diagram
+    border: 1px solid rgba(0,0,0,0.12)
+    border-radius: 12px
+    padding: 24px
+    background: #fff
+    &__header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 16px
+        h2
+            margin: 0
+            font: 400 24px "PT Serif"
+        :global(.MuiSelect-select)
+            padding-bottom:  0 !important
+        :global(.MuiSvgIcon-root)
+            top: 0 !important
+    &__main
+        display: flex
+        gap: 8px
+    &__block-circle
+        padding-top: 15px
+    &__circle
+        width: 14px
+        height: 14px
+        border-radius: 50%
+    &__number
+        font: 400 32px "Open Sans"
+        margin: 0
+    &__description
+        text-align: center
+        margin: 0
+        font: 400 14px "Open Sans"
+        color: grey
+    &__container
+        text-align: center
+        display: flex
+        gap: 32px
+        margin-bottom: 16px
+        justify-content: space-evenly
+
+    @media (max-width: 1024px) 
+        padding: 16px
+
+    @media (max-width: 425px) 
+        .diagram__header h2
+            font-size: 20px
+        .diagram__number
+            font-size: 24px
+        .diagram__container
+            gap: 10px
+        
+        

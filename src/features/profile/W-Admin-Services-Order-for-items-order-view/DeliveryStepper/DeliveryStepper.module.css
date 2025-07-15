@@ -1,0 +1,163 @@
+.stepper {
+  display: flex;
+  background: #fff;
+  border-radius: 8px;
+  max-width: 750px;
+  width: 100%;
+}
+.stepper__step {
+  display: flex;
+  justify-content: center;
+}
+.stepper__step :global(.MuiStack-root) {
+  padding-top: 0 !important;
+}
+.stepper__button {
+  display: flex;
+  gap: 5px;
+}
+.stepper__button p {
+  font: 400 14px "Open Sans";
+}
+.stepper__change-active {
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.stepper__change {
+  height: 38.5px;
+}
+.stepper__change :global(.MuiIconButton-root) {
+  border-radius: 8px !important;
+  padding: 8px !important;
+}
+.stepper__time {
+  margin-top: 10px;
+  width: 100%;
+}
+.stepper__time p {
+  font: 400 14px "Open Sans";
+}
+.stepper__time :global(.MuiStack-root) {
+  width: 100% !important;
+}
+.stepper__time .align_0 {
+  text-align: start;
+}
+.stepper__time .align_1 {
+  text-align: center;
+}
+.stepper__time .align_2 {
+  text-align: end;
+}
+.stepper__container {
+  background: #fff;
+  padding: 24px;
+  width: 100%;
+  border-radius: 8px;
+}
+.stepper__header {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.stepper__title h1 {
+  font: 400 24px "PT Serif";
+}
+.stepper :global(.MuiStep-root) {
+  padding: 0 !important;
+}
+.stepper :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(2) .MuiStepConnector-root) {
+  left: calc(-90% + 16px) !important;
+}
+.stepper :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(3) .MuiStepConnector-root) {
+  right: calc(10% + 16px) !important;
+}
+.stepper :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(1) .MuiStepLabel-root) {
+  align-items: flex-start !important;
+}
+.stepper :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(3) .MuiStepLabel-root) {
+  align-items: flex-end !important;
+}
+.stepper :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(1) .MuiStepLabel-labelContainer) {
+  text-align: start !important;
+}
+.stepper :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(3) .MuiStepLabel-labelContainer) {
+  text-align: end !important;
+}
+.stepper :global(.MuiStepper-root > .MuiStep-root:nth-of-type(1) .MuiStack-root) {
+  justify-content: flex-start !important;
+}
+.stepper :global(.MuiStepper-root > .MuiStep-root:nth-of-type(2) .MuiStack-root) {
+  justify-content: center !important;
+}
+.stepper :global(.MuiStepper-root > .MuiStep-root:nth-of-type(3) .MuiStack-root) {
+  justify-content: flex-end !important;
+}
+@media (max-width: 425px) {
+  .stepper .stepper__title h1 {
+    font-size: 20px;
+  }
+  .stepper .stepper__change-active {
+    gap: 0;
+  }
+  .stepper .stepper__header {
+    margin-bottom: 42px;
+  }
+}
+@media (max-width: 685px) {
+  .stepper :global(.MuiStepper-root) {
+    align-items: center;
+    display: flex;
+    flex-direction: column !important;
+  }
+  .stepper :global(.MuiStep-root) {
+    min-height: 150px !important;
+    display: flex;
+  }
+  .stepper :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(2) .MuiStepConnector-root) {
+    width: 88%;
+    top: -20% !important;
+    transform: rotate(90deg);
+    left: -82px !important;
+  }
+  .stepper :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(3) .MuiStepConnector-root) {
+    width: 88%;
+    top: 25px !important;
+    left: -82px !important;
+    transform: rotate(90deg);
+  }
+  .stepper .stepper__time {
+    margin-top: 0;
+    padding-left: 20px;
+  }
+  .stepper .stepper__time .align_0, .stepper .stepper__time .align_1, .stepper .stepper__time .align_2 {
+    text-align: center;
+  }
+  .stepper .stepper__time--1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .stepper .stepper__time--2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  .stepper :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(1) .MuiStepLabel-root) {
+    justify-content: start !important;
+  }
+  .stepper :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(2) .MuiStepLabel-root) {
+    justify-content: center !important;
+  }
+  .stepper :global(.MuiStepper-horizontal > .MuiStep-root:nth-child(3) .MuiStepLabel-root) {
+    justify-content: end !important;
+  }
+}
+@media (max-width: 1024px) {
+  .stepper .stepper__container {
+    padding: 16px;
+  }
+}/*# sourceMappingURL=DeliveryStepper.module.css.map */

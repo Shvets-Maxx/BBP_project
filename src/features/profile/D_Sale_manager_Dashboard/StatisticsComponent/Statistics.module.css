@@ -1,0 +1,98 @@
+.statistics {
+  display: flex;
+  gap: 20px;
+}
+.statistics__response {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 100%;
+}
+.statistics__block {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 15px 15px 30px 15px;
+  border-radius: 10px;
+}
+.statistics__percentageText {
+  text-align: end;
+}
+.statistics__percentageText p {
+  color: #6CAFC6;
+  font: 400 18px "Open Sans";
+}
+.statistics__wrapperCount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.statistics__wrapperCount p {
+  font: 400 32px "Open Sans";
+}
+.statistics__block-img {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #E6EFF3;
+}
+.statistics__block-img img {
+  width: 26px;
+  height: 26px;
+}
+.statistics__bottomText {
+  padding-left: 46px;
+}
+.statistics__bottomText p {
+  font: 400 14px "Open Sans";
+  color: #92A1A8;
+}
+.statistics .statistics__block:nth-child(2) .statistics__percentageText p {
+  color: #BE8A6C;
+}
+.statistics .statistics__block:nth-child(2) .statistics__block-img {
+  background: #FFE5D7;
+}
+.statistics .statistics__block:nth-child(3) .statistics__percentageText p {
+  color: #49AB3A;
+}
+.statistics .statistics__block:nth-child(3) .statistics__block-img {
+  background: rgba(101, 228, 82, 0.537254902);
+}
+.statistics .statistics__block:nth-child(4) .statistics__percentageText p {
+  color: #EF4D56;
+}
+.statistics .statistics__block:nth-child(4) .statistics__block-img {
+  background: rgba(237, 88, 96, 0.3725490196);
+}
+@media (max-width: 1286px) {
+  .statistics {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1024px) {
+  .statistics__block {
+    padding: 16px;
+  }
+}
+@media (max-width: 900px) {
+  .statistics {
+    flex-direction: column;
+  }
+  .statistics__block {
+    max-width: none;
+  }
+  .statistics__response {
+    flex-direction: row;
+  }
+}
+@media (max-width: 537px) {
+  .statistics__response {
+    flex-direction: column;
+  }
+  .statistics__wrapperCount p {
+    font-size: 24px;
+  }
+}/*# sourceMappingURL=Statistics.module.css.map */
