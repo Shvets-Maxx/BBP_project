@@ -3,10 +3,16 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import dayjs from "dayjs";
+// import dayjs from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
+import { useState } from "react";
+
 import style from "../Time/Time.module.sass";
 
 export default function TimePickerViews({ disabled }: { disabled: boolean }) {
+	const [date, setDate] = useState<Dayjs | null>(dayjs());
+	const [time, setTime] = useState<Dayjs | null>(dayjs());
+
 	return (
 		<div className={style.time}>
 			<LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -16,7 +22,18 @@ export default function TimePickerViews({ disabled }: { disabled: boolean }) {
 						style={{ background: disabled ? "none" : "#EBEBED" }}
 					>
 						<DemoItem>
-							<DatePicker disabled={disabled} defaultValue={dayjs("2022-04-17")} />
+							<DatePicker
+								onChange={(newValue) => {
+									if (newValue === null) {
+										setDate(null);
+									} else {
+										setDate(newValue as Dayjs);
+									}
+								}}
+								disabled={disabled}
+								value={date}
+								// defaultValue={dayjs("2022-04-17")}
+							/>
 						</DemoItem>{" "}
 					</div>
 					<div className={style.time__text}>
@@ -27,7 +44,18 @@ export default function TimePickerViews({ disabled }: { disabled: boolean }) {
 						style={{ background: disabled ? "none" : "#EBEBED" }}
 					>
 						<DemoItem>
-							<TimePicker disabled={disabled} views={["hours", "minutes"]} />
+							<TimePicker
+								value={time}
+								onChange={(newValue) => {
+									if (newValue === null) {
+										setTime(null);
+									} else {
+										setTime(newValue as Dayjs);
+									}
+								}}
+								disabled={disabled}
+								views={["hours", "minutes"]}
+							/>
 						</DemoItem>
 					</div>
 				</DemoContainer>
