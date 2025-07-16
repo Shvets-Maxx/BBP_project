@@ -7,31 +7,88 @@
   overflow: visible !important;
 }
 
-.DashBoardBlock {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  border-radius: 15px;
-}
-
 .profileSettingContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.profileSettingContainer__block {
+.profileSettingContainer__container {
   max-width: 1234px;
   width: 100%;
-  padding: 24px 24px 24px 0;
+  padding: 24px 24px 0 24px;
 }
-.profileSettingContainer__wrapper {
-  padding: 32px 24px 24px 24px;
-  background-color: #E6EFF3;
+.profileSettingContainer__section {
+  display: flex;
+  gap: 16px;
   border-radius: 8px;
+}
+.profileSettingContainer__components {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  max-width: 370px;
+}
+.profileSettingContainer__tabPanel {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.profileSettingContainer p, .profileSettingContainer h3, .profileSettingContainer h2 {
-  color: black;
+.profileSettingContainer__catalog {
+  display: flex;
+  justify-content: space-between;
+}
+.profileSettingContainer__responce {
+  display: none;
+}
+.profileSettingContainer__block {
+  padding: 24px;
+  background-color: #E6EFF3;
+  border-radius: 8px;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+.profileSettingContainer__button {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .profileSettingContainer {
+    flex-direction: column;
+  }
+  .profileSettingContainer .profileSettingContainer__search {
+    display: none;
+  }
+  .profileSettingContainer .profileSettingContainer__responce {
+    display: block;
+  }
+  .profileSettingContainer .profileSettingContainer__section {
+    gap: 0px;
+  }
+  .profileSettingContainer__components {
+    min-width: auto;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    max-width: auto;
+    width: auto;
+  }
+  .profileSettingContainer .profileSettingContainer__button {
+    display: block;
+  }
+  .profileSettingContainer .responsive__margin {
+    margin-bottom: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .profileSettingContainer .responsive__fontSize {
+    font-size: 20px;
+  }
+  .profileSettingContainer .profileSettingContainer__container {
+    padding: 24px 0 24px 0;
+  }
+}
+@media (max-width: 425px) {
+  .profileSettingContainer .profileSettingContainer__block {
+    padding: 24px 16px 16px 16px;
+  }
 }/*# sourceMappingURL=W-Admin-Services-Catalog.module.css.map */

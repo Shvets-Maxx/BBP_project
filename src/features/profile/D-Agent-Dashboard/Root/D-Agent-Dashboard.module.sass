@@ -1,0 +1,132 @@
+
+
+
+    
+.dashboard
+    display: flex
+    flex-direction: row
+    justify-content: center
+    &__container
+        width: 100%
+        max-width: 1234px
+        padding: 24px 24px  0 24px
+    &__block
+        padding: 24px
+        background: #E6EFF3
+        border-radius: 8px
+        display: flex
+        flex-direction: column
+        gap: 16px
+
+    
+    &__lineDiagram
+        gap: 20px
+        display: flex
+    &__currentRevenueCard
+        flex-basis: 50%
+    &__balanceOverviewChart
+        width: 100%
+    &__popularProducts
+        display: flex
+        gap: 20px
+    &__popularProductsTable
+        width: 100%
+    &__donutChart
+        flex-basis: 50%
+
+    @media (max-width: 1024px) 
+        flex-direction: column
+
+    @media (max-width: 1336px) 
+        &__lineDiagram
+            flex-direction: column
+        &__popularProducts
+            flex-direction: column
+            
+    @media (max-width: 768px) 
+        &__container
+            padding: 24px 0 24px 0
+    @media (max-width: 425px) 
+        .dashboard__block
+            padding: 24px 16px 16px 16px
+
+    
+
+
+
+
+
+// // === Cards ===
+// .MuiPaper-root.MuiCard-root 
+//   box-shadow: none
+//   height: 100%
+
+
+
+// //CallsChart
+// .MuiCardContent-root
+//   padding: 0 !important 
+// .recharts-wrapper
+//   height: auto !important
+// // === Card Content ===
+// .MuiCardContent-root 
+//   display: flex
+//   flex-direction: column
+//   height: 100%
+//   &:last-child 
+//     padding-bottom: 0 !important
+//     justify-content: space-between
+  
+
+// .MuiInputBase-root
+//     border-bottom: 1px solid #1D1D1F
+// .MuiToolbar-root 
+//   display: flex
+//   justify-content: space-between
+
+
+// .MuiAppBar-root 
+//   background-color: #ffff !important
+//   @media (max-width: 600px) 
+//     display: block !important
+  
+
+
+// .MuiTypography-root 
+//   border-bottom: 1px solid black
+ 
+  
+
+
+// .MuiFormControl-root 
+//   background: #ffff
+//   max-width: 69px
+//   border-radius: 5px
+
+
+// // === Chart legend & axis ===
+
+
+
+
+
+// // === Chips ===
+// .MuiChip-root 
+//   padding: 15px !important
+//   width: 100%
+
+
+// // === Icons ===
+// .MuiSvgIcon-root 
+//   fill: rgb(0 0 0) !important
+//   width: 20px !important
+//   height: 20px !important
+
+
+
+// .recharts-cartesian-axis-line,.MuiChartsAxis-line,.MuiChartsAxis-tick,
+// .recharts-cartesian-axis-tick-line 
+//   display: none !important
+
+
+

@@ -1,6 +1,6 @@
 
 .filter__container::-webkit-scrollbar 
-  width: 14px
+  width: 7px
 .filter__container::-webkit-scrollbar-track 
   background: none
   border-radius: 4px
@@ -24,9 +24,7 @@
     padding-right: 10px
     padding-top: 24px
     height: 100%
-
-    
-
+    display: block
     
     &__container
         height: 100%
@@ -37,21 +35,25 @@
         flex-direction: column
         gap: 16px
 
-    &__title 
-        .filter__text
-            margin-bottom: 16px
-            font: 400 24px 'PT Serif'
-        div:hover
-            cursor: pointer
-        div
-            display: flex
-            gap: 8px
-            align-items: center
-            p
-                font: 400 14px 'Open Sans'
-                color: grey
-            img
-                width: 13px
+    &__text
+        font: 400 24px 'PT Serif'
+    &__title-clear:hover
+        cursor: pointer
+    &__title-clear
+        display: flex
+        gap: 8px
+        align-items: center
+        img
+            width: 13px
+        p
+            font: 400 14px 'Open Sans'
+            color: grey
+        
+    &__title-block
+        margin-bottom: 16px
+        display: flex
+        align-items: center
+        justify-content: space-between
     &__selected-block
         p
             font: 400 18px 'Open Sans'
@@ -73,7 +75,6 @@
         img:hover
             cursor: pointer
 
-    &__selected-value
     &__main-block
         display: flex
         flex-direction: column
@@ -119,7 +120,8 @@
         p
             font: 400 14px 'Open Sans'
             color: #000
-    
+    &__burger
+        display: none
     &__arrow
         width: 24px
         height: 24px
@@ -165,6 +167,39 @@
                     flex: 1
                     padding-left: 8px
                     width: 100%
+    .overlay 
+        position: fixed
+        top: 0
+        left: 0
+        width: 100vw
+        height: 100vh
+        background-color: rgba(0, 0, 0, 0.4)
+        backdrop-filter: blur(1px)
+        z-index: 998
+        animation: fadeIn 0.3s ease-in-out
+    @media (max-width: 1024px)
+        background: none
+        border-radius: none
+        padding-right: 0px
+        padding-top: 0px
+        height: none
+        &__burger
+            display: block
+        .filter__container
+            max-height: 100vh
+            padding: 20px
+            position: fixed
+            top: 0
+            left: -100%
+            width: 100vw
+            height: 100vh
+            background: #fff
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1)
+            transition: left 0.3s ease-in-out
+            z-index: 999
+    .filter__active 
+        left: 0 !important
+        
 
 
 

@@ -4,9 +4,6 @@
   padding: 24px;
   background: #fff;
 }
-.product div {
-  font: 400 14px "Open Sans";
-}
 .product .product__header, .product .product__content {
   display: flex;
   align-items: center;
@@ -72,6 +69,7 @@
   font-size: 14px;
   color: #555;
   margin-top: 16px;
+  font: 400 14px "Open Sans";
 }
 .product .pagination button {
   background: none;

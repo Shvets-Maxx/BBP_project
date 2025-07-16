@@ -15,7 +15,7 @@ export default function RangeSlider({ value, onChange }: Props) {
 	};
 
 	return (
-		<Box sx={{ width: "100%" }}>
+		<Box sx={{ width: "100%", padding: "0 5px 0 5px" }}>
 			<Slider
 				getAriaLabel={() => "Price range"}
 				value={value}

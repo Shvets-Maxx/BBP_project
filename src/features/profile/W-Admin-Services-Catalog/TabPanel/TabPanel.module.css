@@ -1,4 +1,9 @@
+.catalog {
+  width: 100%;
+  min-width: 450px;
+}
 .catalog__container {
+  width: 100%;
   background: #fff;
   padding: 24px;
   display: flex;
@@ -6,9 +11,60 @@
   gap: 20px;
   border-radius: 8px;
 }
+.catalog .pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+  margin-top: 16px;
+  font: 400 14px "Open Sans";
+}
+.catalog .pagination button {
+  background: none;
+  border-radius: 4px;
+  padding: 5px 8px;
+  cursor: pointer;
+  display: flex;
+}
+.catalog .pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.catalog .pagination .view {
+  background: #9D9D9D;
+  color: #000;
+  padding: 5px 0;
+  width: 70px;
+  border-radius: 8px;
+}
+.catalog .pagination .view:hover {
+  cursor: pointer;
+}
+.catalog .pagination__block {
+  gap: 8px;
+  align-items: center;
+  display: flex;
+}
+.catalog .pagination__block span {
+  width: 110px;
+}
+@media (max-width: 465px) {
+  .catalog .pagination {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+}
 .catalog .header {
   display: flex;
   justify-content: space-between;
+}
+.catalog .header :global(.MuiSelect-icon) {
+  right: 0 !important;
+}
+.catalog .header :global(.MuiSelect-select) {
+  padding-right: 22px !important;
 }
 .catalog .header__block {
   display: flex;
@@ -20,9 +76,10 @@
   height: min-content;
 }
 .catalog .header__block .header__selectWrapper:nth-child(1) {
+  padding-bottom: 3px;
   border-bottom: 1px solid black;
 }
-.catalog .header__selectWrapper {
+.catalog__selectWrapper {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -30,7 +87,7 @@
   width: min-content !important;
   padding-bottom: 4px;
 }
-.catalog .header__select {
+.catalog__select {
   width: 100%;
   border-radius: 10px !important;
   padding: 12px 12px 12px 16px;
@@ -39,40 +96,40 @@
   border: 1px solid #1D1D1F;
   font: 400 14px "Open Sans";
 }
-.catalog .header__select--padding {
+.catalog__select--padding {
   border-bottom: 1px solid black;
 }
-.catalog .header__select--padding :global(.MuiSelect-icon) {
+.catalog__select--padding :global(.MuiSelect-icon) {
   right: 0px !important;
 }
-.catalog .header__select--border {
+.catalog__select--border {
   border: none;
   padding: 0;
 }
-.catalog .header__select--burger :global(.MuiSelect-icon) {
+.catalog__select--burger :global(.MuiSelect-icon) {
   right: 0 !important;
 }
-.catalog .header__select--burger :global(.MuiSelect-select) {
+.catalog__select--burger :global(.MuiSelect-select) {
   padding-right: 20px !important;
 }
 .catalog .clothes {
-  display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(211px, 1fr));
-  grid-template-rows: 1fr 1fr;
-  justify-items: center;
+  justify-content: center;
+  display: inline-flex;
   gap: 16px;
+  flex-wrap: wrap;
 }
 .catalog .clothes__block {
-  width: -moz-min-content;
-  width: min-content;
-  display: flex;
+  width: 31%;
+  display: inline-flex;
   flex-direction: column;
   gap: 8px;
 }
 .catalog .clothes__img {
-  width: 211px;
-  height: 196px;
+  border: 1px solid black;
+}
+.catalog .clothes__img img {
+  width: 100%;
   background: grey;
   border-radius: 8px;
 }
@@ -99,7 +156,7 @@
 .catalog .clothes__prise p {
   font: 700 18px "Open Sans";
 }
-.catalog .clothes :global(.MuiMenu-list li) {
+.catalog :global(.MuiMenu-list li) {
   background-color: black !important;
 }
 .catalog :global(.MuiSelect-select) {
@@ -130,4 +187,22 @@
 }
 .catalog :global(.MuiOutlinedInput-notchedOutline) {
   display: none !important;
+}
+@media (max-width: 1260px) {
+  .catalog .clothes__block {
+    width: 47%;
+  }
+}
+@media (max-width: 1024px) {
+  .catalog {
+    min-width: auto;
+  }
+}
+@media (max-width: 500px) {
+  .catalog .header__block {
+    gap: 5px;
+  }
+  .catalog .clothes__block {
+    width: 98%;
+  }
 }/*# sourceMappingURL=TabPanel.module.css.map */

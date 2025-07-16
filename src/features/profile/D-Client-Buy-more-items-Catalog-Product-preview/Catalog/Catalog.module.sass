@@ -1,5 +1,4 @@
 .catalog
-    
     width: 100%
     &__container
         display: flex
@@ -34,7 +33,6 @@
                 font: 400 18px 'Open Sans'
                 span
                     color: grey
-
         &__size--active
             background: #ED805B4D
         &__size-block
@@ -49,8 +47,6 @@
                 border: 1px solid #92A1A8
                 border-radius: 10px
                 color: black
-
-
         &__color 
             p 
                 font: 400 18px 'Open Sans'
@@ -72,8 +68,6 @@
             &--active
                 box-shadow: 0 0 0 2px white, 0 0 0 4px grey    
 
-            
-    
         &__availability 
             p 
                 font: 400 18px 'Open Sans'
@@ -95,8 +89,6 @@
             border-radius: 10px
             &--hover:hover
                 cursor: pointer
-
-
         &__description--dropDown
             p
                 font: 400 14px 'Open Sans'
@@ -107,9 +99,6 @@
             align-items: center
             p
                 font: 400 18px 'Open Sans'
-
-            
-
         &__arrow
             width: 20px
             height: 20px
@@ -118,3 +107,33 @@
             transform: rotate(-90deg)
             &--open
                 transform: rotate(0deg)
+
+
+            
+    @media (max-width: 1133px) 
+        &__container
+            gap: 16px
+        &__swiper
+            flex: 0 0 45%
+            min-width: 300px
+        .clothes__title p 
+            font-size: 24px
+    @media (max-width: 1024px)
+        &__swiper
+            flex: none
+            min-width: auto
+
+    @media (max-width: 900px) 
+        &__container
+            gap: 16px
+        &__swiper
+            flex: 0 0 45%
+            min-width: 300px
+        .clothes__title p 
+            font-size: 24px
+
+    @media (max-width: 768px)
+        .catalog__container , .catalog__swiper , .catalog__swiper-block 
+            width: 100%
+        .catalog__container
+            flex-direction: column

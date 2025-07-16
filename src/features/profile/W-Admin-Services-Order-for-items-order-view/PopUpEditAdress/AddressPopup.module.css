@@ -88,6 +88,7 @@
 .address__footer button {
   font: 400 18px "Open Sans";
   flex-basis: 50%;
+  color: black;
 }
 .address__button-update {
   background-color: #9D9D9D;

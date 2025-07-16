@@ -226,7 +226,7 @@ import { AddressPopup } from "../PopUpEditAdress/AddressPopup";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 
 function OrderInformation() {
-	const [changeOpen, setShangeOpen] = useState(true);
+	const [changeOpen, setShangeOpen] = useState(false);
 
 	const [deliveryDate, setDeliveryDate] = useState<Date | null>(new Date());
 	const [courierDate, setCourierDate] = useState<Date | null>(new Date());

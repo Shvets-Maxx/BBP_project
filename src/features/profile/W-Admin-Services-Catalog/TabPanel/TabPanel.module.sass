@@ -1,25 +1,72 @@
 
   
 .catalog
-  &__container
-    background: #fff
-    padding: 24px
-    display: flex
-    flex-direction: column
-    gap: 20px
-    border-radius: 8px
-
-  .header
-    display: flex
-    justify-content: space-between
-    &__block
+    width: 100%
+    min-width: 450px
+    &__container
+        width: 100%
+        background: #fff
+        padding: 24px
         display: flex
-        gap: 26px
-        align-items: end
-        .header__selectWrapper
-            height: min-content
-        .header__selectWrapper:nth-child(1)
-            border-bottom: 1px solid black
+        flex-direction: column
+        gap: 20px
+        border-radius: 8px
+    .pagination
+        display: flex
+        justify-content: space-between
+        align-items: center
+        font-size: 14px
+        color: #555
+        margin-top: 16px
+        font: 400 14px 'Open Sans'
+
+        & button
+            background: none
+            border-radius: 4px
+            padding: 5px 8px
+            cursor: pointer
+            display: flex       
+        & button:disabled
+            opacity: 0.4
+            cursor: not-allowed     
+        .view
+            background: #9D9D9D
+            color: #000
+            padding: 5px 0 
+            width: 70px
+            border-radius: 8px
+        .view:hover
+            cursor: pointer
+        &__block
+            gap: 8px 
+            align-items: center
+            display: flex
+            span
+                width: 110px
+
+    @media (max-width: 465px)
+        .pagination
+            display: flex
+            flex-direction: column-reverse
+            gap: 10px
+
+    .header
+        display: flex
+        justify-content: space-between
+        :global(.MuiSelect-icon)
+            right: 0 !important
+        :global(.MuiSelect-select)
+            padding-right: 22px !important
+    
+        &__block
+            display: flex
+            gap: 26px
+            align-items: end
+            .header__selectWrapper
+                height: min-content
+            .header__selectWrapper:nth-child(1)
+                padding-bottom: 3px
+                border-bottom: 1px solid black
     &__selectWrapper
         display: flex
         gap: 8px
@@ -49,42 +96,46 @@
             right: 0 !important
         :global(.MuiSelect-select)
             padding-right: 20px !important
-  .clothes
-    display: grid
-    width: 100%
-    grid-template-columns: repeat(auto-fill, minmax(211px, 1fr))
-    grid-template-rows: 1fr 1fr
-    justify-items: center
-    gap: 16px
-    &__block
-        width: min-content
-        display: flex
-        flex-direction: column
-        gap: 8px
-    &__img
-        width: 211px
-        height: 196px
-        background: grey
-        border-radius: 8px
-    &__info
-        display: flex
-        flex-direction: column
-        gap: 8px
-    &__size
-        display: flex
-        justify-content: space-between
-        font: 400 14px 'Open Sans'
-        p
-            color: #8D8D8E
-    &__name p 
-        font: 400 18px 'Open Sans'
+    .clothes
+        
+        width: 100%
+        // display: grid
+        // grid-template-columns: repeat(3, 1fr)
+        // grid-template-rows: 1fr 1fr
+        justify-content: center
+        display: inline-flex
+        gap: 16px
+        flex-wrap: wrap
+        &__block
+            width: 31%
+            display: inline-flex
+            flex-direction: column
+            gap: 8px
+        &__img 
+            border: 1px solid black
+            img
+                width: 100%
+                background: grey
+                border-radius: 8px
+        &__info
+            display: flex
+            flex-direction: column
+            gap: 8px
+        &__size
+            display: flex
+            justify-content: space-between
+            font: 400 14px 'Open Sans'
+            p
+                color: #8D8D8E
+        &__name p 
+            font: 400 18px 'Open Sans'
 
-    &__stock p 
-        color: #8D8D8E
-        font: 400 18px 'Open Sans'
-    &__prise 
-        p 
-            font: 700 18px 'Open Sans'
+        &__stock p 
+            color: #8D8D8E
+            font: 400 18px 'Open Sans'
+        &__prise 
+            p 
+                font: 700 18px 'Open Sans'
 
 
 
@@ -93,34 +144,47 @@
         background-color: black !important
         
 
-  // MUI overrides
-  :global(.MuiSelect-select)
-    padding: 0
-    font: 400 14px 'Open Sans' !important
-  :global(.Mui-selected)
-    background-color: black !important
+    // MUI overrides
+    :global(.MuiSelect-select)
+        padding: 0
+        font: 400 14px 'Open Sans' !important
+    :global(.Mui-selected)
+        background-color: black !important
 
-  :global(.MuiSelect-icon)
-    // position: static !important
-    top: auto !important
-    width: 15px !important
-    height: 15px !important
+    :global(.MuiSelect-icon)
+        // position: static !important
+        top: auto !important
+        width: 15px !important
+        height: 15px !important
+        
+
+    :global(.MuiSvgIcon-root)
+        width: 20px !important
+        height: 20px !important
     
 
-  :global(.MuiSvgIcon-root)
-    width: 20px !important
-    height: 20px !important
-   
+    :global(.MuiSelect-icon)
+        transition: transform 300ms ease
+        right: 16px
+        top: calc(50% - 12px)
+        position: absolute
+        pointer-events: none
 
-  :global(.MuiSelect-icon)
-    transition: transform 300ms ease
-    right: 16px
-    top: calc(50% - 12px)
-    position: absolute
-    pointer-events: none
+    :global(.MuiSelect-icon.MuiSelect-iconOpen)
+        transform: rotate(180deg)
 
-  :global(.MuiSelect-icon.MuiSelect-iconOpen)
-    transform: rotate(180deg)
+    :global(.MuiOutlinedInput-notchedOutline)
+        display: none !important
 
-  :global(.MuiOutlinedInput-notchedOutline)
-    display: none !important
+
+    @media (max-width: 1260px) 
+        .clothes__block
+            width: 47%
+    @media (max-width: 1024px)
+        min-width: auto
+    @media (max-width: 500px)
+        .header__block
+            gap: 5px 
+        .clothes__block
+            width: 98%
+

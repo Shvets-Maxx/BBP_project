@@ -389,6 +389,8 @@ import ArrowIconSrc from "@/features/profile/SupportTicketsChat/assets/ArrowBott
 import shape from "./assets/shape.svg";
 import line from "./assets/line.svg";
 import RangeSlider from "./Range/Range.tsx";
+import CloseIcon from "@mui/icons-material/Close";
+import IconButton from "@mui/material/IconButton";
 
 type FilterItem = {
 	label: string;
@@ -402,6 +404,10 @@ type FilterSection = {
 	type: "simple" | "nested";
 	items: FilterItem[];
 };
+interface FilterPanelProps {
+	state: boolean;
+	setState: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 const sections: FilterSection[] = [
 	{
@@ -487,7 +493,7 @@ const sections: FilterSection[] = [
 	},
 ];
 
-export default function FilterPanel() {
+export default function FilterPanel({ state, setState }: FilterPanelProps) {
 	const sectionsBeforePrice = sections.slice(0, 2);
 	const sectionsAfterPrice = sections.slice(2);
 	const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
@@ -708,11 +714,21 @@ export default function FilterPanel() {
 	};
 
 	return (
-		<div className={style.filter}>
-			<div className={style.filter__container}>
+		<div className={`${style.filter}`}>
+			<div
+				className={`${style.filter__container} ${state ? style.filter__active : ""}`}
+			>
 				<div className={style.filter__title}>
-					<p className={style.filter__text}>Filters</p>
-					<div onClick={handleClear}>
+					<div className={style["filter__title-block"]}>
+						<p className={style.filter__text}>Filters</p>
+						<div onClick={(_e) => setState(!state)} className={style.filter__burger}>
+							<IconButton>
+								<CloseIcon />
+							</IconButton>
+						</div>
+					</div>
+
+					<div className={style["filter__title-clear"]} onClick={handleClear}>
 						<p>clear all Filters</p>
 						<img src={shape} />
 					</div>
@@ -807,6 +823,7 @@ export default function FilterPanel() {
 				{/* Фільтри після прайсу */}
 				{sectionsAfterPrice.map((section) => renderSection(section))}
 			</div>
+			{state && <div className={style.overlay} onClick={() => setState(false)} />}
 		</div>
 	);
 }

@@ -56,6 +56,6 @@
 }
 @media (max-width: 425px) {
   .dashboard .dashboard__block {
-    padding: 16px;
+    padding: 24px 16px 16px 16px;
   }
 }/*# sourceMappingURL=D_Sale_manager_Dashboard.module.css.map */

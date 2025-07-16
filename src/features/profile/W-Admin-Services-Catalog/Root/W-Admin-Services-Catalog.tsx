@@ -4,42 +4,47 @@ import ClientProfileTop from "../../../../components/common/clientProfileTop/Cli
 import Search from "../Search/Search.tsx";
 import Filters from "../Filters/Filters.tsx";
 import TabPanel from "../TabPanel/TabPanel.tsx";
+import { useState } from "react";
+import FilterListIcon from "@mui/icons-material/FilterList";
+import IconButton from "@mui/material/IconButton";
+
 function W_Admin_Services_Catalog() {
+	const [isOpen, setIsOpen] = useState(false); // ← замість open
+
 	return (
 		<div className={style.profileSettingContainer}>
 			<Sidebar />
-			<div className={style.profileSettingContainer__block}>
-				<div className={style.profileSettingContainer__wrapper}>
-					<header className={style.header}>
-						<ClientProfileTop>Services - Catalog</ClientProfileTop>
-					</header>
-					<main style={{ display: "flex", gap: "16px" }} className="">
-						<section
-							style={{
-								display: "flex",
-								gap: "16px",
-								flexDirection: "column",
-								maxWidth: "370px",
-							}}
+			<div className={style.profileSettingContainer__container}>
+				<div className={style.profileSettingContainer__block}>
+					<div className={style.profileSettingContainer__catalog}>
+						<ClientProfileTop
+							classNameTitle={style.responsive__fontSize}
+							classNameMargin={style.responsive__margin}
 						>
-							<div>
+							Services - Catalog
+						</ClientProfileTop>
+						<div className={style.profileSettingContainer__button}>
+							<IconButton onClick={(_e) => setIsOpen(!isOpen)}>
+								<FilterListIcon fontSize="large" />
+							</IconButton>
+						</div>
+					</div>
+
+					<section className={style.profileSettingContainer__section}>
+						<div className={style.profileSettingContainer__components}>
+							<div className={style.profileSettingContainer__search}>
 								<Search />
 							</div>
-							<div style={{ flexGrow: "1" }}>
-								<Filters />
+
+							<Filters state={isOpen} setState={setIsOpen} />
+						</div>
+						<div className={style.profileSettingContainer__tabPanel}>
+							<div className={style.profileSettingContainer__responce}>
+								<Search />
 							</div>
-						</section>
-						<section
-							style={{
-								display: "flex",
-								gap: "16px",
-								flexDirection: "column",
-								width: "100%",
-							}}
-						>
 							<TabPanel />
-						</section>
-					</main>
+						</div>
+					</section>
 				</div>
 			</div>
 		</div>
