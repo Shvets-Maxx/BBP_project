@@ -11,7 +11,7 @@ function D_Client_Buy_more_items_Catalog_Product_preview() {
 			<Sidebar />
 			<div className={style.profileSettingContainer__container}>
 				<div className={style.profileSettingContainer__block}>
-					<ClientProfileTop className={style.responsive__fontSize}>
+					<ClientProfileTop classNameTitle={style.responsive__fontSize}>
 						Buy more items - Catalog - Preview{" "}
 					</ClientProfileTop>
 					<section className={style.profileSettingContainer__section}>
@@ -28,21 +28,3 @@ function D_Client_Buy_more_items_Catalog_Product_preview() {
 }
 
 export default D_Client_Buy_more_items_Catalog_Product_preview;
-
-{
-	/* <div className={style.profileSettingContainer}>
-			<Sidebar />
-			<div className={style.profileSettingContainer__container}>
-				<div className={style.profileSettingContainer__block}>
-					<ClientProfileTop>Buy more items - Catalog - Preview </ClientProfileTop>
-					<section className={style.profileSettingContainer__section}>
-						<div>
-							<Catalog />
-							<FullDescription />
-							<TabPanel />
-						</div>
-					</section>
-				</div>
-			</div>
-		</div> */
-}
