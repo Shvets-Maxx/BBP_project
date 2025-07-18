@@ -53,158 +53,162 @@ function PopularOrders() {
 
 	return (
 		<div className={style.product}>
-			<div style={{ overflowX: "auto" }}>
-				<div className={style.product__header} style={{ minWidth: 700 }}>
-					<div style={{ flex: 1.5, minWidth: 70 }}>
-						<p>ID</p>
+			<div style={{ overflowX: "scroll" }}>
+				<div style={{ minWidth: 780 }}>
+					<div className={style.product__header}>
+						<div style={{ width: 50 }}>
+							<p>ID</p>
+						</div>
+						<div style={{ width: 140 }}>
+							<p>Customer</p>
+						</div>
+						<div style={{ width: 120 }}>
+							<p>Order</p>
+						</div>
+						<div style={{ width: 80 }}>
+							<p>Date</p>
+						</div>
+						<div style={{ width: 60 }}>
+							<p>Payment</p>
+						</div>
+						<div style={{ width: 120 }}>
+							<p>Status</p>
+						</div>
+						<div style={{ width: 50 }}>
+							<p>Price</p>
+						</div>
+						<div style={{ width: 80 }}>
+							<p>Action</p>
+						</div>
 					</div>
-					<div style={{ flex: 2, minWidth: 140 }}>
-						<p>Customer</p>
-					</div>
-					<div style={{ flex: 2, minWidth: 140 }}>
-						<p>Order</p>
-					</div>
-					<div style={{ flex: 2, minWidth: 100 }}>
-						<p>Date</p>
-					</div>
-					<div style={{ flex: 1.5, minWidth: 60 }}>
-						<p>Payment</p>
-					</div>
-					<div style={{ flex: 2, minWidth: 120 }}>
-						<p>Status</p>
-					</div>
-					<div style={{ flex: 1.5, minWidth: 80 }}>
-						<p>Price</p>
-					</div>
-					<div style={{ flex: 1, minWidth: 50 }}>
-						<p>Action</p>
-					</div>
-				</div>
 
-				{pagedOrders.map((order, idx) => {
-					const { color, icon } = getStatusStyle(order.status);
+					{pagedOrders.map((order, idx) => {
+						const { color, icon } = getStatusStyle(order.status);
 
-					return (
-						<div
-							className={style.product__content}
-							style={{ minWidth: 700 }}
-							key={idx}
-						>
-							<div style={{ flex: 1.5, minWidth: 70 }}>
-								<p>{order.id}</p>
-							</div>
-							<div
-								style={{
-									flex: 2,
-									minWidth: 140,
-									display: "flex",
-									alignItems: "center",
-									justifyContent: "center",
-									gap: 10,
-								}}
-							>
+						return (
+							<div className={style.product__content} key={idx}>
+								<div style={{ width: 50 }}>
+									<p>{order.id}</p>
+								</div>
 								<div
 									style={{
-										border: "1px solid grey",
-										borderRadius: "88px",
-										padding: "5px 10px 5px 5px",
+										width: 140,
 										display: "flex",
 										alignItems: "center",
-										gap: "10px",
+										gap: 10,
 									}}
 								>
-									<Avatar
-										sx={{ width: 32, height: 32 }}
-										src={order.customer.avatar}
-										alt={order.customer.name}
-									/>
-									<p>{order.customer.name}</p>
-								</div>
-							</div>
-							<div style={{ flex: 2, minWidth: 140 }}>
-								<p>{order.order}</p>
-							</div>
-							<div style={{ flex: 2, minWidth: 100 }}>
-								<p>{order.date}</p>
-							</div>
-							<div style={{ flex: 1.5, minWidth: 60 }}>
-								<p>{order.payment}</p>
-							</div>
-							<div style={{ flex: 2, minWidth: 120 }}>
-								<p>
-									<span
+									<div
 										style={{
-											maxWidth: "140px",
-											width: "100%",
-											display: "inline-flex",
-											justifyContent: "center",
+											border: "1px solid grey",
+											borderRadius: "88px",
+											padding: "5px 10px 5px 5px",
+											display: "flex",
 											alignItems: "center",
-											gap: 8,
-											padding: "10px 12px",
-											borderRadius: 56,
-											border: `1px solid ${color}`,
-											background: "#fff",
+											gap: "10px",
 										}}
 									>
-										<img src={icon} alt="status icon" style={{ width: 14, height: 14 }} />
-										<span style={{ color }}>{order.status}</span>
-									</span>
-								</p>
-							</div>
-							<div style={{ flex: 1.5, minWidth: 80 }}>
-								<p style={{ fontWeight: 600 }}>{order.price}</p>
-							</div>
-							<div style={{ flex: 1, minWidth: 50 }}>
-								<div className={style.view}>
-									<p>View</p>
+										<Avatar
+											sx={{ width: 32, height: 32 }}
+											src={order.customer.avatar}
+											alt={order.customer.name}
+										/>
+										<p>{order.customer.name}</p>
+									</div>
+								</div>
+								<div style={{ width: 120 }}>
+									<p>{order.order}</p>
+								</div>
+								<div style={{ width: 80 }}>
+									<p>{order.date}</p>
+								</div>
+								<div style={{ width: 60 }}>
+									<p>{order.payment}</p>
+								</div>
+								<div style={{ width: 120 }}>
+									<p>
+										<span
+											style={{
+												width: "120px",
+												display: "inline-flex",
+												justifyContent: "center",
+												alignItems: "center",
+												gap: 8,
+												padding: "10px 12px",
+												borderRadius: 56,
+												border: `1px solid ${color}`,
+												background: "#fff",
+											}}
+										>
+											<img
+												src={icon}
+												alt="status icon"
+												style={{ width: 14, height: 14 }}
+											/>
+											<span style={{ color }}>{order.status}</span>
+										</span>
+									</p>
+								</div>
+								<div style={{ width: 50 }}>
+									<p style={{ fontWeight: 600 }}>{order.price}</p>
+								</div>
+								<div style={{ width: 80 }}>
+									<div className={style.view}>
+										<p>View</p>
+									</div>
 								</div>
 							</div>
-						</div>
-					);
-				})}
+						);
+					})}
+				</div>
 			</div>
 
 			<div className={style.pagination}>
-				<p>
-					Showing {page * ROWS_PER_PAGE + 1}-
-					{Math.min((page + 1) * ROWS_PER_PAGE, orders.length)} of {orders.length}{" "}
-					entries
-				</p>
-				<div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-					<button
-						onClick={() => setPage(Math.max(page - 1, 0))}
-						disabled={page === 0}
-					>
-						<img style={{ transform: "rotate(90deg)" }} src={ArrowIconSrc} alt="" />
-					</button>
-					{visiblePages().map((p, idx) =>
-						p === "..." ? (
-							<span key={idx} style={{ padding: "0 6px" }}>
-								...
-							</span>
-						) : (
-							<button
-								key={p as number}
-								onClick={() => setPage(p as number)}
-								style={{
-									padding: "4px 10px",
-									background: page === p ? "#ddd" : "transparent",
-									borderRadius: 6,
-									border: "none",
-									cursor: "pointer",
-									fontWeight: page === p ? 600 : 400,
-								}}
-							>
-								{(p as number) + 1}
-							</button>
-						),
-					)}
-					<button
-						onClick={() => setPage(Math.min(page + 1, TOTAL_PAGES - 1))}
-						disabled={page === TOTAL_PAGES - 1}
-					>
-						<img style={{ transform: "rotate(-90deg)" }} src={ArrowIconSrc} alt="" />
-					</button>
+				<div className={style["pagination__scroll-alert"]}>
+					<p>« Scroll for more »</p>
+				</div>
+				<div className={style.pagination__block}>
+					<p>
+						Showing {page * ROWS_PER_PAGE + 1}-
+						{Math.min((page + 1) * ROWS_PER_PAGE, orders.length)} of {orders.length}{" "}
+						entries
+					</p>
+					<div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+						<button
+							onClick={() => setPage(Math.max(page - 1, 0))}
+							disabled={page === 0}
+						>
+							<img style={{ transform: "rotate(90deg)" }} src={ArrowIconSrc} alt="" />
+						</button>
+						{visiblePages().map((p, idx) =>
+							p === "..." ? (
+								<span key={idx} style={{ padding: "0 6px" }}>
+									...
+								</span>
+							) : (
+								<button
+									key={p as number}
+									onClick={() => setPage(p as number)}
+									style={{
+										padding: "4px 10px",
+										background: page === p ? "#ddd" : "transparent",
+										borderRadius: 6,
+										border: "none",
+										cursor: "pointer",
+										fontWeight: page === p ? 600 : 400,
+									}}
+								>
+									{(p as number) + 1}
+								</button>
+							),
+						)}
+						<button
+							onClick={() => setPage(Math.min(page + 1, TOTAL_PAGES - 1))}
+							disabled={page === TOTAL_PAGES - 1}
+						>
+							<img style={{ transform: "rotate(-90deg)" }} src={ArrowIconSrc} alt="" />
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

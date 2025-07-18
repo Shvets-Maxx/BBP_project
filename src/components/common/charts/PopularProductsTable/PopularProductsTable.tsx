@@ -232,69 +232,68 @@ function PopularProductsTable() {
 	return (
 		<div className={style.product}>
 			<div style={{ overflowX: "auto" }}>
-				<div className={style.product__header}>
-					<div style={{ flex: 1.5, minWidth: 70 }}>
-						<p>ID</p>
+				<div style={{ minWidth: 520 }}>
+					<div className={style.product__header}>
+						<div style={{ width: 70 }}>
+							<p>ID</p>
+						</div>
+						<div style={{ width: 180 }}>
+							<p>Product</p>
+						</div>
+						<div style={{ width: 80 }}>
+							<p>Price</p>
+						</div>
+						<div style={{ width: 120 }}>
+							<p>Availability</p>
+						</div>
+						<div style={{ width: 80 }}>
+							<p>Sell</p>
+						</div>
+						<div style={{ width: 50 }}>
+							<p>Action</p>
+						</div>
 					</div>
-					<div style={{ flex: 2, minWidth: 160 }}>
-						<p>Product</p>
-					</div>
-					<div style={{ flex: 1.5, minWidth: 80 }}>
-						<p>Price</p>
-					</div>
-					<div style={{ flex: 2, minWidth: 120 }}>
-						<p>Availability</p>
-					</div>
-					<div style={{ flex: 1.5, minWidth: 80 }}>
-						<p>Sell</p>
-					</div>
-					<div style={{ flex: 1, minWidth: 50 }}>
-						<p>Action</p>
-					</div>
+
+					{pagedOrders.map((order, idx) => (
+						<div className={style.product__content} key={idx}>
+							<div className={style.product__id}>
+								<p>{order.id}</p>
+							</div>
+							<div className={style["product__produt-name"]}>
+								<Avatar
+									sx={{ width: 32, height: 32 }}
+									src={order.customer.avatar}
+									alt={order.customer.name}
+								/>
+								<p>{order.customer.name}</p>
+							</div>
+							<div className={style.product__price}>
+								<p style={{ fontWeight: 600, width: 80 }}>{order.price}</p>
+							</div>
+							<div className={style.product__status}>
+								<p>
+									<span
+										style={{
+											color: order.status === "In Stock" ? "#49AB3A" : "#EF4D56",
+											borderColor: order.status === "In Stock" ? "#49AB3A" : "#EF4D56",
+										}}
+									>
+										{order.status}
+									</span>
+								</p>
+							</div>
+
+							<div className={style.product__sell}>
+								<p style={{ fontWeight: 600 }}>{order.sell}</p>
+							</div>
+							<div className={style.product__view}>
+								<IconButton size="small">
+									<VisibilityIcon fontSize="small" />
+								</IconButton>
+							</div>
+						</div>
+					))}
 				</div>
-
-				{pagedOrders.map((order, idx) => (
-					<div className={style.product__content} key={idx}>
-						<div className={style.product__id}>
-							<p>{order.id}</p>
-						</div>
-						<div className={style.product__name}>
-							<Avatar
-								sx={{ width: 32, height: 32 }}
-								src={order.customer.avatar}
-								alt={order.customer.name}
-							/>
-							<p>{order.customer.name}</p>
-						</div>
-						<div className={style.product__price}>
-							<p style={{ fontWeight: 600 }}>{order.price}</p>
-						</div>
-						<div className={style.product__status}>
-							<p>
-								<span
-									style={{
-										color: order.status === "In Stock" ? "#49AB3A" : "#EF4D56",
-										borderColor: order.status === "In Stock" ? "#49AB3A" : "#EF4D56",
-									}}
-								>
-									{order.status}
-								</span>
-							</p>
-						</div>
-
-						<div className={style.product__price}>
-							<p style={{ fontWeight: 600 }}>{order.sell}</p>
-						</div>
-						<div className={style.product__view}>
-							{/* <div className={style.view}>
-								<p>View</p>
-							</div> */}
-							<IconButton size="small">
-								<VisibilityIcon fontSize="small" />
-							</IconButton>
-						</div>
-					</div>
-				))}
 			</div>
 
 			<div className={style.pagination}>

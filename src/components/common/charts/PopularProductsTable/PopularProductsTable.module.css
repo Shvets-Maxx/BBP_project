@@ -4,7 +4,12 @@
   padding: 24px;
   background: #fff;
 }
+.product p, .product span, .product button {
+  font: 400 14px "Open Sans";
+  color: #000;
+}
 .product .product__header, .product .product__content {
+  justify-content: space-between;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #eee;
@@ -14,36 +19,28 @@
   font-weight: 600;
   color: #999;
 }
-.product div {
+.product .product__header div:nth-child(n+3) {
   text-align: center;
 }
-.product .product__content p {
-  margin: 0;
-  color: #333;
-}
-.product .product__content div {
+.product .product__content div:nth-child(n+3) {
   text-align: center;
 }
-.product__name {
-  flex: 2;
-  min-width: 160px;
+.product__produt-name {
+  width: 180px;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
 }
-.product__name :global(.MuiAvatar-root) {
+.product__produt-name :global(.MuiAvatar-root) {
   border-radius: 0px !important;
   width: 42px !important;
   height: 42px !important;
 }
 .product__id {
-  flex: 1.5;
-  min-width: 70px;
+  width: 70px;
 }
 .product__status {
-  flex: 1.5;
-  min-width: 120px;
+  width: 120px;
 }
 .product__status p span {
   white-space: nowrap;
@@ -55,12 +52,13 @@
   color: #333;
 }
 .product__price {
-  flex: 1.5;
-  min-width: 80px;
+  width: 80px;
+}
+.product__sell {
+  width: 80px;
 }
 .product__view {
-  flex: 1;
-  min-width: 50px;
+  width: 50px;
 }
 .product .pagination {
   display: flex;
