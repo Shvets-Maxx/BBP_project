@@ -1,25 +1,42 @@
-.body {
+.service {
   display: flex;
   flex-direction: row;
+  overflow: hidden;
   justify-content: center;
-  gap: 20px;
 }
-.body__container {
+.service__container {
   max-width: 1234px;
+  overflow-x: auto;
   width: 100%;
-  padding: 24px 40px 24px 0;
+  padding: 24px 24px 0 24px;
 }
-.body__block {
-  padding: 32px 24px 24px 24px;
+.service__block {
+  padding: 24px;
   background: #E6EFF3;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   height: 100%;
+  gap: 16px;
 }
-.body__group-one {
+.service__section {
   height: 100%;
 }
-.body__popular {
-  height: 100%;
+@media (max-width: 1024px) {
+  .service {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .service .responsive__fontSize {
+    font-size: 20px;
+  }
+  .service__container {
+    padding: 24px 0 24px 0;
+  }
+}
+@media (max-width: 425px) {
+  .service__block {
+    padding: 24px 16px 16px 16px;
+  }
 }/*# sourceMappingURL=D-Admin-Services-Order-for-items.module.css.map */
