@@ -1,0 +1,31 @@
+.details 
+	padding: 24px
+	background-color: #fff
+	border-radius: 8px
+	min-width: 376px
+	flex: 1
+	h3 
+		font-weight: 400
+		font-size: 24px
+		line-height: 100%
+		color: #1d1d1f
+		padding-bottom: 16px
+		font-family: "PT serif", serif
+
+	&__inner 
+		& > div 
+			display: flex
+			align-items: center
+			justify-content: space-between
+			font-weight: 400
+			font-size: 14px
+			line-height: 150%
+			color: #1d1d1f
+		
+
+		& > div:not(:last-child) 
+			padding-bottom: 16px
+	@media (max-width: 500px)
+		min-width: auto
+		
+	

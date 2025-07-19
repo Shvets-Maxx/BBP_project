@@ -5,23 +5,25 @@
     flex-direction: column
     border-radius: 8px
     width: 100%
-    padding: 24px
+    background: #fff
+
     &__block
-      width: 100%
-      .tabs-panel
-          margin-bottom: 32px
-          // border-bottom: 1px solid grey
-          &__block
-              display: flex
-              justify-content: start !important
-              :global(.MuiTabs-list)
-                  display: flex
-                  gap: 75px
-                  button
-                      padding: 0 !important
-          &__title
-              font: 400 24px 'Open Sans'
-              text-transform: none !important
+        padding: 24px
+        width: 100%
+        .tabs-panel
+            margin-bottom: 32px
+            // border-bottom: 1px solid grey
+            &__block
+                display: flex
+                justify-content: start !important
+                :global(.MuiTabs-list)
+                    display: flex
+                    gap: 75px
+                    button
+                        padding: 0 !important
+            &__title
+                font: 400 24px 'Open Sans'
+                text-transform: none !important
             
        
       
@@ -38,24 +40,40 @@
     :global(.Mui-selected)
         color: #000 !important
 
-.information
-    &__container
-      width: 520px
-      border: 1px solid #92A1A8
-      border-radius: 8px
-    &__block
-      display: flex
-      justify-content: space-between
-      border-bottom: 1px solid #92A1A8
-      div
-        font: 400 18px 'Open Sans'
-        color: black
-        text-align: center
-        width: 100%
-        padding: 20px
+    .information
+        &__container
+            max-width: 520px
+            border: 1px solid #92A1A8
+            border-radius: 8px
+        &__block
+            display: flex
+            justify-content: space-between
+            border-bottom: 1px solid #92A1A8
+            div
+                font: 400 18px 'Open Sans'
+                color: black
+                text-align: center
+                width: 100%
+                padding: 20px
 
-      div:first-child
-        background: #EBEBED
-        text-align: start
-    &__block:last-child
-      border: none
+            div:first-child
+                background: #EBEBED
+                text-align: start
+        &__block:last-child
+            border: none
+
+
+    @media (max-width: 1024px) 
+        .container__block
+            padding: 16px
+    @media (max-width: 768px) 
+        .information__block div
+            font-size: 16px
+            padding: 16px
+        .tabs-panel__title
+            font-size: 20px
+        
+    @media (max-width: 400px) 
+        .tabs-panel__block :global(.MuiTabs-list)
+            display: flex
+            gap: 25px

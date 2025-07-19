@@ -7,9 +7,10 @@
   flex-direction: column;
   border-radius: 8px;
   width: 100%;
-  padding: 24px;
+  background: #fff;
 }
 .container__block {
+  padding: 24px;
   width: 100%;
 }
 .container__block .tabs-panel {
@@ -47,28 +48,47 @@
 .container :global(.Mui-selected) {
   color: #000 !important;
 }
-
-.information__container {
-  width: 520px;
+.container .information__container {
+  max-width: 520px;
   border: 1px solid #92A1A8;
   border-radius: 8px;
 }
-.information__block {
+.container .information__block {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #92A1A8;
 }
-.information__block div {
+.container .information__block div {
   font: 400 18px "Open Sans";
   color: black;
   text-align: center;
   width: 100%;
   padding: 20px;
 }
-.information__block div:first-child {
+.container .information__block div:first-child {
   background: #EBEBED;
   text-align: start;
 }
-.information__block:last-child {
+.container .information__block:last-child {
   border: none;
+}
+@media (max-width: 1024px) {
+  .container .container__block {
+    padding: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .container .information__block div {
+    font-size: 16px;
+    padding: 16px;
+  }
+  .container .tabs-panel__title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .container .tabs-panel__block :global(.MuiTabs-list) {
+    display: flex;
+    gap: 25px;
+  }
 }/*# sourceMappingURL=TabPanel.module.css.map */

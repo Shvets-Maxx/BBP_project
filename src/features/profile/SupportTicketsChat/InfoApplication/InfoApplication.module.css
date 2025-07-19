@@ -1,0 +1,44 @@
+.top {
+  background-color: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  gap: 16px;
+}
+.top__info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+}
+.top__info h3 {
+  font: 400 24px "PT Serif";
+  line-height: 100%;
+  color: #1d1d1f;
+}
+.top__details {
+  display: flex;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+}
+.top__details span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #1d1d1f;
+}
+.top__date {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.top__details-grey {
+  color: grey;
+}
+@media (max-width: 500px) {
+  .top h3 {
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=InfoApplication.module.css.map */

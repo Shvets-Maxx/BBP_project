@@ -1,26 +1,38 @@
 
     
-.body
+.service
     display: flex
     flex-direction: row
+    overflow: hidden
     justify-content: center
-    gap: 20px
-    // height: 100vh
 
     &__container
         max-width: 1234px
+        overflow-x: auto
         width: 100%
-        padding: 24px 40px 24px 0
+        padding: 24px 24px  0 24px
     &__block
-        padding: 32px 24px 24px 24px
+        padding: 24px
         background: #E6EFF3
         border-radius: 8px
         display: flex
         flex-direction: column
         height: 100%
-    &__group-one
+        gap: 16px
+    &__section
         height: 100%
-    &__popular
-        height: 100%
+
+
+    @media (max-width: 1024px) 
+        flex-direction: column
+
+    @media (max-width: 768px) 
+        .responsive__fontSize
+            font-size: 20px
+        &__container
+            padding: 24px 0 24px 0
+    @media (max-width: 425px) 
+        &__block
+            padding: 24px 16px 16px 16px
 
     

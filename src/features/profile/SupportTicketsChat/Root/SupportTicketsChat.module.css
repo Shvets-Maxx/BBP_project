@@ -1,42 +1,45 @@
-.service {
+.chat {
   display: flex;
-  flex-direction: row;
-  overflow: hidden;
   justify-content: center;
 }
-.service__container {
-  max-width: 1234px;
-  overflow-x: auto;
+.chat__container {
   width: 100%;
+  max-width: 1234px;
   padding: 24px 24px 0 24px;
 }
-.service__block {
+.chat__block {
   padding: 24px;
-  background: #E6EFF3;
+  background: #e6eff3;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  height: 100%;
   gap: 16px;
 }
-.service__section {
-  height: 100%;
+.chat__section {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+.chat__components {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 @media (max-width: 1024px) {
-  .service {
+  .chat {
     flex-direction: column;
   }
 }
 @media (max-width: 768px) {
-  .service .responsive__fontSize {
+  .chat .responsive__fontSize {
     font-size: 20px;
   }
-  .service__container {
+  .chat__container {
     padding: 24px 0 24px 0;
   }
 }
 @media (max-width: 425px) {
-  .service__block {
+  .chat__block {
     padding: 24px 16px 16px 16px;
   }
-}/*# sourceMappingURL=W-Admin-Services-Order-for-items.module.css.map */
+}/*# sourceMappingURL=SupportTicketsChat.module.css.map */

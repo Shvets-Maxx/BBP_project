@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Tickets from "./features/profile/Tickets/Tickets";
 import D_Sale_manager_Dashboard from "@/features/profile/D_Sale_manager_Dashboard/Root/D_Sale_manager_Dashboard.tsx";
-import SupportTicketsChat from "@/features/profile/SupportTicketsChat/SupportTicketsChat.tsx";
+import SupportTicketsChat from "@/features/profile/SupportTicketsChat/Root/SupportTicketsChat.tsx";
 import SupportCreateTicket from "@/features/profile/SupportCreateTicket/SupportCreateTicket.tsx";
 import D_Agent_dashboard from "./features/profile/D-Agent-Dashboard/Root/D-Agent-Dashboard.tsx";
 // import D_Admin_Dashboard from "./features/profile/D-Admin-Dashboard/D-Admin-Dashboard.tsx"

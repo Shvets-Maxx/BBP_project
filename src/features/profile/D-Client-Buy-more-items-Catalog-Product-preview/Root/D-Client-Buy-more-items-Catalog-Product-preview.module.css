@@ -36,9 +36,6 @@
   gap: 16px;
   flex-direction: column;
 }
-.profileSettingContainer p, .profileSettingContainer h3, .profileSettingContainer h2 {
-  color: black;
-}
 @media (max-width: 1024px) {
   .profileSettingContainer {
     flex-direction: column;
