@@ -10,26 +10,55 @@
 
   
 
-  
-.DashBoardBlock
-  display: flex
-  justify-content: space-between
-  margin-bottom: 20px
-  border-radius: 15px
+
+
+
+:global(.MuiTabs-indicator)
+  background-color: #ED805B !important
+  bottom: -1px !important
+:global(.MuiTabs-root)
+  overflow: visible !important
+
 
 .profileSettingContainer
-  display: flex
-  flex-direction: row
-  justify-content: center
-  &__block
-    max-width: 1234px
-    width: 100%
-    // padding: 24px 24px 24px 0
-  &__wrapper
-    padding: 32px 24px 24px 24px 
-    // background-color: #E6EFF3
-    border-radius: 8px
     display: flex
-    flex-direction: column
-  p, h3,h2
-    color: black
+    flex-direction: row
+    justify-content: center
+    &__container
+        max-width: 1234px
+        width: 100%
+        padding: 24px 24px  0 24px
+    &__section
+        display: flex
+        gap: 16px
+        border-radius: 8px
+    &__components
+        display: flex
+        flex-direction: column
+        width: 100%
+    &__block
+        padding: 24px
+        background-color: #E6EFF3
+        border-radius: 8px
+        display: flex
+        gap: 16px
+        flex-direction: column
+   
+
+
+    @media (max-width: 1024px) 
+        flex-direction: column
+        .profileSettingContainer
+            padding: 16px
+
+    @media (max-width: 1336px) 
+            
+    @media (max-width: 768px) 
+        .responsive__fontSize
+            font-size: 20px
+        .profileSettingContainer__container
+            padding: 0
+        
+    @media (max-width: 425px) 
+        .profileSettingContainer__block
+            padding: 24px 16px 16px 16px

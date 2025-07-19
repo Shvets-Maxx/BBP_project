@@ -1,0 +1,71 @@
+$error: #ef4d56;
+$warning: #edce54;
+$success: #49ab3a;
+$info: #6cafc6;
+$grey: #92a1a8;
+
+.chat {
+	display: flex;
+	justify-content: center;
+	&__container {
+		width: 100%;
+		max-width: 1234px;
+		padding: 24px 24px 0 24px;
+	}
+	&__block {
+		padding: 24px;
+		background: #e6eff3;
+		border-radius: 8px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	&__section {
+		display: flex;
+		gap: 16px;
+		flex-direction: column;
+	}
+	&__components {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+
+	@media (max-width: 1024px) {
+		flex-direction: column;
+	}
+
+	@media (max-width: 768px) {
+		.responsive__fontSize {
+			font-size: 20px;
+		}
+		&__container {
+			padding: 24px 0 24px 0;
+		}
+	}
+	@media (max-width: 425px) {
+		&__block {
+			padding: 24px 16px 16px 16px;
+		}
+	}
+}
+
+// .main {
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	column-gap: 16px;
+// 	padding-top: 16px;
+// 	row-gap: 16px;
+
+// 	& > *:nth-child(1) {
+// 		flex: 1;
+// 	}
+
+// 	& > *:nth-child(2) {
+// 		flex: 0 0 auto;
+// 	}
+
+// 	& > *:nth-child(3) {
+// 		flex-basis: 100%;
+// 	}
+// }

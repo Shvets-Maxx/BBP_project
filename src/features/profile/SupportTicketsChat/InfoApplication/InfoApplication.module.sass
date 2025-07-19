@@ -1,0 +1,40 @@
+
+
+.top
+    background-color: #fff
+    padding: 24px
+    display: flex
+    flex-direction: column
+    border-radius: 8px
+    gap: 16px
+    &__info
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        gap: 16px
+        justify-content: space-between
+        h3 
+            font: 400 24px 'PT Serif'
+            line-height: 100%
+            color: #1d1d1f
+    &__details
+        display: flex
+        column-gap: 16px
+        span
+            font-weight: 400
+            font-size: 14px
+            line-height: 150%
+            color: #1d1d1f
+    &__date
+        display: flex
+        gap: 16px
+        flex-wrap: wrap
+    &__details-grey
+        color: grey
+
+    @media (max-width: 500px)
+        & h3
+            font-size: 20px
+            
+            
+        

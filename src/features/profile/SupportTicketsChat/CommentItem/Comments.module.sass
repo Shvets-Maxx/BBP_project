@@ -1,0 +1,125 @@
+.comments 
+	padding: 24px 32px 24px 12px
+	background-color: #fff
+	border-radius: 8px
+	max-width: 746px
+	width: 100%
+	color: #1d1d1f
+	h3 
+		font-weight: 400
+		font-size: 24px
+		line-height: 100%
+		color: #1d1d1f
+		padding-bottom: 16px
+		font-family: "PT serif", serif
+		padding-left: 12px
+			
+	
+
+	&__el 
+		width: 100%
+		border-radius: 2px 8px 8px 2px
+		padding: 8px 8px 8px 12px
+		color: #1d1d1f
+		position: relative
+		margin-bottom: 8px
+
+		& > div:first-child 
+			display: flex
+			align-items: center
+			column-gap: 8px
+			font-weight: 400
+			font-size: 14px
+			line-height: 150%
+			padding-bottom: 11px
+
+			img 
+				width: 30px
+				height: 30px
+			
+
+			& > span:last-child 
+				font-size: 12px
+				color: #92a1a8
+			
+		
+
+		& > div:nth-child(2) 
+			font-weight: 400
+			font-size: 14px
+			line-height: 150%
+			color: #1d1d1f
+			padding-bottom: 12px
+			margin-left: 38px
+		
+
+		&-reply 
+			width: 75px
+			height: 32px
+			border: 1px solid #ed805b
+			background: #ffccbc
+			border-radius: 8px
+			display: flex
+			align-items: center
+			justify-content: center
+			gap: 4px
+			color: #1d1d1f
+			cursor: pointer
+			font-weight: 400
+			font-size: 12px
+			line-height: 150%
+			margin-left: 38px
+		
+	
+
+	&__el:first-of-type 
+		background-color: #ffe5d7
+
+		&::before 
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 4px
+			height: 100%
+			background-color: #eec497
+			border-radius: 2px
+		
+	
+
+	&__el:not(:first-of-type) 
+		margin-bottom: 24px
+	
+
+	&__leave 
+		margin: 16px 0 16px 12px
+	
+
+	&__input 
+		width: 100%
+		min-height: 104px
+		padding: 16px
+		font-size: 18px
+		line-height: 150%
+		color: #1d1d1f
+		background-color: #ffffff
+		border: 1px solid #c6d4db
+		border-radius: 8px
+		resize: vertical
+		outline: none
+
+		&::placeholder 
+			color: #92a1a8
+		
+		&:focus 
+			border-color: #c6d4db
+			box-shadow: 0 0 0 2px rgba(198, 212, 219, 0.5)
+		
+	
+
+	&__bottom 
+		display: flex
+		justify-content: flex-end
+		column-gap: 16px
+		align-items: center
+	

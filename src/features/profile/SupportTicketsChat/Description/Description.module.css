@@ -1,0 +1,63 @@
+.description {
+  padding: 24px 24px 16px 24px;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 100%;
+  flex: 1;
+  flex-basis: 52%;
+}
+.description h3 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  color: #1d1d1f;
+  padding-bottom: 16px;
+  font-family: "PT serif", serif;
+}
+.description__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #1d1d1f;
+  padding-bottom: 16px;
+}
+.description__files-grey {
+  color: grey;
+}
+.description__files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.description__files > div {
+  width: 177px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 16px;
+  cursor: pointer;
+  background-color: #ffe5d7;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #1d1d1f;
+}
+.description__files > div > div:first-child {
+  width: 36px;
+  height: 36px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+.description__files > div > div:nth-child(2) {
+  max-width: 65px;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}/*# sourceMappingURL=Description.module.css.map */

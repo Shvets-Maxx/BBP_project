@@ -115,3 +115,39 @@
             transform: rotate(-90deg)
             &--open
                 transform: rotate(0deg)
+
+    @media (max-width: 1133px) 
+        &__container
+            gap: 16px
+       
+        .clothes__title p 
+            font-size: 24px
+    @media (max-width: 1024px)
+        .catalog__container
+            padding: 16px
+        &__swiper
+            flex: none
+            min-width: auto
+
+    @media (max-width: 978px)
+        &__swiper
+            flex: 0 0 45%
+            min-width: 300px
+
+    @media (max-width: 900px) 
+        &__container
+            gap: 16px
+        &__swiper
+            flex: 0 0 45%
+           
+        .clothes__title p 
+            font-size: 24px
+
+    @media (max-width: 768px)
+        &__swiper
+            flex: none
+            min-width: auto
+        .catalog__container , .catalog__swiper , .catalog__swiper-block 
+            width: 100%
+        .catalog__container
+            flex-direction: column
