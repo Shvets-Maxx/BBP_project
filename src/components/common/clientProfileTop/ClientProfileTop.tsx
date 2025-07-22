@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import styles from "./ClientProfileTop.module.scss";
 import NotificationIconSrc from "./assets/notifications.svg";
-import SelectLanguage from "../selectLanguage/selectLanguage.tsx";
+import SelectLanguage from "../selectLanguageComponents/selectLanguage.tsx";
 
 interface ClientProfileTopProps {
 	children?: ReactNode;
