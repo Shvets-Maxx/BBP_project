@@ -12,25 +12,64 @@
 
   
 .DashBoardBlock
-  display: flex
-  justify-content: space-between
-  margin-bottom: 20px
-  border-radius: 15px
+    display: flex
+    justify-content: space-between
+    margin-bottom: 20px
+    border-radius: 15px
 
 .profileSettingContainer
-  display: flex
-  flex-direction: row
-  justify-content: center
-  &__block
-    max-width: 1234px
-    width: 100%
-    padding: 24px 24px 24px 0 !important
-  &__wrapper
-    padding: 32px 24px 24px 24px 
-    background-color: #E6EFF3
-    border-radius: 8px
     display: flex
-    flex-direction: column
-    gap: 16px
-  p, h3,h2
-    color: black
+    flex-direction: row
+    justify-content: center
+    &__left-block
+        width: 100%
+        display: flex
+        gap: 16px
+        flex-direction: column
+        min-width: 402px
+        flex-basis: 60%
+    &__right-block
+        display: flex
+        width: 100%
+        gap: 16px
+        flex-direction: column
+
+    &__container
+        max-width: 1234px
+        width: 100%
+        padding: 24px 24px  0 24px
+    &__block
+        padding: 24px 
+        background-color: #E6EFF3
+        border-radius: 8px
+        display: flex
+        flex-direction: column
+        gap: 16px
+    &__section
+        display: flex
+        gap: 16px
+        
+    @media (max-width: 1124px)
+        .profileSettingContainer__left-block
+            min-width: 375px
+
+    @media (max-width: 1024px) 
+        flex-direction: column
+        .profileSettingContainer__left-block
+            min-width: auto
+        .profileSettingContainer__section
+            flex-direction: column
+
+    
+   
+
+
+
+   
+            
+    @media (max-width: 768px) 
+        &__container
+            padding: 24px 0 24px 0
+    @media (max-width: 425px) 
+        .profileSettingContainer__block
+            padding: 24px 16px 16px 16px

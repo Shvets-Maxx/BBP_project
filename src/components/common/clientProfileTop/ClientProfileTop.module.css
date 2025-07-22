@@ -12,6 +12,45 @@
   color: #1d1d1f;
   font-family: "PT serif", serif;
 }
+.core .timezone__select-value {
+  display: flex;
+  gap: 2px;
+}
+.core .language {
+  background: #fff;
+  border-radius: 8px;
+}
+.core .timezone__value {
+  font: 400 12px "Open Sans";
+}
+.core .timezone__select {
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.core :global(.MuiSvgIcon-root) {
+  display: none;
+}
+.core :global(.MuiSelect-select) {
+  min-height: auto !important;
+}
+.core :global(.MuiSelect-icon) {
+  transition: transform 300ms ease;
+  top: calc(50% - 8px);
+  position: absolute;
+  pointer-events: none;
+}
+.core :global(.MuiOutlinedInput-input) {
+  padding: 7px !important;
+  padding-right: 25px !important;
+}
+.core :global(.MuiSelect-icon.MuiSelect-iconOpen) {
+  transform: rotate(180deg);
+}
+.core :global(.MuiOutlinedInput-notchedOutline) {
+  display: none !important;
+}
 .core > div {
   display: flex;
   -moz-column-gap: 8px;
@@ -25,19 +64,6 @@
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-}
-.core > div > div:nth-child(2) {
-  width: 66px;
-  height: 32px;
-  display: flex;
-  background: #fff;
-  color: #1d1d1f;
-  align-items: center;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 150%;
-  border-radius: 4px;
-  padding-left: 4px;
 }
 @media (max-width: 1024px) {
   .core .actions {

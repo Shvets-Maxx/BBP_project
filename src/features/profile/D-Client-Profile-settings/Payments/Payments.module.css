@@ -1,7 +1,7 @@
 .container {
   background: #fff;
   border-radius: 10px;
-  padding: 20px;
+  padding: 24px;
   width: 100%;
 }
 .container__block {
@@ -43,19 +43,33 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  width: 100%;
 }
 .container__block .payments__info-block img {
   height: 33px;
 }
-.container__block .payments__info-wrapper p {
+.container__block .payments__info-wrapper {
+  width: 100%;
+}
+.container__block .payments__cartName-block {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.container__block .payments__cartName-block p {
   font: 400 18px "Open Sans";
 }
-.container__block .payments__numbers {
-  color: grey !important;
+.container__block .payments__cartNumber-block p {
+  font: 400 18px "Open Sans";
+  color: grey;
 }
 .container__block .payments__actions {
   display: flex;
   gap: 10px;
+}
+.container__block .payments__actions img {
+  width: 16px;
+  height: 20px;
 }
 .container__block .payments__dropDown-block {
   display: flex;
@@ -80,4 +94,17 @@
 .container__title-block p {
   font: 400 24px "PT Serif";
   color: #000;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+}
+@media (max-width: 425px) {
+  .container .payments__cartNumber-block p {
+    font-size: 14px;
+  }
+  .container .container__title-block p {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=Payments.module.css.map */

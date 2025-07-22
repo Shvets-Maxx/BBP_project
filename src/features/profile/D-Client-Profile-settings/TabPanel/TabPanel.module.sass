@@ -2,9 +2,9 @@
 .container
     display: flex
     flex-direction: column
-    max-width: 426px
     background-color: #FFFFFF
     border-radius: 8px
+    width: 100%
     &__block
 
         padding: 24px
@@ -16,6 +16,7 @@
                 display: flex
                 justify-content: space-between
                 :global(.MuiTabs-list)
+                    gap: 5px
                     display: flex
                     justify-content: space-between
                     button
@@ -111,4 +112,29 @@
         padding: 0 !important
     :global(.Mui-selected)
         color: #000 !important
+
+
+    @media (max-width: 1124px)
+        .tabs-panel__title
+            font-size: 22px
+    @media (max-width: 1024px)
+        :global(.MuiTabs-list)
+            justify-content: start !important
+            gap: 10px !important
+
+    @media (max-width: 768px)
+        .container__block
+            padding: 16px
+
+    @media (max-width: 425px)
+        :global(.MuiTabs-list)
+            justify-content: space-between !important
+            gap: 10px !important
+        .tabs-panel__title
+            font-size: 20px
+    @media (max-width: 350px)
+        .tabs-panel__title
+            font-size: 18px
+    
+
 

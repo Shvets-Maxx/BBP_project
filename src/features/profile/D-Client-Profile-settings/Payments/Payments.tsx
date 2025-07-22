@@ -7,7 +7,8 @@ import penLogo from "./assets/penLogo.svg";
 import GooglePayLogo from "./assets/GooglePayLogo.svg";
 import MasterCardLogo from "./assets/MasterCardLogo.svg";
 import plusLogo from "./assets/plusLogo.svg";
-import CreateNewPasswordPopup from "@/components/common/popUp/popUp_Password/CreateNewPasswordPopup/CreateNewPasswordPopup";
+// import CreateNewPasswordPopup from "@/components/common/popUp/popUp_Password/CreateNewPasswordPopup/CreateNewPasswordPopup";
+import { AddPaymentMethodPopup } from "../../../../components/common/popUp/popUp_AddPaymentMethod/AddPaymentMethodPopup";
 
 const PAYMENT_CARDS = [
 	{
@@ -23,12 +24,17 @@ const PAYMENT_CARDS = [
 ];
 
 export default function Payments() {
+	const [isPopupOpen, setIsPopupOpen] = useState(false);
+	const [_selectedMethod, setSelectedMethod] = useState<string | null>(null);
+
+	const handleNext = (method: string) => {
+		setSelectedMethod(method);
+		setIsPopupOpen(!isPopupOpen);
+		console.log("Chosen method:", method);
+	};
 	const [isOpen, setIsOpen] = useState(false);
 	const additionalCards = PAYMENT_CARDS.slice(1); // всі, крім першої
 	const [showCreatePopup, setShowCreatePopup] = useState(false);
-
-
-	  
 
 	return (
 		<div className={style.container}>
@@ -48,13 +54,17 @@ export default function Payments() {
 						<div className={style["payments__info-block"]}>
 							<img src={PAYMENT_CARDS[0].logo} alt={PAYMENT_CARDS[0].name} />
 							<div className={style["payments__info-wrapper"]}>
-								<p className={style["payments__name"]}>{PAYMENT_CARDS[0].name}</p>
-								<p className={style["payments__numbers"]}>{PAYMENT_CARDS[0].number}</p>
+								<div className={style["payments__cartName-block"]}>
+									<p className={style["payments__name"]}>{PAYMENT_CARDS[0].name}</p>
+									<div className={style["payments__actions"]}>
+										<img src={penLogo} alt="Edit" />
+										<img src={deleteLogo} alt="Delete" />
+									</div>
+								</div>
+								<div className={style["payments__cartNumber-block"]}>
+									<p className={style["payments__numbers"]}>{PAYMENT_CARDS[0].number}</p>
+								</div>
 							</div>
-						</div>
-						<div className={style["payments__actions"]}>
-							<img src={penLogo} alt="Edit" />
-							<img src={deleteLogo} alt="Delete" />
 						</div>
 					</div>
 
@@ -73,13 +83,17 @@ export default function Payments() {
 											<div className={style["payments__info-block"]}>
 												<img src={card.logo} alt={card.name} />
 												<div className={style["payments__info-wrapper"]}>
-													<p className={style["payments__name-card"]}>{card.name}</p>
-													<p className={style["payments__numbers-card"]}>{card.number}</p>
+													<div className={style["payments__cartName-block"]}>
+														<p className={style["payments__name"]}>{card.name}</p>
+														<div className={style["payments__actions"]}>
+															<img src={penLogo} alt="Edit" />
+															<img src={deleteLogo} alt="Delete" />
+														</div>
+													</div>
+													<div className={style["payments__cartNumber-block"]}>
+														<p className={style["payments__numbers"]}>{card.number}</p>
+													</div>
 												</div>
-											</div>
-											<div className={style["payments__actions"]}>
-												<img src={penLogo} alt="Edit" />
-												<img src={deleteLogo} alt="Delete" />
 											</div>
 										</div>
 									))}
@@ -90,7 +104,10 @@ export default function Payments() {
 				</div>
 				{showCreatePopup && (
 					<div className="popup-container">
-						<CreateNewPasswordPopup onClose={() => setShowCreatePopup(false)} />
+						<AddPaymentMethodPopup
+							onClose={() => setShowCreatePopup(false)}
+							onNext={handleNext}
+						/>
 					</div>
 				)}
 				<button

@@ -1,0 +1,49 @@
+.language {
+  background: #fff;
+  border-radius: 8px;
+}
+.language .timezone__select-value {
+  display: flex;
+  gap: 2px;
+  background: #fff;
+  border-radius: 8px;
+}
+.language .timezone__value {
+  font: 400 12px "Open Sans";
+}
+.language .timezone__select {
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.language :global(.MuiSvgIcon-root) {
+  display: none;
+}
+.language :global(.MuiSelect-select) {
+  min-height: auto !important;
+}
+.language :global(.MuiSelect-icon) {
+  transition: transform 300ms ease;
+  top: calc(50% - 7px);
+  position: absolute;
+  pointer-events: none;
+}
+.language :global(.MuiOutlinedInput-input) {
+  padding: 7px !important;
+  padding-right: 25px !important;
+}
+.language :global(.MuiSelect-icon.MuiSelect-iconOpen) {
+  transform: rotate(180deg);
+}
+.language :global(.MuiOutlinedInput-notchedOutline) {
+  display: none !important;
+}
+@media (max-width: 1024px) {
+  .language .timezone__globus {
+    display: none;
+  }
+  .language .timezone__value {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=SelectLanguage.module.css.map */

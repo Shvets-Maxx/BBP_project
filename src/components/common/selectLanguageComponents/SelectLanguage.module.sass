@@ -1,0 +1,47 @@
+
+    
+.language
+    background: #fff
+    border-radius: 8px
+    .timezone__select-value
+        display: flex
+        gap: 2px
+        background: #fff
+        border-radius: 8px
+    .timezone__value
+        font: 400 12px 'Open Sans'
+    .timezone__select
+        width: 100%
+        border-radius: 8px
+        display: flex
+        align-items: center
+    :global(.MuiSvgIcon-root)
+        display: none
+    :global(.MuiSelect-select)  
+        min-height: auto !important
+    :global(.MuiSelect-icon)
+        transition: transform 300ms ease
+        top: calc(50% - 7px)
+        position: absolute
+        pointer-events: none
+        
+    :global(.MuiOutlinedInput-input) 
+        padding: 7px !important
+        padding-right: 25px !important
+
+    :global(.MuiSelect-icon.MuiSelect-iconOpen) 
+        transform: rotate(180deg)
+
+    :global(.MuiOutlinedInput-notchedOutline) 
+        display: none !important
+    @media (max-width: 1024px)
+        .timezone__globus
+            display: none
+        .timezone__value
+            font-size: 14px
+
+
+    
+    
+
+ 

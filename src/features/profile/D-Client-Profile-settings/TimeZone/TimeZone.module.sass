@@ -1,53 +1,70 @@
 
 
 .timezone
-  display: flex
-  flex-direction: column
-  background-color: #fff
-  border-radius: 8px
-  width: 100%
-
-  &__wrapper
-    padding: 24px
-    width: 100%
-
-  &__title
-    margin-bottom: 16px
-
-    p
-      font: 400 24px 'PT Serif'
-      color: #000
-
-  &__selectWrapper
     display: flex
-    gap: 8px
-    flex-wrap: wrap
-
-  &__select
-    width: 100%
+    flex-direction: column
+    background-color: #fff
     border-radius: 8px
-    padding: 16px
-    display: flex
-    align-items: center
-    border: 1px solid #ccc
+    width: 100%
+    &__value
+        font: 400 18px 'Open Sans'
+        display: -webkit-box
+        -webkit-line-clamp: 1
+        -webkit-box-orient: vertical
+        overflow: hidden
+        text-overflow: ellipsis
 
-  // MUI overrides
-  :global(.MuiSelect-select)
-    padding: 0
-    font-weight: 400
+    &__wrapper
+        padding: 24px
+        width: 100%
 
-  :global(.MuiSvgIcon-root)
-    display: none
+    &__title
+        margin-bottom: 16px
 
-  :global(.MuiSelect-icon)
-    transition: transform 300ms ease
-    right: 16px
-    top: calc(50% - 12px)
-    position: absolute
-    pointer-events: none
+        p
+            font: 400 24px 'PT Serif'
+            color: #000
 
-  :global(.MuiSelect-icon.MuiSelect-iconOpen)
-    transform: rotate(180deg)
+    &__selectWrapper
+        display: flex
+        gap: 8px
+        flex-wrap: wrap
 
-  :global(.MuiOutlinedInput-notchedOutline)
-    display: none !important
+    &__select
+        width: 100%
+        border-radius: 8px
+        padding: 16px
+        display: flex
+        align-items: center
+        border: 1px solid #ccc
+
+    // MUI overrides
+    :global(.MuiSelect-select)
+        padding: 0
+        font-weight: 400
+        white-space: normal !important
+        text-overflow: initial !important
+
+    :global(.MuiSvgIcon-root)
+        display: none
+
+    :global(.MuiSelect-icon)
+        transition: transform 300ms ease
+        right: 16px
+        top: calc(50% - 12px)
+        position: absolute
+        pointer-events: none
+
+    :global(.MuiSelect-icon.MuiSelect-iconOpen)
+        transform: rotate(180deg)
+
+    :global(.MuiOutlinedInput-notchedOutline)
+        display: none !important
+
+    @media (max-width: 768px)
+        .timezone__wrapper
+            padding: 16px
+    @media (max-width: 425px)
+        .timezone__title p
+            font-size: 20px
+
