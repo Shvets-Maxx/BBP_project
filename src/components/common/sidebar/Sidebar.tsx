@@ -12,9 +12,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import NotificationIconSrc from "./assets/notifications.svg";
-import GlobusIconSrc from "./assets/Small globe.svg";
-import ArrowDownSrc from "./assets/Small arrow_Down.svg";
-import SelectLanguage from "../selectLanguage/selectLanguage";
+import SelectLanguage from "../selectLanguage/selectLanguage.tsx";
 
 interface NavItemConfig {
 	key: string;

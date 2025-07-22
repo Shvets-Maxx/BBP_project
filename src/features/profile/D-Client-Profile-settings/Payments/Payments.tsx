@@ -25,7 +25,7 @@ const PAYMENT_CARDS = [
 
 export default function Payments() {
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
-	const [selectedMethod, setSelectedMethod] = useState<string | null>(null);
+	const [_selectedMethod, setSelectedMethod] = useState<string | null>(null);
 
 	const handleNext = (method: string) => {
 		setSelectedMethod(method);
