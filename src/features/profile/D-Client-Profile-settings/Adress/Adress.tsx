@@ -33,12 +33,11 @@ export default function TimeZoneSelect() {
 		setIsPopupOpen(true);
 	};
 	const handleSubmit = () => {
-		alert(isEditMode ? "Address updated!" : "Address added!");
 		setIsPopupOpen(false);
 	};
 	const handleClose = () => {
-		setIsPopupOpen(false)
-	  }
+		setIsPopupOpen(false);
+	};
 
 	return (
 		<div className={style["address-container"]}>
@@ -96,7 +95,10 @@ export default function TimeZoneSelect() {
 						address={isEditMode ? selectedAddress : undefined}
 					/>
 				)}
-				<button onClick={handleAddClick} className={style["address-container__add-button"]}>
+				<button
+					onClick={handleAddClick}
+					className={style["address-container__add-button"]}
+				>
 					<img src={plusLogo} alt="Add" />
 					Add
 				</button>

@@ -14,6 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import NotificationIconSrc from "./assets/notifications.svg";
 import GlobusIconSrc from "./assets/Small globe.svg";
 import ArrowDownSrc from "./assets/Small arrow_Down.svg";
+import SelectLanguage from "../selectLanguage/selectLanguage";
 
 interface NavItemConfig {
 	key: string;
@@ -84,11 +85,7 @@ const Sidebar: FC = () => {
 						<div className={styles.nav__notification}>
 							<img src={NotificationIconSrc} alt="notification-icon" />
 						</div>
-						<div className={styles.nav__language}>
-							<img src={GlobusIconSrc} alt="language-icon" />
-							<span>EN</span>
-							<img src={ArrowDownSrc} alt="dropdown-icon" />
-						</div>
+						<SelectLanguage />
 					</div>
 				</div>
 				<ul className={`${styles.nav__list} ${open ? styles.active : ""}`}>

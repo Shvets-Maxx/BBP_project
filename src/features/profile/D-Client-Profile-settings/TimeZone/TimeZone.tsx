@@ -36,17 +36,16 @@ const DropdownIcon = (props: { className?: string }) => (
 
 export default function TimeZoneSelect() {
 	const [timeZone, setTimeZone] = useState<TimeZoneOption>(
-		"(UTC -08:00) Los Angeles, California, USA"
+		"(UTC -08:00) Los Angeles, California, USA",
 	);
 
 	const handleTimeZoneChange: SelectProps["onChange"] = (
-		event: SelectChangeEvent<unknown>
+		event: SelectChangeEvent<unknown>,
 	) => {
 		setTimeZone(event.target.value as TimeZoneOption);
 	};
 
 	return (
-
 		<div className={style.timezone}>
 			<div className={style.timezone__wrapper}>
 				<div className={style.timezone__title}>
@@ -61,7 +60,7 @@ export default function TimeZoneSelect() {
 					>
 						{TIME_ZONES.map(({ value }) => (
 							<MenuItem key={value} value={value}>
-								{value}
+								<p className={style.timezone__value}>{value}</p>
 							</MenuItem>
 						))}
 					</Select>

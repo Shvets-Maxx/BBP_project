@@ -151,6 +151,9 @@
 
 	@media (max-width: 1024px) {
 		max-width: none;
+		.nav__actions {
+			gap: 0px;
+		}
 
 		&__logo {
 			display: flex;

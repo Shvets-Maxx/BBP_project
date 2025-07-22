@@ -143,6 +143,9 @@
   .nav {
     max-width: none;
   }
+  .nav .nav__actions {
+    gap: 0px;
+  }
   .nav__logo {
     display: flex;
     justify-content: space-between;

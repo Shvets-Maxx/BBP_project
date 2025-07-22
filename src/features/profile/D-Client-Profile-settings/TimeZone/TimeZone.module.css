@@ -5,6 +5,14 @@
   border-radius: 8px;
   width: 100%;
 }
+.timezone__value {
+  font: 400 18px "Open Sans";
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .timezone__wrapper {
   padding: 24px;
   width: 100%;
@@ -32,6 +40,8 @@
 .timezone :global(.MuiSelect-select) {
   padding: 0;
   font-weight: 400;
+  white-space: normal !important;
+  text-overflow: initial !important;
 }
 .timezone :global(.MuiSvgIcon-root) {
   display: none;
@@ -48,4 +58,14 @@
 }
 .timezone :global(.MuiOutlinedInput-notchedOutline) {
   display: none !important;
+}
+@media (max-width: 768px) {
+  .timezone .timezone__wrapper {
+    padding: 16px;
+  }
+}
+@media (max-width: 425px) {
+  .timezone .timezone__title p {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=TimeZone.module.css.map */
