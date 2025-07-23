@@ -9,6 +9,7 @@ import MasterCardLogo from "./assets/MasterCardLogo.svg";
 import plusLogo from "./assets/plusLogo.svg";
 // import CreateNewPasswordPopup from "@/components/common/popUp/popUp_Password/CreateNewPasswordPopup/CreateNewPasswordPopup";
 import { AddPaymentMethodPopup } from "../../../../components/common/popUp/popUp_AddPaymentMethod/AddPaymentMethodPopup";
+import CardPopup from "../../../../components/common/popUp/popUp_Card/CardPopup";
 
 const PAYMENT_CARDS = [
 	{
@@ -24,17 +25,16 @@ const PAYMENT_CARDS = [
 ];
 
 export default function Payments() {
-	const [isPopupOpen, setIsPopupOpen] = useState(false);
-	const [_selectedMethod, setSelectedMethod] = useState<string | null>(null);
-
-	const handleNext = (method: string) => {
-		setSelectedMethod(method);
-		setIsPopupOpen(!isPopupOpen);
-		console.log("Chosen method:", method);
-	};
 	const [isOpen, setIsOpen] = useState(false);
 	const additionalCards = PAYMENT_CARDS.slice(1); // всі, крім першої
-	const [showCreatePopup, setShowCreatePopup] = useState(false);
+	const [showSelectPopup, setShowSelectPopup] = useState(false);
+	const [showCardPopup, setShowCardPopup] = useState(false);
+	const handleNext = () => {
+		setShowSelectPopup(false);
+		setShowCardPopup(true);
+
+		// Інші методи — можеш додати логіку при потребі
+	};
 
 	return (
 		<div className={style.container}>
@@ -102,16 +102,28 @@ export default function Payments() {
 						)}
 					</AnimatePresence>
 				</div>
-				{showCreatePopup && (
+				{showSelectPopup && (
 					<div className="popup-container">
 						<AddPaymentMethodPopup
-							onClose={() => setShowCreatePopup(false)}
+							onClose={() => setShowSelectPopup(false)}
 							onNext={handleNext}
 						/>
 					</div>
 				)}
+				{showCardPopup && (
+					<div className="popup-container">
+						<CardPopup
+							mode={"add"}
+							onBack={() => {
+								setShowCardPopup(false);
+								setShowSelectPopup(true); // ← повертаємо попередній попап
+							}}
+							onClose={() => setShowCardPopup(false)}
+						/>
+					</div>
+				)}
 				<button
-					onClick={() => setShowCreatePopup(true)}
+					onClick={() => setShowSelectPopup(true)}
 					className={style.addButton}
 				>
 					<img src={plusLogo}></img>Add{" "}

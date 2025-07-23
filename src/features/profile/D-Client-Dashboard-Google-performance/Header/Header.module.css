@@ -3,12 +3,14 @@
   flex-direction: column;
   border-radius: 8px;
   width: 100%;
+  margin-bottom: 16px;
 }
 .timezone__wrapper {
   width: 100%;
+  flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
-  gap: 50px;
+  gap: 16px;
 }
 .timezone__block {
   display: flex;

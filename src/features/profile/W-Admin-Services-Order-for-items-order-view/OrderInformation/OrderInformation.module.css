@@ -61,12 +61,6 @@
   display: flex;
   gap: 5px;
 }
-.information :global(.MuiFormControl-root) {
-  background: none !important;
-  max-width: none !important;
-  width: -moz-min-content !important;
-  width: min-content !important;
-}
 .information :global(.MuiInputAdornment-root) {
   margin-left: 0 !important;
 }

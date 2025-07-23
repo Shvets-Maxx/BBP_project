@@ -9,6 +9,45 @@
   justify-content: center;
   align-items: center;
 }
+.payment__button {
+  display: flex;
+  justify-content: end;
+}
+.payment__button button {
+  font: 400 18px "Open Sans";
+  flex-basis: 50%;
+}
+.payment__container {
+  padding: 24px;
+  width: 100%;
+  max-width: 600px;
+}
+.payment__block {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: #fff;
+  padding: 24px;
+}
+.payment__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.payment__header h1 {
+  font: 500 32px "PT Serif";
+}
+.payment__header :global(.MuiSvgIcon-root) {
+  width: 24px !important;
+  height: 24px !important;
+}
+.payment__header :global(.MuiButtonBase-root) {
+  border-radius: 8px !important;
+}
+.payment .no-scroll {
+  overflow: hidden !important;
+  height: 100vh;
+}
 .payment .popup__block {
   max-height: 500px;
   height: 50vh;
@@ -54,45 +93,6 @@
   cursor: pointer;
   transition: background 0.3s;
 }
-.payment__button {
-  display: flex;
-  justify-content: end;
-}
-.payment__button button {
-  font: 400 18px "Open Sans";
-  flex-basis: 50%;
-}
-.payment__container {
-  padding: 24px;
-  width: 100%;
-  max-width: 600px;
-}
-.payment__block {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  background: #fff;
-  padding: 24px;
-}
-.payment__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 32px;
-}
-.payment__header h1 {
-  font: 500 32px "PT Serif";
-}
-.payment__header :global(.MuiSvgIcon-root) {
-  width: 24px !important;
-  height: 24px !important;
-}
-.payment__header :global(.MuiButtonBase-root) {
-  border-radius: 8px !important;
-}
-.payment .no-scroll {
-  overflow: hidden !important;
-  height: 100vh;
-}
 .payment__footer {
   display: flex;
   justify-content: flex-end;
@@ -133,15 +133,35 @@
   cursor: pointer;
 }
 @media (max-width: 500px) {
+  .payment .popup__block {
+    display: flex;
+    min-height: 263px;
+    max-height: none;
+    height: auto;
+    flex: 1;
+  }
   .payment .payment__header h1 {
     font-size: 20px;
+  }
+  .payment .payment__block {
+    padding: 16px;
   }
 }
 @media (max-width: 425px) {
   .payment .payment__container {
-    padding: 16px;
+    padding: 0px;
+    height: 100vh;
   }
   .payment .payment__block {
+    height: 100%;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
     padding: 16px;
+  }
+  .payment .card__main {
+    height: 100%;
+    max-height: none;
+    min-height: auto;
   }
 }/*# sourceMappingURL=AddPaymentMethodPopup.module.css.map */

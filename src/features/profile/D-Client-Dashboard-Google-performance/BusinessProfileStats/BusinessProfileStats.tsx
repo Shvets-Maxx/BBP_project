@@ -1,8 +1,8 @@
-import { FC,  ReactElement } from "react";
+import { FC, ReactElement } from "react";
 import { PieChart, Pie, Cell, Sector } from "recharts";
 import { donutChartDataOrders } from "@/features/profile/constants.ts";
 import eyes from "../assets/eyes.svg";
-
+import style from "./BusinessProfileStats.module.sass";
 const renderActiveShape = (props: any): ReactElement => {
 	const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill } = props;
 
@@ -22,38 +22,17 @@ const renderActiveShape = (props: any): ReactElement => {
 };
 
 const DonutChart: FC = () => {
-
-
-
 	const activeIndex = donutChartDataOrders.reduce(
 		(maxIdx, entry, idx, arr) => (entry.value > arr[maxIdx].value ? idx : maxIdx),
-		0
+		0,
 	);
 
 	return (
-		<div
-			style={{
-				width: "100%",
-				height: "100%",
-				padding: 24,
-				borderRadius: 16,
-				backgroundColor: "#fff",
-				boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)",
-				display: "flex",
-				flexDirection: "column",
-				justifyContent: "space-between",
-			}}
-		>
+		<div className={style.chart}>
 			{/* Header */}
-			<div
-				style={{
-					display: "flex",
-					alignItems: "start",
-					gap: "16px",
-					marginBottom: "32px",
-				}}
-			>
+			<div className={style.chart__header}>
 				<div
+					className={style["chart__header-logo"]}
 					style={{
 						backgroundColor: "#D4E4EB",
 						width: "36px",
@@ -90,7 +69,7 @@ const DonutChart: FC = () => {
 					display: "flex",
 					flexDirection: "column",
 					gap: "6px",
-                    marginBottom:'35px'
+					marginBottom: "35px",
 				}}
 			>
 				<p
@@ -137,7 +116,7 @@ const DonutChart: FC = () => {
 				<div
 					style={{
 						display: "flex",
-                        flexDirection:"column",
+						flexDirection: "column",
 						gap: "20px",
 						justifyContent: "space-evenly",
 					}}
@@ -162,10 +141,10 @@ const DonutChart: FC = () => {
 										marginRight: 8,
 									}}
 								/>
-                                <span style={{ color: "#000" }} >{item.people} - </span>
+								<span style={{ color: "#000" }}>{item.people} - </span>
 								<span style={{ color: "#000" }}>{item.value}%</span>
 							</div>
-							<span style={{ color: "#888"}}>{item.name}</span>
+							<span style={{ color: "#888" }}>{item.name}</span>
 						</div>
 					))}
 				</div>

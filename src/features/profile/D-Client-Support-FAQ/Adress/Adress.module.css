@@ -40,7 +40,7 @@
 .onboarding-container .onboarding {
   background: #fff;
   border-radius: 10px;
-  padding: 20px;
+  padding: 24px;
   gap: 16px;
   display: flex;
   flex-direction: column;
@@ -79,4 +79,14 @@
 }
 .onboarding-container .onboarding__wrraper span {
   font-weight: 700;
+}
+@media (max-width: 425px) {
+  .onboarding-container .onboarding {
+    padding: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .onboarding-container .onboarding__block p {
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=Adress.module.css.map */

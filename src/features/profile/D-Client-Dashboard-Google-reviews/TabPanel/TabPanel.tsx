@@ -4,8 +4,20 @@ import Tab from "@mui/material/Tab";
 import style from "./TabPanel.module.sass";
 import { comments } from "../../../profile/constants.ts";
 import { CommentItem } from "../CommentItem/CommentItem.tsx";
+import ArrowIconSrc from "@/features/profile/SupportTicketsChat/assets/ArrowBottom.svg";
 
-const ROWS_PER_PAGE = 2;
+const ROWS_PER_PAGE = 5;
+
+const orders = Array.from({ length: 24 }, (_, i) => ({
+	id: "#51973",
+	customer: {
+		name: "In a better word",
+		avatar: "",
+	},
+	status: i % 3 === 0 ? "In Stock" : "Out of stock",
+	price: "$1500",
+	sell: "450",
+}));
 
 interface TabPanelProps {
 	children?: React.ReactNode;
@@ -38,87 +50,63 @@ function a11yProps(index: number) {
 		"aria-controls": `simple-tabpanel-${index}`,
 	};
 }
-
-// Кастомна пагінація зі стрілками і цифрами
 function Pagination({
 	page,
 	count,
 	onPageChange,
 }: {
 	page: number;
-	count: number; // загальна кількість сторінок
+	count: number;
 	onPageChange: (newPage: number) => void;
 }) {
-	const pages = Array.from({ length: count }, (_, i) => i);
+	const visiblePages = () => {
+		if (count <= 5) return Array.from({ length: count }, (_, i) => i);
+		if (page <= 1) return [0, 1, "...", count - 1];
+		if (page >= count - 2) return [0, "...", count - 2, count - 1];
+		return [0, "...", page, "...", count - 1];
+	};
 
 	return (
-		<div
-			style={{
-				display: "flex",
-				justifyContent: "space-between",
-				alignItems: "center",
-			}}
-		>
-			<div className={style.timezone__button}>
-				<p style={{ color: "grey", font: "400 14px Open Sans" }}>
-					Showing 1-10 of 24 entries
-				</p>
-			</div>
-			<div
-				style={{
-					display: "flex",
-					justifyContent: "end",
-					alignItems: "center",
-					gap: 12,
-					userSelect: "none",
-				}}
-			>
+		<div className={style.pagination}>
+			<p>
+				Showing {page * ROWS_PER_PAGE + 1}-
+				{Math.min((page + 1) * ROWS_PER_PAGE, orders.length)} of {orders.length}{" "}
+				entries
+			</p>
+			<div className={style.pagination__block}>
 				<button
-					onClick={() => onPageChange(page - 1)}
+					onClick={() => onPageChange(Math.max(page - 1, 0))}
 					disabled={page === 0}
-					aria-label="previous page"
-					style={{
-						cursor: page === 0 ? "default" : "pointer",
-						fontSize: 20,
-						border: "none",
-						background: "none",
-						padding: 4,
-					}}
 				>
-					‹
+					<img style={{ transform: "rotate(90deg)" }} src={ArrowIconSrc} alt="" />
 				</button>
-
-				{pages.map((p) => (
-					<button
-						key={p}
-						onClick={() => onPageChange(p)}
-						style={{
-							color: p === page ? "#ED805B" : "black",
-							cursor: "pointer",
-							border: "none",
-							background: "none",
-							padding: "4px 8px",
-							fontSize: 16,
-						}}
-						aria-current={p === page ? "page" : undefined}
-					>
-						{p + 1}
-					</button>
-				))}
-
+				{visiblePages().map((p, idx) =>
+					p === "..." ? (
+						<span key={idx} style={{ padding: "0 6px" }}>
+							...
+						</span>
+					) : (
+						<button
+							key={p as number}
+							onClick={() => onPageChange(p as number)}
+							style={{
+								padding: "5px 10px",
+								background: page === p ? "#ddd" : "transparent",
+								borderRadius: 6,
+								border: "none",
+								cursor: "pointer",
+								fontWeight: page === p ? 600 : 400,
+							}}
+						>
+							{(p as number) + 1}
+						</button>
+					),
+				)}
 				<button
-					onClick={() => onPageChange(page + 1)}
+					onClick={() => onPageChange(Math.min(page + 1, count - 1))}
 					disabled={page === count - 1}
-					aria-label="next page"
-					style={{
-						cursor: page === count - 1 ? "default" : "pointer",
-						fontSize: 20,
-						border: "none",
-						background: "none",
-						padding: 4,
-					}}
 				>
-					›
+					<img style={{ transform: "rotate(-90deg)" }} src={ArrowIconSrc} alt="" />
 				</button>
 			</div>
 		</div>
@@ -149,11 +137,13 @@ export default function BasicTabs() {
 		items.slice(page * ROWS_PER_PAGE, (page + 1) * ROWS_PER_PAGE);
 
 	// Рендер коментарів на сторінці
-	const renderComments = (items: typeof comments, page: number) =>
-		paginate(items, page).map((c) => (
-			<CommentItem key={c.datetime + c.author} {...c} />
-		));
-
+	const renderComments = (items: typeof comments, page: number) => (
+		<div key={page}>
+			{paginate(items, page).map((c) => (
+				<CommentItem key={c.datetime + c.author} {...c} />
+			))}
+		</div>
+	);
 	// Кількість сторінок
 	const getPageCount = (length: number) => Math.ceil(length / ROWS_PER_PAGE);
 
