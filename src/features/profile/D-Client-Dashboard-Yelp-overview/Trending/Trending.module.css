@@ -1,5 +1,5 @@
 .Trending {
-  width: 50%;
+  width: 100%;
 }
 .Trending__container {
   height: 100%;
@@ -52,4 +52,9 @@
 .Trending .statistics__rate .reviews {
   font: 400 14px "Open Sans";
   color: grey;
+}
+@media (max-width: 768px) {
+  .Trending .statistics__block {
+    padding: 16px;
+  }
 }/*# sourceMappingURL=Trending.module.css.map */

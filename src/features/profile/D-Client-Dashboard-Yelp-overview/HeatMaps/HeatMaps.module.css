@@ -1,5 +1,5 @@
 .Trending {
-  width: 50%;
+  width: 100%;
 }
 .Trending .statistics {
   display: flex;
@@ -49,8 +49,12 @@
   font: 400 14px "Open Sans";
   color: grey;
 }
-
-:global(.mapboxgl-ctrl-compass) {
+.Trending :global(.mapboxgl-ctrl-compass) {
   display: none !important;
   color: #70c95c;
+}
+@media (max-width: 768px) {
+  .Trending .statistics__block {
+    padding: 16px;
+  }
 }/*# sourceMappingURL=HeatMaps.module.css.map */

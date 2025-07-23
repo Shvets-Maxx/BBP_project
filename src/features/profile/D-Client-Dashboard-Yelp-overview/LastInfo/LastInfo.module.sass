@@ -6,9 +6,20 @@
     .statistics
         display: flex
         width: 100%
+        flex-wrap: wrap
         justify-content: space-between
         gap: 16px
+        &__flex
+            display: flex
+            flex: 1
+            width: 100%
+            min-width: 460px
+            gap: 16px
+            flex-wrap: wrap
+            justify-content: space-between
         &__block
+            min-width: 250px
+            height: 226px
             flex: 1
             padding: 24px
             background: rgb(255, 255, 255)
@@ -49,6 +60,16 @@
                 img
                     width: 20px
                     height: 21px
+
+    @media (max-width: 768px )
+        .statistics__block
+            padding: 16px
+        .statistics__flex
+            min-width: auto
+    @media (max-width: 425px )
+        .LastInfo__title
+            font-size: 16px !important
+
 
 
 

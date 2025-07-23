@@ -1,6 +1,6 @@
 
 .Trending
-    width: 50%
+    width: 100%
     &__container
         height: 100%
     .statistics
@@ -42,7 +42,10 @@
             .reviews
                 font: 400 14px 'Open Sans'
                 color: grey
-     
+    @media (max-width: 768px)
+        .statistics__block
+            padding: 16px
+
         
 
 

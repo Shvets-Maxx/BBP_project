@@ -11,26 +11,53 @@
   
 
   
-.DashBoardBlock
-  display: flex
-  justify-content: space-between
-  margin-bottom: 20px
-  border-radius: 15px
+
 
 .profileSettingContainer
-  display: flex
-  flex-direction: row
-  justify-content: center
-  &__block
-    max-width: 1234px
-    width: 100%
-    padding: 24px 40px 24px
-  &__wrapper
-    padding: 32px 24px 24px 24px 
-    background-color: #E6EFF3
-    border-radius: 8px
     display: flex
-    flex-direction: column
-    gap: 16px
-  p, h3,h2
-    color: black
+    flex-direction: row
+    justify-content: center
+    &__container
+        max-width: 1234px
+        width: 100%
+        padding: 24px 24px  0 24px
+    &__header
+        display: flex
+        flex-direction: column
+        gap: 16px
+    &__block
+        padding: 24px
+        background-color: #E6EFF3
+        border-radius: 8px
+        display: flex
+        flex-direction: column
+        gap: 16px
+    &__section
+        display: flex
+        gap: 16px
+        flex-direction: column
+    &__viewed , &__trending
+        display: flex
+        gap: 16px
+    &__main , &__performanceSummary
+        display: flex
+        flex-direction: column
+        gap: 16px
+
+    @media (max-width: 1024px) 
+        flex-direction: column
+        &__trending , &__viewed 
+            flex-direction: column
+
+
+            
+    @media (max-width: 768px) 
+        &__container
+            padding: 24px 0 24px 0
+    @media (max-width: 425px) 
+        &__title
+            font-size: 16px !important
+        &__block
+            padding: 24px 16px 16px 16px
+
+    
