@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@mui/material";
+import style from "./CallsChart.module.sass";
 import {
 	XAxis,
 	YAxis,
@@ -29,13 +30,21 @@ export default function CallsChart({ number, text }: CallsChartProps) {
 				boxShadow: "0px 2px 8px rgba(0,0,0,0.05)",
 				padding: 2,
 			}}
+			className={style.chart}
 		>
 			<CardContent>
 				<div style={{ marginBottom: "30px" }}>
-					<p style={{ font: "400 32px Open Sans", marginBottom: "5px" }}>{number}</p>
-					<p style={{ font: "400 18px Open Sans" }}>{text}</p>
+					<p
+						className={style.chart__title}
+						style={{ font: "400 32px Open Sans", marginBottom: "5px" }}
+					>
+						{number}
+					</p>
+					<p className={style.chart__text} style={{ font: "400 18px Open Sans" }}>
+						{text}
+					</p>
 				</div>
-				<div style={{ width: "100%", height: 350 }}>
+				<div style={{ width: "100%", height: 300 }}>
 					<ResponsiveContainer width="100%" height="100%">
 						<AreaChart
 							data={data}

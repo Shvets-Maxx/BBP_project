@@ -15,6 +15,7 @@
                 display: flex
                 justify-content: start !important
                 :global(.MuiTabs-list)
+                    overflow: scroll !important
                     display: flex
                     gap: 5px
                     button
@@ -121,38 +122,46 @@
     :global(.Mui-selected)
         color: #000 !important
 
-.hours
-    &__title-block
-        margin-bottom: 24px
-        p
-            font: 700 18px 'Open Sans'
-    &__info-block
-        display: flex
-        gap: 63px
-    &__days , &__time
-        display: flex
-        flex-direction: column
-        gap: 24px
-        p
-            font: 400 18px 'Open Sans'
-.list
-    &__block
-        margin-bottom: 24px
-        p
-            font: 700 18px 'Open Sans'
-            margin-bottom: 16px
-        ul
+    .hours
+        &__title-block
+            margin-bottom: 24px
+            p
+                font: 700 18px 'Open Sans'
+        &__info-block
+            display: flex
+            gap: 63px
+        &__days , &__time
             display: flex
             flex-direction: column
-            gap: 16px
-        li
-            font: 400 18px 'Open Sans'
-            color: black
-            list-style-type: disc
-            margin-left: 30px
-            padding-left: 5px
-        li::marker
-            font-size: 15px
+            gap: 24px
+            p
+                font: 400 18px 'Open Sans'
+    .list
+        &__block
+            margin-bottom: 24px
+            p
+                font: 700 18px 'Open Sans'
+                margin-bottom: 16px
+            ul
+                display: flex
+                flex-direction: column
+                gap: 16px
+            li
+                font: 400 18px 'Open Sans'
+                color: black
+                list-style-type: disc
+                margin-left: 30px
+                padding-left: 5px
+            li::marker
+                font-size: 15px
 
-    &__text--disabled
-        color: grey !important
+        &__text--disabled
+            color: grey !important
+
+    @media (max-width: 1024px)
+        .BusinessProfileStats
+            flex-direction: column-reverse
+    @media (max-width: 500px)
+        .tabs-panel__title
+            font-size: 16px
+    

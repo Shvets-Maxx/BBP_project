@@ -40,7 +40,6 @@ function a11yProps(index: number) {
 export default function BasicTabs() {
 	const [value, setValue] = useState(0);
 
-
 	const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
 		setValue(newValue);
 	};
@@ -84,27 +83,37 @@ export default function BasicTabs() {
 				</div>
 				<CustomTabPanel value={value} index={0}>
 					<CallsChart number={3.731} text="Business Profile interactions" />
-					<div style={{display:'flex', gap:"16px"}}>
+					<div
+						className={style.BusinessProfileStats}
+						style={{ display: "flex", gap: "16px" }}
+					>
 						<BusinessProfileStats />
 						<Searches />
 					</div>
 				</CustomTabPanel>
 				<div className={style["tabs-content"]}>
-					
 					<CustomTabPanel value={value} index={1}>
-						<div>						<CallsChart number={469} text="Calls made from your Business Profile"/>
+						<div>
+							{" "}
+							<CallsChart number={469} text="Calls made from your Business Profile" />
 						</div>
 					</CustomTabPanel>
 
 					{/* Вкладка Unreplied */}
 					<CustomTabPanel value={value} index={2}>
-						<CallsChart number={22} text="Booking made from your Business Profile "/>
+						<CallsChart number={22} text="Booking made from your Business Profile " />
 					</CustomTabPanel>
 					<CustomTabPanel value={value} index={3}>
-						<CallsChart number={2.376} text="Direction requests made from your Business Profile" />
+						<CallsChart
+							number={2.376}
+							text="Direction requests made from your Business Profile"
+						/>
 					</CustomTabPanel>
 					<CustomTabPanel value={value} index={4}>
-						<CallsChart number={886} text="Website clicks made from your Business Profile" />
+						<CallsChart
+							number={886}
+							text="Website clicks made from your Business Profile"
+						/>
 					</CustomTabPanel>
 				</div>
 			</div>
