@@ -10,7 +10,8 @@
   align-items: center;
   margin-bottom: 5px;
   gap: 8px;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   justify-content: space-between;
 }
 .comments__headerTitle {
@@ -32,6 +33,7 @@
   margin-bottom: 16px;
   display: flex;
   gap: 16px;
+  overflow: scroll;
 }
 .comments__star {
   margin-bottom: 16px;
@@ -48,6 +50,16 @@
 }
 .comments__el > div:first-child {
   display: flex;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  padding-bottom: 11px;
+}
+.comments__el > span:last-child {
+  font-size: 12px;
+  color: #92A1A8;
 }
 .comments__el > div:nth-child(2) {
   font-weight: 400;
@@ -108,4 +120,72 @@
   -moz-column-gap: 16px;
        column-gap: 16px;
   align-items: center;
+}
+.comments .swiper {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  max-width: 370px;
+}
+.comments .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+  border-radius: 8p;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comments .swiper-button-prev:after,
+.comments .swiper-button-next:after {
+  font-size: 20px !important;
+  color: #000;
+}
+.comments .swiper-slide img {
+  border-radius: 8px;
+  display: block;
+  width: 50px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.comments .swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.comments .swiper-wrapper {
+  gap: 10px;
+}
+.comments .swiper-slide {
+  max-width: 200px;
+  background-size: cover;
+  background-position: center;
+}
+.comments .mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  height: 21% !important;
+}
+.comments .mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+.comments .mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.comments .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 29px;
 }/*# sourceMappingURL=CommentItem.module.css.map */

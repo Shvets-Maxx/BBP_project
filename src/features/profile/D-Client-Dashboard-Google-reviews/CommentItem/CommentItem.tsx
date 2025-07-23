@@ -2,11 +2,13 @@ import { FC, useState } from "react";
 import styles from "./CommentItem.module.sass";
 import undoIconSrc from "@/features/profile/SupportTicketsChat/assets/undo.svg";
 import Star from "../assets/Star.svg";
-// import clothes1 from "../assets/clothes1.svg";
-// import clothes2 from "../assets/clothes2.svg";
 import warning from "../assets/warningNO.svg";
-// import warningYes from "../assets/warningYes.svg";
 import { Select, MenuItem, SelectChangeEvent } from "@mui/material";
+// import React, { useRef } from "react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+// import { Pagination, Navigation } from "swiper/modules";
 
 type Period = "This month" | "Last month";
 
@@ -68,6 +70,32 @@ export const CommentItem: FC<CommentProps> = ({
 					</div>
 				</div>
 				<div className={styles.comments__content}>{content}</div>
+				{/* <div>
+					<Swiper
+						slidesPerView="auto"
+						spaceBetween={10}
+						loop={true}
+						pagination={{
+							clickable: true,
+						}}
+						navigation={true}
+						modules={[Pagination, Navigation]}
+						className="mySwiper"
+					>
+						<SwiperSlide>
+							<img src={imgg} alt="clothes 1" />
+						</SwiperSlide>
+						<SwiperSlide>
+							<img src={imgg} alt="clothes 1" />
+						</SwiperSlide>
+						<SwiperSlide>
+							<img src={imgg} alt="clothes 1" />
+						</SwiperSlide>
+						<SwiperSlide>
+							<img src={imgg} alt="clothes 1" />
+						</SwiperSlide>
+					</Swiper>{" "}
+				</div> */}
 				{imgg && (
 					<div className={styles.comments__clothes}>
 						<img src={imgg} alt="clothes 1" />

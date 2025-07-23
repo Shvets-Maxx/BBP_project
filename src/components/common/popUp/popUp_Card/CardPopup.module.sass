@@ -1,27 +1,9 @@
-
-
 $primary-color: #ee774d
 $primary-color-light: #fcded3
 $primary-color-dark: #b65e31
 
-.MuiFormControl-root
-    max-width: 700px
 
-.MuiInputBase-root
-    border-bottom: none
-
-.no-scroll
-    overflow: hidden !important
-    height: 100vh
-
-
-.no-scroll
-    overflow: hidden !important
-    height: 100vh
-
-
-      
-.address
+.card
     background: #86868670
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
     position: fixed
@@ -33,7 +15,6 @@ $primary-color-dark: #b65e31
     align-items: center
 
     &__container
- 
         padding: 24px
         width: 100%
         max-width: 600px 
@@ -42,12 +23,13 @@ $primary-color-dark: #b65e31
         border-radius: 8px
         background: #fff
         padding: 24px
+        display: flex
+        flex-direction: column
        
 
     &__header
         display: flex
         justify-content: space-between
-        align-items: center
         margin-bottom: 24px
         h1
             font: 500 32px 'PT Serif'
@@ -56,9 +38,34 @@ $primary-color-dark: #b65e31
             height: 24px !important
         :global(.MuiButtonBase-root)
             border-radius: 8px !important
+    &__header-block
+        align-items: center
+        cursor: pointer
+        display: flex
+        gap: 24px
+    &__header-back:hover
+        background: rgba(0, 0, 0, 0.04)
+    &__header-back
+        display: flex
+        gap: 8px
+        align-items: center
+        img
+            width: 20px
+            transform: rotate(90deg)
+        p
+            font: 400 18px 'Open Sans'
     &__main
-        margin-bottom: 30px
-
+        height: 50vh
+        flex-basis: 100%
+        max-height: 500px
+        min-height: 372px
+    &__main-footer
+        flex: 1
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    
+    
             
     &__info
         width: 100%
@@ -69,7 +76,7 @@ $primary-color-dark: #b65e31
             height: 60px
             width: 100%
             margin-bottom: 0px
-            padding: 8px 16px
+            padding: 10px 16px
             border: 1px solid #ccd5db
             border-radius: 8px
             flex: 1
@@ -77,7 +84,44 @@ $primary-color-dark: #b65e31
         input::-webkit-outer-spin-button,input::-webkit-inner-spin-button
             -webkit-appearance: none
             margin: 0
-    
+    &__input-icon
+        position: relative
+        input 
+            padding-right: 30px
+        span
+            position: absolute
+            right: 10px
+            top: 50%
+            transform: translateY(-50%)
+            cursor: pointer
+    &__footer
+        display: flex
+        gap: 16px
+        justify-content: end
+        button
+
+            flex-basis: 50%
+            max-width: none
+    .btn
+        padding: 12px
+        border-radius: 8px
+        cursor: pointer
+        border: none
+
+        font: 700 18px 'Open Sans'
+        &--primary
+            background-color: #ed7d5a
+            color: white
+        &--primary:hover
+            background: darken($primary-color, 10%)
+
+        &--cancel
+            background-color: #fcd9cf
+            color: #333
+            border: 1px solid $primary-color
+        &--cancel:hover
+            background: lighten($primary-color-light, 10%)
+
     .no-scroll
         overflow: hidden !important
         height: 100vh
@@ -89,20 +133,13 @@ $primary-color-dark: #b65e31
             font: 400 18px 'Open Sans'
             color: #000
             text-align: start
-      
-    &__footer
-        display: flex
-        justify-content: flex-end
-        gap: 16px
-        button
-            font: 400 18px 'Open Sans'
-            flex-basis: 50%
-            
+  
 
     &__button-update
         background-color: #ED805B
         color: white
     &__button-cancel ,&__button-update
+        color: #000
         padding: 12px 0
         border: none
         border-radius: 8px
@@ -117,90 +154,44 @@ $primary-color-dark: #b65e31
         
 
     &__button-cancel 
-        background: #ED805B66
-        border: 1px solid #ED805B
-        color: #000
+        background: #EBEBED
+        border: 1px solid #000
 
     &__popup-close
         background: none
         border: none
-        font-size: 10px
+        font-size: 1.5rem
         cursor: pointer
-
-    ::-webkit-scrollbar 
-        width: 8px 
-        height: 0px
-    ::-webkit-scrollbar-button 
-        width: 0px
-        height: 0px
-        
-
     
-
-    ::-webkit-scrollbar-track 
-        -webkit-border-radius: 10px
-        border-radius: 10px
-        background: white
-        margin-top: 10px
-    
-
-    ::-webkit-scrollbar-thumb 
-        -webkit-border-radius: 10px
-        border-radius: 10px
-        background: #ADADAD
-    
-
-    ::-webkit-scrollbar-thumb:window-inactive 
-        background: #ADADAD
-  
-        
-    
-    
-
     @media (max-width: 500px) 
-        
-        .popup__block
-            display: flex
-            min-height: 263px
-            max-height: none
-            height: auto
-            flex: 1
-        .address__header h1
-            font-size: 20px
-        .address__block
-            padding: 16px
-        .address__info
-            margin-bottom: 16px
-            input
-                height: 50px
-            :global(.MuiInputBase-root)
-                height: 50px !important
-        .address__info-block
+        .card__header-back p 
+            font-size: 16px
+        .card__info-block p 
+            font-size: 16px
+        .card__info-block
             margin-bottom: 8px
-       
-        
-       
+        .card__info input
+            height: 50px
+            font-size: 16px
+        .card__header h1
+            font-size: 20px
+        .card__container , .card__block
+            padding: 16px
 
-    @media (max-width: 425px)
-        .address__main
-            height: 90vh
-            margin-left: 10px
-            padding-right: 10px
-            overflow: auto
-            margin-bottom: 20px
-        .address__info
-            flex-direction: column
-        .address__container
+
+    @media (max-width: 425px) 
+        .card__container
             padding: 0px
             height: 100vh
-        .address__block
+        .card__block
             height: 100%
             border-radius: 0
-            display: flex
-            flex-direction: column
-            padding: 16px
+        .card__main
+            height: 100%
+            max-height: none
+            min-height: auto
         
-
+        
 
 
 

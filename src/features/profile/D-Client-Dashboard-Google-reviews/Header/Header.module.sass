@@ -1,94 +1,102 @@
 
 
 .timezone
-  display: flex
-  flex-direction: column
-  border-radius: 8px
-  width: 100%
-
-  &__wrapper
-    width: 100%
     display: flex
     flex-direction: column
-  &__block
-    display: flex
-    gap: 47px
-    align-items: center
-    margin-bottom: 24px
-  &__rate
-    margin-bottom: 16px
-    display: flex
-    align-items: center
-    gap: 12px
-    .title
-      font: 400 32px 'PT Serif'
-    .reviews
-      font: 400 18px 'Open Sans'
-  &__buttonText
-    p
-      font: 400 14px 'Open Sans'
-      color: grey
-  &__button
-    display: flex
-    gap: 16px
-    button:hover
-      cursor: pointer
-    button 
-      background: #ee774d
-      color: white
-      font: 400 18px "Open Sans"
-      padding: 9px 0
-      text-align: center
-      width: 217px
-      border-radius: 10px
-      display: flex
-      align-items: center
-      justify-content: center
-      gap: 6px
-    .whiteColor
-      background: none 
-      color: #000
-      border: 1px solid grey
-
-
-
-  &__title
-
-    p
-      font: 400 14px 'Open Sans'
-      color: #000
-
-  &__selectWrapper
-    display: flex
-    gap: 8px
-    flex-wrap: wrap
-    width: 378px
-
-  &__select
+    border-radius: 8px
     width: 100%
-    border-radius: 10px !important
-    padding: 12px 12px 12px 16px
-    display: flex
-    align-items: center
-    border: 1px solid #ccc
 
-  // MUI overrides
-  :global(.MuiSelect-select)
-    padding: 0
-    font-weight: 400
+    &__wrapper
+        width: 100%
+        display: flex
+        flex-direction: column
+    &__block
+        display: flex
+        gap: 47px
+        align-items: center
+        margin-bottom: 24px
+    &__rate
+        margin-bottom: 16px
+        display: flex
+        align-items: center
+        gap: 12px
+        .title
+            font: 400 32px 'PT Serif'
+        .reviews
+            font: 400 18px 'Open Sans'
+    &__buttonText
+        p
+            font: 400 14px 'Open Sans'
+            color: grey
+    &__button
+        flex-wrap: wrap
+        display: flex
+        gap: 16px
+        button:hover
+            cursor: pointer
+        button 
+            background: #ee774d
+            color: white
+            font: 400 18px "Open Sans"
+            padding: 9px 0
+            text-align: center
+            width: 217px
+            border-radius: 10px
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: 6px
+        .whiteColor
+            background: none 
+            color: #000
+            border: 1px solid grey
 
-  :global(.MuiSvgIcon-root)
-    display: none
 
-  :global(.MuiSelect-icon)
-    transition: transform 300ms ease
-    right: 16px
-    top: calc(50% - 12px)
-    position: absolute
-    pointer-events: none
 
-  :global(.MuiSelect-icon.MuiSelect-iconOpen)
-    transform: rotate(180deg)
+    &__title
 
-  :global(.MuiOutlinedInput-notchedOutline)
-    display: none !important
+        p
+            font: 400 14px 'Open Sans'
+            color: #000
+
+    &__selectWrapper
+        display: flex
+        gap: 8px
+        flex-wrap: wrap
+        width: 378px
+
+    &__select
+        width: 100%
+        border-radius: 10px !important
+        padding: 12px 12px 12px 16px
+        display: flex
+        align-items: center
+        border: 1px solid #ccc
+
+    // MUI overrides
+    :global(.MuiSelect-select)
+        padding: 0
+        font-weight: 400
+
+    :global(.MuiSvgIcon-root)
+        display: none
+
+    :global(.MuiSelect-icon)
+        transition: transform 300ms ease
+        right: 16px
+        top: calc(50% - 12px)
+        position: absolute
+        pointer-events: none
+
+    :global(.MuiSelect-icon.MuiSelect-iconOpen)
+        transform: rotate(180deg)
+
+    :global(.MuiOutlinedInput-notchedOutline)
+        display: none !important
+
+    @media (max-width: 500px)
+        .timezone__button button
+            width: 100%
+        .timezone__button button ,.reviews
+            font-size: 16px
+

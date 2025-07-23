@@ -2,7 +2,6 @@
   display: flex;
   background: #fff;
   border-radius: 8px;
-  max-width: 750px;
   width: 100%;
 }
 .stepper__step {

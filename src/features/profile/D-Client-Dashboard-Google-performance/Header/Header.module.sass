@@ -1,63 +1,61 @@
 
 
 .timezone
-  display: flex
-  flex-direction: column
-  border-radius: 8px
-  width: 100%
-
-  &__wrapper
-    width: 100%
     display: flex
-    justify-content: space-between
-    gap: 50px
+    flex-direction: column
+    border-radius: 8px
+    width: 100%
+    margin-bottom: 16px
+
+    &__wrapper
+        width: 100%
+        flex-wrap: wrap
+        display: flex
+        justify-content: space-between
+        gap: 16px
+        
+    &__block
+        display: flex
+        gap: 47px
+        align-items: center
+    &__title
+        p
+            font: 400 14px 'Open Sans'
+            color: #000
+
+    &__selectWrapper
+        display: flex
+        gap: 8px
+        flex-wrap: wrap
+        width: 378px
+
+    &__select
+        width: 100%
+        border-radius: 10px !important
+        padding: 12px 12px 12px 16px
+        display: flex
+        align-items: center
+        border: 1px solid #ccc
+
+    // MUI overrides
+    :global(.MuiSelect-select)
+        padding: 0
+        font-weight: 400
+
+    :global(.MuiSvgIcon-root)
+        display: none
+
+    :global(.MuiSelect-icon)
+        transition: transform 300ms ease
+        right: 16px
+        top: calc(50% - 12px)
+        position: absolute
+        pointer-events: none
+
+    :global(.MuiSelect-icon.MuiSelect-iconOpen)
+        transform: rotate(180deg)
+
+    :global(.MuiOutlinedInput-notchedOutline)
+        display: none !important
+
     
-  &__block
-    display: flex
-    gap: 47px
-    align-items: center
-
-
-
-
-
-  &__title
-
-    p
-      font: 400 14px 'Open Sans'
-      color: #000
-
-  &__selectWrapper
-    display: flex
-    gap: 8px
-    flex-wrap: wrap
-    width: 378px
-
-  &__select
-    width: 100%
-    border-radius: 10px !important
-    padding: 12px 12px 12px 16px
-    display: flex
-    align-items: center
-    border: 1px solid #ccc
-
-  // MUI overrides
-  :global(.MuiSelect-select)
-    padding: 0
-    font-weight: 400
-
-  :global(.MuiSvgIcon-root)
-    display: none
-
-  :global(.MuiSelect-icon)
-    transition: transform 300ms ease
-    right: 16px
-    top: calc(50% - 12px)
-    position: absolute
-    pointer-events: none
-
-  :global(.MuiSelect-icon.MuiSelect-iconOpen)
-    transform: rotate(180deg)
-
-  :global(.MuiOutlinedInput-notchedOutline)
-    display: none !important

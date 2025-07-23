@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@mui/material";
 import {
-
 	XAxis,
 	YAxis,
 	CartesianGrid,
@@ -19,11 +18,10 @@ const data = [
 	{ month: "Mar 2025", calls: 48 },
 ];
 type CallsChartProps = {
-    number: number;
-    text: string;
-  };
+	number: number;
+	text: string;
+};
 export default function CallsChart({ number, text }: CallsChartProps) {
-
 	return (
 		<Card
 			sx={{
@@ -33,62 +31,65 @@ export default function CallsChart({ number, text }: CallsChartProps) {
 			}}
 		>
 			<CardContent>
-				<div style={{marginBottom:"30px"}}>
+				<div style={{ marginBottom: "30px" }}>
 					<p style={{ font: "400 32px Open Sans", marginBottom: "5px" }}>{number}</p>
-					<p style={{ font: "400 18px Open Sans" }}>
-                        {text} 
-					</p>
+					<p style={{ font: "400 18px Open Sans" }}>{text}</p>
 				</div>
-				<ResponsiveContainer width="100%" height={250}>
-					<AreaChart
-						data={data}
-						margin={{ top: 20, right: 20, left: -10, bottom: 0 }}
-					>
-						<defs>
-							<linearGradient id="colorCalls" x1="0" y1="0" x2="0" y2="1">
-								<stop offset="5%" stopColor={"#ED805B"} stopOpacity={0.3} />
-								<stop offset="95%" stopColor={"#ED805B"} stopOpacity={0} />
-							</linearGradient>
-						</defs>
-						<CartesianGrid strokeDasharray="3 3" vertical={true} horizontal={false} />
-						<XAxis
-                            width={40}
-							
-							dataKey="month"
-							tick={{ fill: "#9E9E9E", fontSize: 12 }}
-						/>
-						<YAxis
-							tickMargin={16}
-							tick={{ fill: "#9E9E9E", fontSize: 12 }}
-							domain={[0, 100]}
-							tickCount={5}
-							interval={0}
-							allowDuplicatedCategory={false}
-						/>
-						<Tooltip
-							contentStyle={{
-								backgroundColor: "white",
-								border: "1px solid #ccc",
-								borderRadius: 4,
-								fontSize: 12,
-							}}
-							labelStyle={{ fontWeight: 500 }}
-							formatter={(value: number) => [`${value}`, "Calls"]}
-						/>
-						<Area
-							type="linear"
-							dataKey="calls"
-							stroke={"#ED805B"}
-							fillOpacity={1}
-							fill="url(#colorCalls)"
-							activeDot={{ r: 6 }}
-							dot={{ r: 6, fill: "#ED805B" }}
-							isAnimationActive={true}
-							animationDuration={1000}
-							animationEasing="ease-in-out"
-						/>
-					</AreaChart>
-				</ResponsiveContainer>
+				<div style={{ width: "100%", height: 350 }}>
+					<ResponsiveContainer width="100%" height="100%">
+						<AreaChart
+							data={data}
+							margin={{ top: 20, right: 20, left: -10, bottom: 0 }}
+						>
+							<defs>
+								<linearGradient id="colorCalls" x1="0" y1="0" x2="0" y2="1">
+									<stop offset="5%" stopColor={"#ED805B"} stopOpacity={0.3} />
+									<stop offset="95%" stopColor={"#ED805B"} stopOpacity={0} />
+								</linearGradient>
+							</defs>
+							<CartesianGrid
+								strokeDasharray="3 3"
+								vertical={true}
+								horizontal={false}
+							/>
+							<XAxis
+								width={40}
+								dataKey="month"
+								tick={{ fill: "#9E9E9E", fontSize: 12 }}
+							/>
+							<YAxis
+								tickMargin={16}
+								tick={{ fill: "#9E9E9E", fontSize: 12 }}
+								domain={[0, 100]}
+								tickCount={5}
+								interval={0}
+								allowDuplicatedCategory={false}
+							/>
+							<Tooltip
+								contentStyle={{
+									backgroundColor: "white",
+									border: "1px solid #ccc",
+									borderRadius: 4,
+									fontSize: 12,
+								}}
+								labelStyle={{ fontWeight: 500 }}
+								formatter={(value: number) => [`${value}`, "Calls"]}
+							/>
+							<Area
+								type="linear"
+								dataKey="calls"
+								stroke={"#ED805B"}
+								fillOpacity={1}
+								fill="url(#colorCalls)"
+								activeDot={{ r: 6 }}
+								dot={{ r: 6, fill: "#ED805B" }}
+								isAnimationActive={true}
+								animationDuration={1000}
+								animationEasing="ease-in-out"
+							/>
+						</AreaChart>
+					</ResponsiveContainer>
+				</div>
 			</CardContent>
 		</Card>
 	);

@@ -32,6 +32,7 @@
   color: grey;
 }
 .timezone__button {
+  flex-wrap: wrap;
   display: flex;
   gap: 16px;
 }
@@ -93,4 +94,12 @@
 }
 .timezone :global(.MuiOutlinedInput-notchedOutline) {
   display: none !important;
+}
+@media (max-width: 500px) {
+  .timezone .timezone__button button {
+    width: 100%;
+  }
+  .timezone .timezone__button button, .timezone .reviews {
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=Header.module.css.map */

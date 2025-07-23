@@ -42,7 +42,7 @@
     .onboarding
         background: #fff
         border-radius: 10px
-        padding: 20px
+        padding: 24px
         gap: 16px
         display: flex
         flex-direction: column
@@ -73,6 +73,14 @@
                 cursor: pointer
             span
                 font-weight: 700
+
+    @media (max-width: 425px)
+        .onboarding
+            padding: 16px
+    @media (max-width: 500px)
+        
+        .onboarding__block p
+            font-size: 16px
 
        
 

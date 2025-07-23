@@ -20,6 +20,39 @@
     display: flex
     justify-content: center
     align-items: center
+    
+    &__button
+        display: flex
+        justify-content: end
+        button
+            font: 400 18px 'Open Sans'
+            flex-basis: 50%
+    &__container
+        padding: 24px
+        width: 100%
+        max-width: 600px 
+    &__block
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+        border-radius: 8px
+        background: #fff
+        padding: 24px
+       
+    &__header
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 32px
+        h1
+            font: 500 32px 'PT Serif'
+        :global(.MuiSvgIcon-root)
+            width: 24px !important
+            height: 24px !important
+        :global(.MuiButtonBase-root)
+            border-radius: 8px !important
+  
+    .no-scroll
+        overflow: hidden !important
+        height: 100vh
     .popup__block
         max-height: 500px
         height: 50vh
@@ -63,38 +96,6 @@
         border-radius: 6px
         cursor: pointer
         transition: background 0.3s
-    &__button
-        display: flex
-        justify-content: end
-        button
-            font: 400 18px 'Open Sans'
-            flex-basis: 50%
-    &__container
-        padding: 24px
-        width: 100%
-        max-width: 600px 
-    &__block
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
-        border-radius: 8px
-        background: #fff
-        padding: 24px
-       
-    &__header
-        display: flex
-        align-items: center
-        justify-content: space-between
-        margin-bottom: 32px
-        h1
-            font: 500 32px 'PT Serif'
-        :global(.MuiSvgIcon-root)
-            width: 24px !important
-            height: 24px !important
-        :global(.MuiButtonBase-root)
-            border-radius: 8px !important
-  
-    .no-scroll
-        overflow: hidden !important
-        height: 100vh
 
 
     &__footer
@@ -135,13 +136,36 @@
         cursor: pointer
     
     @media (max-width: 500px) 
+        
+        .popup__block
+            display: flex
+            min-height: 263px
+            max-height: none
+            height: auto
+            flex: 1
         .payment__header h1
             font-size: 20px
-    @media (max-width: 425px) 
-        .payment__container
-            padding: 16px
         .payment__block
             padding: 16px
+       
+        
+       
+
+    @media (max-width: 425px) 
+        .payment__container
+            padding: 0px
+            height: 100vh
+        .payment__block
+            height: 100%
+            border-radius: 0
+            display: flex
+            flex-direction: column
+            padding: 16px
+        .card__main
+            height: 100%
+            max-height: none
+            min-height: auto
+
         
 
 
