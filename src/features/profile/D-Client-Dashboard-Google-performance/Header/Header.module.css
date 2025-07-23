@@ -16,6 +16,7 @@
   display: flex;
   gap: 47px;
   align-items: center;
+  width: 100%;
 }
 .timezone__title p {
   font: 400 14px "Open Sans";
@@ -25,7 +26,8 @@
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  width: 378px;
+  max-width: 378px;
+  width: 100%;
 }
 .timezone__select {
   width: 100%;

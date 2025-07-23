@@ -37,14 +37,25 @@
   gap: 16px;
   flex-direction: column;
 }
+.profileSettingContainer__content {
+  width: 100%;
+}
 @media (max-width: 1024px) {
   .profileSettingContainer {
     flex-direction: column;
+  }
+  .profileSettingContainer__section {
+    flex-direction: row;
   }
 }
 @media (max-width: 768px) {
   .profileSettingContainer__container {
     padding: 24px 0 24px 0;
+  }
+}
+@media (max-width: 500px) {
+  .profileSettingContainer .responsive__fontSize {
+    font-size: 20px !important;
   }
 }
 @media (max-width: 425px) {

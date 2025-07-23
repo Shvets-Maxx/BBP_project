@@ -3,19 +3,18 @@ import Sidebar from "../../../../components/common/sidebar/Sidebar.tsx";
 import ClientProfileTop from "../../../../components/common/clientProfileTop/ClientProfileTop.tsx";
 import TabPanel from "../TabPanel/TabPanel.tsx";
 import Header from "../Header/Header.tsx";
-// import LinkedAccount from "../LinkedAccount/LinkedAccount.tsx";
-// import TimeZone from "../TimeZone/TimeZone.tsx"
-// import Adress from "../Adress/Adress.tsx"
-// import Payments from "../Payments/Payments.tsx"
+
 function D_Client_Dashboard_Google_performance() {
 	return (
 		<div className={style.profileSettingContainer}>
 			<Sidebar />
 			<div className={style.profileSettingContainer__container}>
 				<div className={style.profileSettingContainer__block}>
-					<ClientProfileTop>Dashboard - Google business</ClientProfileTop>
+					<ClientProfileTop classNameTitle={style.responsive__fontSize}>
+						Dashboard - Google business
+					</ClientProfileTop>
 					<section className={style.profileSettingContainer__section}>
-						<div className="section_CurrentRevenueCard">
+						<div className={style.profileSettingContainer__content}>
 							<Header />
 							<TabPanel />
 						</div>

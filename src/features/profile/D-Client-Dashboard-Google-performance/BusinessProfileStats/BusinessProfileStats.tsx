@@ -45,7 +45,7 @@ const DonutChart: FC = () => {
 				>
 					<img src={eyes} alt="" />
 				</div>
-				<div>
+				<div className={style.chart__title}>
 					<h3
 						style={{
 							margin: 0,
@@ -88,7 +88,7 @@ const DonutChart: FC = () => {
 					Platform and devices that people used to find your profile
 				</p>
 			</div>
-			<div style={{ display: "flex" }}>
+			<div className={style.flex} style={{ display: "flex" }}>
 				{/* Chart */}
 				<div>
 					<PieChart style={{ width: "400px !important" }} width={270} height={300}>
@@ -120,6 +120,7 @@ const DonutChart: FC = () => {
 						gap: "20px",
 						justifyContent: "space-evenly",
 					}}
+					className={style.legend}
 				>
 					{donutChartDataOrders.map((item) => (
 						<div

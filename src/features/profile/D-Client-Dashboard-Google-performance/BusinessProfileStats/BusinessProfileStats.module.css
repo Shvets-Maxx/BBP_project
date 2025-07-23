@@ -22,4 +22,26 @@
   justify-content: center;
   align-items: center;
   border-radius: 5lx;
+}
+@media (max-width: 1024px) {
+  .chart .legend {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+  }
+  .chart .flex {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .chart {
+    padding: 16px;
+  }
+}
+@media (max-width: 425px) {
+  .chart .chart__title h3 {
+    font-size: 24px !important;
+  }
+  .chart .chart__title p {
+    font-size: 14px !important;
+  }
 }/*# sourceMappingURL=BusinessProfileStats.module.css.map */

@@ -1,0 +1,19 @@
+.chart :global(.recharts-cartesian-axis-line) {
+  display: none !important;
+}
+.chart :global(.recharts-cartesian-axis-tick-line) {
+  display: none !important;
+}
+@media (max-width: 768px) {
+  .chart :global(.MuiCardContent-root) {
+    padding: 0px !important;
+  }
+}
+@media (max-width: 425px) {
+  .chart .chart__title {
+    font-size: 24px !important;
+  }
+  .chart .chart__text {
+    font-size: 16px !important;
+  }
+}/*# sourceMappingURL=CallsChart.module.css.map */
