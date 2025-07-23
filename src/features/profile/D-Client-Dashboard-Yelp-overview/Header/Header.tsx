@@ -36,7 +36,7 @@ export default function Header() {
 	const [timeZone, setTimeZone] = useState<TimeZoneOption>("Reviews");
 
 	const handleTimeZoneChange: SelectProps["onChange"] = (
-		event: SelectChangeEvent<unknown>
+		event: SelectChangeEvent<unknown>,
 	) => {
 		setTimeZone(event.target.value as TimeZoneOption);
 	};
@@ -65,12 +65,15 @@ export default function Header() {
 				</div>
 
 				<div className={style.timezone__rate}>
-					<div style={{display:'flex' , gap:"16px" ,alignItems:"center"}}>
+					<div
+						className={style.timezone__logo}
+						style={{ display: "flex", gap: "16px", alignItems: "center" }}
+					>
 						<img src={shoplogo} alt="" />
-						<p style={{font:"400 24px PT Serif"}}>The name of shop</p>
+						<p style={{ font: "400 24px PT Serif" }}>The name of shop</p>
 					</div>
-					<div style={{display:'flex' , gap:"30px" , paddingLeft:"68px"}}>
-						<div style={{display:"flex" , gap:"2px"}}>
+					<div style={{ display: "flex", gap: "30px", paddingLeft: "68px" }}>
+						<div style={{ display: "flex", gap: "2px" }}>
 							<img src={Star} alt="" />
 							<img src={Star} alt="" />
 							<img src={Star} alt="" />
