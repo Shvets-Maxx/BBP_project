@@ -70,4 +70,12 @@
 }
 .timezone :global(.MuiPaper-root) {
   padding: none !important;
+}
+@media (max-width: 425px) {
+  .timezone__logo p {
+    font-size: 20px !important;
+  }
+  .timezone .reviews {
+    font-size: 16px !important;
+  }
 }/*# sourceMappingURL=Header.module.css.map */

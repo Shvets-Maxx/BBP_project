@@ -6,7 +6,7 @@ import {
 	XAxis,
 	YAxis,
 	Tooltip,
-  CartesianGrid,
+	CartesianGrid,
 	ResponsiveContainer,
 } from "recharts";
 
@@ -18,8 +18,8 @@ export default function HeatMaps() {
 		{ month: "Oct", organic: 20, ads: 50, forecast: 0 },
 		{ month: "Nov", organic: 18, ads: 45, forecast: 0 },
 		{ month: "Jan", organic: 25, ads: 70, forecast: 0 },
-		{ month: "Feb", organic: 22, ads: 85, forecast: 0 },
-		{ month: "Mar", organic: 35, ads: 150, forecast: 15 },
+		// { month: "Feb", organic: 22, ads: 85, forecast: 0 },
+		// { month: "Mar", organic: 35, ads: 150, forecast: 15 },
 	];
 
 	return (
@@ -33,8 +33,8 @@ export default function HeatMaps() {
 						</div>
 						<div style={{ width: "100%", height: "320px" }}>
 							<ResponsiveContainer height={320}>
-								<BarChart  height={360} barCategoryGap={40} data={data}>
-                <CartesianGrid strokeDasharray="1 0" vertical={false} />
+								<BarChart height={360} barCategoryGap={40} data={data}>
+									<CartesianGrid strokeDasharray="1 0" vertical={false} />
 
 									<XAxis
 										axisLine={{ stroke: "#ccc" }}
@@ -64,20 +64,41 @@ export default function HeatMaps() {
 								</BarChart>
 							</ResponsiveContainer>
 						</div>
-            <div style={{display:'flex' , gap:"16px"}}>
-              <div style={{display:"flex" ,gap:"8px", alignItems:"center" }}>
-                <div style={{width:"16px" , height:"16px" , borderRadius:"999px" , border:"1px solid grey"}}></div>
-                <p style={{font:'400 14px Open Sans'}}>Forecast</p>
-              </div>
-              <div style={{display:"flex" ,gap:"8px", alignItems:"center" }}>
-                <div style={{width:"16px" , height:"16px" , borderRadius:"999px" , background:"#F25757"}}></div>
-                <p style={{font:'400 14px Open Sans'}}>Ads</p>
-              </div>
-              <div style={{display:"flex" ,gap:"8px" , alignItems:"center" }}>
-                <div style={{width:"16px" , height:"16px" , borderRadius:"999px" , background:"#8ECADF"}}></div>
-                <p style={{font:'400 14px Open Sans'}}>Organic</p>
-              </div>
-            </div>
+						<div style={{ display: "flex", gap: "16px" }}>
+							<div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+								<div
+									style={{
+										width: "16px",
+										height: "16px",
+										borderRadius: "999px",
+										border: "1px solid grey",
+									}}
+								></div>
+								<p style={{ font: "400 14px Open Sans" }}>Forecast</p>
+							</div>
+							<div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+								<div
+									style={{
+										width: "16px",
+										height: "16px",
+										borderRadius: "999px",
+										background: "#F25757",
+									}}
+								></div>
+								<p style={{ font: "400 14px Open Sans" }}>Ads</p>
+							</div>
+							<div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+								<div
+									style={{
+										width: "16px",
+										height: "16px",
+										borderRadius: "999px",
+										background: "#8ECADF",
+									}}
+								></div>
+								<p style={{ font: "400 14px Open Sans" }}>Organic</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

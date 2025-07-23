@@ -16,54 +16,35 @@ function D_Client_Dashboard_Yelp_overview() {
 	return (
 		<div className={style.profileSettingContainer}>
 			<Sidebar />
-			<div className={style.profileSettingContainer__block}>
-				<div className={style.profileSettingContainer__wrapper}>
-					<header className={style.header}>
+			<div className={style.profileSettingContainer__container}>
+				<div className={style.profileSettingContainer__block}>
+					<header className={style.profileSettingContainer__header}>
 						<ClientProfileTop>Dashboard - Yepl</ClientProfileTop>
 						<Header />
 					</header>
-					<main
-						style={{ display: "flex", gap: "16px", flexDirection: "column" }}
-						className=""
-					>
-						<section
-							style={{
-								display: "flex",
-								gap: "16px",
-								flexDirection: "column",
-								width: "100%",
-							}}
-							className="section_lineDiagram"
-						>
-							<div className="section_CurrentRevenueCard">
-								<PerformanceSummary />
-							</div>
-							<div>
-								<LastInfo />
-							</div>
-							{/* <div className="section_BalanceOverviewChart"><LinkedAccount/></div> */}
-						</section>
-						<section
-							style={{
-								display: "flex",
-								gap: "16px",
-								flexDirection: "column",
-								flexGrow: "1",
-							}}
-							className="section_PopularProducts"
-						>
-              <p style={{font:'400 24px Open Sans'}}>Insights</p>
+					<section className={style.profileSettingContainer__section}>
+						<div className={style.profileSettingContainer__performanceSummary}>
+							<PerformanceSummary />
+							<LastInfo />
+						</div>
 
-							<div style={{display:"flex",gap:"16px"}}>
+						<p
+							className={style.profileSettingContainer__title}
+							style={{ font: "400 24px Open Sans" }}
+						>
+							Insights
+						</p>
+						<div className={style.profileSettingContainer__main}>
+							<div className={style.profileSettingContainer__viewed}>
 								<Viewed />
 								<HeatMaps />
 							</div>
-							<div style={{display:"flex" , gap:"16px"}}>
+							<div className={style.profileSettingContainer__trending}>
 								<Trending />
 								<StackedBarChart />
 							</div>
-						</section>
-					</main>
+						</div>
+					</section>
 				</div>
 			</div>
 		</div>

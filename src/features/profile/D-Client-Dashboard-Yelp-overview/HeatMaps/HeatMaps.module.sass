@@ -1,6 +1,6 @@
 
 .Trending
-    width: 50%
+    width: 100%
     .statistics
         display: flex
         width: 100%
@@ -39,13 +39,13 @@
             .reviews
                 font: 400 14px 'Open Sans'
                 color: grey
-     
-        
+    :global(.mapboxgl-ctrl-compass) 
+        display: none !important
+        color: #70c95c
 
-
-:global(.mapboxgl-ctrl-compass) 
-  display: none !important
-  color: #70c95c
+    @media (max-width: 768px)
+        .statistics__block
+            padding: 16px
 
 
     
