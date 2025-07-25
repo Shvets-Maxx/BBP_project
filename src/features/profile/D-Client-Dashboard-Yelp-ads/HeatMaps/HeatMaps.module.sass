@@ -1,6 +1,6 @@
 
 .Trending
-    width: 50%
+    width: 100%
     .statistics
         display: flex
         width: 100%
@@ -11,6 +11,7 @@
             flex-direction: column
             gap: 16px
         &__block
+            height: 570px
             flex: 1
             padding: 24px
             background: rgb(255, 255, 255)
@@ -42,13 +43,19 @@
             .reviews
                 font: 400 14px 'Open Sans'
                 color: grey
-     
-        
+
+    :global(.mapboxgl-ctrl-compass) 
+        display: none !important
+        color: #70c95c
+    @media (max-width: 768px)
+        .statistics__block
+            padding: 16px
+    @media (max-width: 425px)
+        .statistics__block
+            height: auto
+            aspect-ratio: 1/1
 
 
-:global(.mapboxgl-ctrl-compass) 
-  display: none !important
-  color: #70c95c
 
 
     

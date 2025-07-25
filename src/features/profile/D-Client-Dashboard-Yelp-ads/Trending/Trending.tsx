@@ -29,28 +29,17 @@ export default function Trending() {
 						</div>
 
 						<div className={style["statistics__main-block"]}>
-							{Array.from({ length: 20 }).map((_, index) => (
-								<div className={style.statistics__rate}>
-									<div key={index} style={{ width: "100%" }}>
-										<div
-											style={{
-												display: "flex",
-												alignItems: "center",
-												justifyContent: "space-between",
-											}}
-										>
-											<div style={{ display: "flex", gap: "40px" }}>
-												<p style={{ font: "400 14px Open Sans" }}>Mar 29, 2025, 11:08 AM</p>
-												<p style={{ font: "400 14px Open Sans", color: "#49AB3A" }}>
-													(323) XXX-2827
-												</p>
-											</div>
-
-											<p style={{ font: "400 14px Open Sans" }}>0 min 10 sec</p>
+							<div className={style["statistics__main-wrraper"]}>
+								{Array.from({ length: 20 }).map((_, index) => (
+									<div key={index} className={style.statistics__rate}>
+										<div className={style["statistics__rate-block"]}>
+											<p>Mar 29, 2025, 11:08 AM</p>
+											<p>(323) XXX-2827</p>
+											<p>0 min 10 sec</p>
 										</div>
 									</div>
-								</div>
-							))}
+								))}
+							</div>
 						</div>
 					</div>
 				</div>

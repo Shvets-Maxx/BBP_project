@@ -52,4 +52,9 @@
 .Viewed .feedback__rate .reviews {
   font: 400 14px "Open Sans";
   color: grey;
+}
+@media (max-width: 768px) {
+  .Viewed .feedback__block {
+    padding: 16px;
+  }
 }/*# sourceMappingURL=Viewed.module.css.map */

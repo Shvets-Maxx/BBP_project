@@ -46,7 +46,7 @@ export default function BasicTabs() {
 		<div className={style.container}>
 			<div className={style.container__block}>
 				<div className={style["container__title-block"]}>
-					<p>Ad performance </p>
+					<p>Add performance </p>
 					<p>(last 30 days)</p>
 				</div>
 				<div className={style["tabs-panel"]}>

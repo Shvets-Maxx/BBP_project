@@ -56,6 +56,16 @@
 .Trending :global(.mapboxgl-map) {
   height: 360px !important;
 }
+.Trending :global(.recharts-cartesian-axis-line) {
+  display: none !important;
+}
+.Trending :global(.recharts-cartesian-axis-tick-line) {
+  display: none !important;
+}
+.Trending :global(.recharts-text tspan) {
+  font: 400 14px "Open Sans";
+  color: #92A1A8;
+}
 @media (max-width: 768px) {
   .Trending .statistics__block {
     padding: 16px;

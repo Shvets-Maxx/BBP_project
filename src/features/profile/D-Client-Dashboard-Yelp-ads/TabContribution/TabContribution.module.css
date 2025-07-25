@@ -149,7 +149,7 @@
   overflow: visible !important;
 }
 .container :global(.MuiTabs-scroller) {
-  overflow: visible !important;
+  overflow: scroll !important;
 }
 .container :global(.MuiBox-root) {
   width: 40%;
@@ -158,48 +158,56 @@
 .container :global(.Mui-selected) {
   color: #000 !important;
 }
-
-.hours__title-block {
+.container .hours__title-block {
   margin-bottom: 24px;
 }
-.hours__title-block p {
+.container .hours__title-block p {
   font: 700 18px "Open Sans";
 }
-.hours__info-block {
+.container .hours__info-block {
   display: flex;
   gap: 63px;
 }
-.hours__days, .hours__time {
+.container .hours__days, .container .hours__time {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.hours__days p, .hours__time p {
+.container .hours__days p, .container .hours__time p {
   font: 400 18px "Open Sans";
 }
-
-.list__block {
+.container .list__block {
   margin-bottom: 24px;
 }
-.list__block p {
+.container .list__block p {
   font: 700 18px "Open Sans";
   margin-bottom: 16px;
 }
-.list__block ul {
+.container .list__block ul {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.list__block li {
+.container .list__block li {
   font: 400 18px "Open Sans";
   color: black;
   list-style-type: disc;
   margin-left: 30px;
   padding-left: 5px;
 }
-.list__block li::marker {
+.container .list__block li::marker {
   font-size: 15px;
 }
-.list__text--disabled {
+.container .list__text--disabled {
   color: grey !important;
+}
+@media (max-width: 768px) {
+  .container .container__block {
+    padding: 16px;
+  }
+}
+@media (max-width: 460px) {
+  .container .container__title-block p {
+    font-size: 18px;
+  }
 }/*# sourceMappingURL=TabContribution.module.css.map */

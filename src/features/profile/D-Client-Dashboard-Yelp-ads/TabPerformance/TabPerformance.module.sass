@@ -124,45 +124,55 @@
     :global(.MuiTabs-root)
         overflow: visible !important
     :global(.MuiTabs-scroller)
-        overflow: visible !important
+        overflow: scroll !important
     :global(.MuiBox-root)
         width: 40%
         padding: 0 !important
     :global(.Mui-selected)
         color: #000 !important
 
-.hours
-    &__title-block
-        margin-bottom: 24px
-        p
-            font: 700 18px 'Open Sans'
-    &__info-block
-        display: flex
-        gap: 63px
-    &__days , &__time
-        display: flex
-        flex-direction: column
-        gap: 24px
-        p
-            font: 400 18px 'Open Sans'
-.list
-    &__block
-        margin-bottom: 24px
-        p
-            font: 700 18px 'Open Sans'
-            margin-bottom: 16px
-        ul
+    .hours
+        &__title-block
+            margin-bottom: 24px
+            p
+                font: 700 18px 'Open Sans'
+        &__info-block
+            display: flex
+            gap: 63px
+        &__days , &__time
             display: flex
             flex-direction: column
-            gap: 16px
-        li
-            font: 400 18px 'Open Sans'
-            color: black
-            list-style-type: disc
-            margin-left: 30px
-            padding-left: 5px
-        li::marker
-            font-size: 15px
+            gap: 24px
+            p
+                font: 400 18px 'Open Sans'
+    .list
+        &__block
+            margin-bottom: 24px
+            p
+                font: 700 18px 'Open Sans'
+                margin-bottom: 16px
+            ul
+                display: flex
+                flex-direction: column
+                gap: 16px
+            li
+                font: 400 18px 'Open Sans'
+                color: black
+                list-style-type: disc
+                margin-left: 30px
+                padding-left: 5px
+            li::marker
+                font-size: 15px
 
-    &__text--disabled
-        color: grey !important
+        &__text--disabled
+            color: grey !important
+
+    @media (max-width: 768px)
+        .container__block
+            padding: 16px
+    @media (max-width: 460px)
+        .container__title-block p
+            font-size: 18px
+
+
+    

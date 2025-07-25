@@ -86,7 +86,7 @@ export default function HeatMaps() {
 						</div>
 						<Map
 							initialViewState={{ longitude: 30.5234, latitude: 50.4501, zoom: 12 }}
-							style={{ width: "100%", height: "500px" }}
+							style={{ width: "100%", height: "100%" }}
 							mapStyle="mapbox://styles/mapbox/light-v10"
 							mapboxAccessToken={ACCESS_TOKEN}
 						>

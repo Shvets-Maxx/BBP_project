@@ -14,22 +14,28 @@
   background: rgb(255, 255, 255);
   border-radius: 10px;
   display: flex;
-  gap: 24px;
+  gap: 16px;
   flex-direction: column;
 }
 .Trending .statistics__title-block {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  flex-wrap: wrap;
 }
-.Trending .statistics__title-block p {
+.Trending .statistics__title-block > p {
+  font: 400 32px "Open Sans";
+}
+.Trending .statistics__title-head {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 5px;
+}
+.Trending .statistics__title-head p {
   font: 400 24px "PT Serif";
 }
-.Trending .statistics__title-block p span {
+.Trending .statistics__title-head p:last-child {
   color: grey;
-}
-.Trending .statistics__title-block p:last-child {
-  font: 400 32px "Open Sans";
 }
 .Trending .statistics__rate {
   display: flex;
@@ -59,10 +65,89 @@
   border-image-slice: 1;
   flex-basis: 45%;
 }
+.Trending .value {
+  min-width: 270px;
+  display: flex;
+  flex-direction: column;
+  border-left: 1.5px solid transparent;
+  -o-border-image: repeating-linear-gradient(to bottom, #c1c1c1 0 10px, transparent 10px 18px);
+     border-image: repeating-linear-gradient(to bottom, #c1c1c1 0 10px, transparent 10px 18px);
+  border-image-slice: 1;
+  flex-basis: 45%;
+}
+.Trending .value__header-block {
+  border-bottom: 1.5px solid transparent;
+  -o-border-image: repeating-linear-gradient(to right, #c1c1c1 0 10px, transparent 10px 18px);
+     border-image: repeating-linear-gradient(to right, #c1c1c1 0 10px, transparent 10px 18px);
+  border-image-slice: 1;
+  border-style: solid;
+  padding: 16px 0 16px 24px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.Trending .value__header-block:last-child {
+  border-bottom: none;
+}
+.Trending .value__wrraper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+.Trending .value__circle-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.Trending .value__circle-block div {
+  min-width: 16px;
+  min-height: 16px;
+  border-radius: 999px;
+}
+.Trending .value__circle-block p {
+  font: 400 14px "Open Sans";
+}
+.Trending .value__bottom-data {
+  display: flex;
+}
+.Trending .value__bottom-data p {
+  font: 400 14px "Open Sans";
+}
+.Trending .value__bottom-data p:first-child {
+  width: 60px;
+}
+.Trending .value__bottom-data p:last-child {
+  color: grey;
+}
 .Trending :global(.mapboxgl-ctrl-compass) {
   display: none !important;
   color: #70c95c;
 }
 .Trending :global(.mapboxgl-map) {
   height: 360px !important;
+}
+.Trending :global(.recharts-text tspan) {
+  font: 400 14px "Open Sans";
+  color: #92A1A8;
+}
+@media (max-width: 768px) {
+  .Trending .value {
+    border-left: none !important;
+  }
+  .Trending .value__header-block {
+    padding-left: 0px;
+  }
+  .Trending .statistics__block {
+    padding: 16px;
+  }
+  .Trending .statistics__main {
+    gap: 16px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 460px) {
+  .Trending .statistics__title-block p {
+    font-size: 24px;
+  }
 }/*# sourceMappingURL=TabBreakdown.module.css.map */

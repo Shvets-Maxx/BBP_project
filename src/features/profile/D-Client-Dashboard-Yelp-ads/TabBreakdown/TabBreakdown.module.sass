@@ -14,18 +14,26 @@
             background: rgb(255, 255, 255)
             border-radius: 10px
             display: flex
-            gap: 24px
+            gap: 16px
             flex-direction: column
         &__title-block
             display: flex
             flex-direction: column
             gap: 16px
+            flex-wrap: wrap
+            > p
+               font: 400 32px 'Open Sans'
+            
+                
+        &__title-head
+            flex-wrap: wrap
+            display: flex
+            gap: 5px
             p
                 font: 400 24px 'PT Serif'
-                span
-                    color: grey
             p:last-child
-                font: 400 32px 'Open Sans'
+                color: grey
+
         &__rate
             display: flex
             gap: 16px
@@ -47,12 +55,75 @@
             border-image: repeating-linear-gradient(to bottom, #c1c1c1 0 10px, transparent 10px 18px)
             border-image-slice: 1
             flex-basis: 45%
+
+    .value
+        min-width: 270px
+        display: flex
+        flex-direction: column
+        border-left: 1.5px solid transparent
+        border-image: repeating-linear-gradient(to bottom, #c1c1c1 0 10px, transparent 10px 18px)
+        border-image-slice: 1
+        flex-basis: 45%
+        &__header-block
+            border-bottom: 1.5px solid transparent
+            border-image: repeating-linear-gradient(to right, #c1c1c1 0 10px, transparent 10px 18px)
+            border-image-slice: 1
+            border-style: solid
+            padding: 16px 0 16px 24px
+            gap: 8px
+            display: flex
+            flex-direction: column
+        &__header-block:last-child
+            border-bottom: none
+        &__wrraper
+            display: flex
+            gap: 8px
+            align-items: center
+            justify-content: space-between
+        &__circle-block
+            display: flex
+            align-items: center
+            gap: 10px
+            div
+                min-width: 16px
+                min-height: 16px
+                border-radius: 999px
+            p
+                font: 400 14px 'Open Sans'
+        &__bottom-data
+            display: flex
+            p
+                font: 400 14px 'Open Sans'
+            p:first-child
+                width: 60px
+            p:last-child
+                color: grey
+
+
     :global(.mapboxgl-ctrl-compass) 
         display: none !important
         color: #70c95c
   
     :global(.mapboxgl-map) 
         height: 360px !important
+    :global(.recharts-text tspan) 
+        font: 400 14px 'Open Sans'
+        color: #92A1A8
+
+    @media (max-width: 768px)
+        .value 
+            border-left: none !important
+        .value__header-block
+            padding-left: 0px
+        .statistics__block
+            padding: 16px
+        .statistics__main
+            gap: 16px
+            flex-direction: column
+    @media (max-width: 460px)
+        .statistics__title-block p 
+            font-size: 24px
+        
 
 
         

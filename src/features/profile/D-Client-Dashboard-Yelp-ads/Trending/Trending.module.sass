@@ -1,7 +1,7 @@
 
 .Trending
-    width: 50%
-    height: 527px
+    width: 100%
+    height: 567px
     
     &__container
         height: 100%
@@ -11,41 +11,7 @@
         justify-content: space-between
         gap: 16px
         height: 100%
-        &__info-block
-            display: flex
-            border-bottom: 1.5px solid transparent
-            border-image: repeating-linear-gradient(to right, #c1c1c1 0 10px, transparent 10px 18px)
-            border-image-slice: 1
-            border-top: 1.5px solid transparent
-            border-image: repeating-linear-gradient(to right, #c1c1c1 0 10px, transparent 10px 18px)
-            border-image-slice: 1
-            
-        &__info
-            padding: 16px 0 16px 0
-            flex: 1
-            display: flex
-            flex-direction: column
-            gap: 8px
-            text-align: center
-            p:first-child
-                font: 400 14px 'Open Sans'
-            p:last-child
-                font: 700 24px 'Open Sans'
-        &__info:nth-child(2)
-            border-left: 1.5px solid transparent
-            border-image: repeating-linear-gradient(to bottom, #c1c1c1 0 10px, transparent 10px 18px)
-            border-image-slice: 1
-            border-right: 1.5px solid transparent
-            border-image: repeating-linear-gradient(to bottom, #c1c1c1 0 10px, transparent 10px 18px)
-            border-image-slice: 1
 
-
-        &__main-block
-            display: flex
-            flex-direction: column
-            gap: 16px
-            overflow: scroll
-            padding-right: 40px
         &__block
             flex: 1
             padding: 24px
@@ -54,6 +20,42 @@
             display: flex
             flex-direction: column
             gap: 16px
+            overflow: scroll
+        &__info-block
+            display: flex
+            border-bottom: 1.5px solid transparent
+            border-image: repeating-linear-gradient(to right, #c1c1c1 0 10px, transparent 10px 18px)
+            border-image-slice: 1       
+        &__info
+            border-image: repeating-linear-gradient(to bottom, #c1c1c1 0 10px, transparent 10px 18px)
+            border-left: 1.5px solid transparent
+            border-right: 1.5px solid transparent
+            border-image-slice: 1
+            padding: 16px
+            flex: 1
+            display: flex
+            flex-direction: column
+            gap: 8px
+            text-align: center
+            p
+                white-space: nowrap
+            p:first-child
+                font: 400 14px 'Open Sans'
+            p:last-child
+                font: 700 24px 'Open Sans'
+        &__info:first-child
+            min-width: 160px
+        &__main-block
+            
+            overflow-x: scroll
+        &__main-wrraper
+            display: flex
+            flex-direction: column
+            gap: 16px
+            min-width: 370px
+
+
+       
         &__title-block
             
             display: flex
@@ -67,12 +69,52 @@
             
         &__rate
             display: flex
+            min-width: 381px
             gap: 16px
             .title
                 font: 400 14px 'Open Sans'
             .reviews
                 font: 400 14px 'Open Sans'
                 color: grey
+        &__rate-block
+            
+            width: 100%
+            gap: 15px
+            display: flex
+            align-items: center
+            justify-content: space-between
+            p
+                white-space: nowrap
+                text-align: center
+                font: 400 14px 'Open Sans'
+           
+            p:last-child 
+                color: #49AB3A
+                padding-right: 15px
+            p:nth-child(n+2)
+                max-width: 150px
+                width: 100%
+    @media (max-width: 768px)
+        .statistics__block
+            padding: 16px
+    @media (max-width: 560px)
+        height: 790px
+        .statistics__info-block
+            flex-direction: column
+            border-left: none !important
+        .statistics__info
+            border-left: none
+            border-right: none
+            border-image: repeating-linear-gradient(to right, #c1c1c1 0 10px, transparent 10px 18px) 
+            border-image-slice: 1
+            border-bottom: none
+            border-top: 1px solid transparent
+
+
+
+     
+
+
      
         
 

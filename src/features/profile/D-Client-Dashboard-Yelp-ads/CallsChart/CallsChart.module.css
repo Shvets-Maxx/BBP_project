@@ -1,3 +1,16 @@
-.CallsChart:global(.MuiPaper-root) {
-	padding: 16px 0 16px 16px !important;
+.callsChart :global(.recharts-cartesian-axis-line) {
+  display: none !important;
 }
+.callsChart :global(.recharts-cartesian-axis-tick-line) {
+  display: none;
+}
+.callsChart :global(.MuiCardContent-root) {
+  padding: 0 !important;
+}
+.callsChart :global(.MuiPaper-root) {
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+.callsChart :global(.recharts-cartesian-axis-tick-value tspan) {
+  font: 400 14px "Open Sans" !important;
+}/*# sourceMappingURL=CallsChart.module.css.map */
