@@ -18,8 +18,8 @@ export default function HeatMaps() {
 		{ month: "Oct", organic: 20, ads: 50, forecast: 0 },
 		{ month: "Nov", organic: 18, ads: 45, forecast: 0 },
 		{ month: "Jan", organic: 25, ads: 70, forecast: 0 },
-		// { month: "Feb", organic: 22, ads: 85, forecast: 0 },
-		// { month: "Mar", organic: 35, ads: 150, forecast: 15 },
+		{ month: "Feb", organic: 22, ads: 85, forecast: 0 },
+		{ month: "Mar", organic: 35, ads: 150, forecast: 15 },
 	];
 
 	return (
@@ -32,11 +32,20 @@ export default function HeatMaps() {
 							<p>Where your ad is reaching</p>
 						</div>
 						<div style={{ width: "100%", height: "320px" }}>
-							<ResponsiveContainer height={320}>
-								<BarChart height={360} barCategoryGap={40} data={data}>
+							<ResponsiveContainer width="100%" height={320}>
+								<BarChart
+									height={360}
+									width={300}
+									barCategoryGap={40}
+									barSize={25}
+									data={data}
+									margin={{ top: 10, right: -28, left: 0, bottom: 0 }}
+								>
 									<CartesianGrid strokeDasharray="1 0" vertical={false} />
 
 									<XAxis
+										padding={{ left: 0, right: 0 }}
+										domain={["dataMin", "dataMax"]}
 										axisLine={{ stroke: "#ccc" }}
 										tickLine={false}
 										dataKey="month"

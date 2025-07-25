@@ -9,8 +9,23 @@ import {
 	CartesianGrid,
 	ResponsiveContainer,
 } from "recharts";
+import { useState, useEffect } from "react";
 
 export default function HeatMaps() {
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+	useEffect(() => {
+		const handleResize = () => setWindowWidth(window.innerWidth);
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
+	const margin =
+		windowWidth < 768
+			? { top: 0, right: -25, left: 0, bottom: 0 }
+			: { top: 0, right: -15, left: 0, bottom: 0 };
+	const barSize = windowWidth < 425 ? 15 : 25;
+
 	const data = [
 		{ month: "May", organic: 10, ads: 0, forecast: 0 },
 		{ month: "Jul", organic: 15, ads: 180, forecast: 0 },
@@ -30,7 +45,14 @@ export default function HeatMaps() {
 						<div className={style["statistics__main"]}>
 							<div className={style["statistics__chart-block"]}>
 								<ResponsiveContainer height={300}>
-									<BarChart barSize={30} height={360} barCategoryGap={40} data={data}>
+									<BarChart
+										className={style.statistics__barChart}
+										margin={margin}
+										barSize={barSize}
+										height={360}
+										barCategoryGap={40}
+										data={data}
+									>
 										<CartesianGrid strokeDasharray="10 10" vertical={false} />
 
 										<XAxis
@@ -67,112 +89,63 @@ export default function HeatMaps() {
 									</BarChart>
 								</ResponsiveContainer>
 							</div>
-							<div className={style["statistics__info-block"]}>
-								<div
-									style={{
-										borderBottom: "1.5px solid transparent",
-										borderImage:
-											"repeating-linear-gradient(to right, #c1c1c1 0 10px, transparent 10px 18px)",
-										borderImageSlice: "1",
-										padding: "24px 0 24px 24px",
-									}}
-								>
-									<div
-										style={{
-											display: "flex",
-											gap: "8px",
-											alignItems: "center",
-											marginBottom: "10px",
-											justifyContent: "space-between",
-										}}
-									>
-										<div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+							<div className={style.value}>
+								<div className={style["value__header-block"]}>
+									<div className={style.value__wrraper}>
+										<div className={style["value__circle-block"]}>
 											<div
 												style={{
-													width: "16px",
-													height: "16px",
-													borderRadius: "999px",
 													background: "#F25757",
 												}}
 											></div>
-											<p style={{ font: "400 14px Open Sans" }}>Ads</p>
+											<p>Ads</p>
 										</div>
-										<div style={{ display: "flex" }}>
-											<p style={{ width: "60px" }}>906</p>
-											<p style={{ color: "grey" }}>73%</p>
+										<div className={style["value__bottom-data"]}>
+											<p>906</p>
+											<p>73%</p>
 										</div>
 									</div>
-									<div
-										style={{
-											display: "flex",
-											gap: "8px",
-											alignItems: "center",
-											justifyContent: "space-between",
-										}}
-									>
-										<div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+									<div className={style.value__wrraper}>
+										<div className={style["value__circle-block"]}>
 											<div
 												style={{
-													width: "16px",
-													height: "16px",
-													borderRadius: "999px",
 													background: "#8ECADF",
 												}}
 											></div>
-											<p style={{ font: "400 14px Open Sans" }}>Organic</p>
+											<p>Organic</p>
 										</div>
-										<div style={{ display: "flex" }}>
-											<p style={{ width: "60px" }}>906</p>
-											<p style={{ color: "grey" }}>73%</p>
+										<div className={style["value__bottom-data"]}>
+											<p>906</p>
+											<p>73%</p>
 										</div>
 									</div>
 								</div>
-								<div
-									style={{
-										display: "flex",
-										gap: "8px",
-										alignItems: "center",
-										borderBottom: "1.5px solid transparent",
-										borderImage:
-											"repeating-linear-gradient(to right, #c1c1c1 0 10px, transparent 10px 18px)",
-										borderImageSlice: "1",
-										padding: "24px 0 24px 24px",
-										justifyContent: "space-between",
-									}}
-								>
-									<div style={{ display: "flex", alignItems: "center" }}>
-										<p style={{ font: "400 14px Open Sans" }}>Total</p>
-									</div>
 
-									<div style={{ display: "flex" }}>
-										<p style={{ display: "flex", width: "60px" }}>1,241</p>
-										<p style={{ color: "grey" }}>100%</p>
+								<div className={style["value__header-block"]}>
+									<div className={style.value__wrraper}>
+										<div className={style["value__circle-block"]}>
+											<p>Total</p>
+										</div>
+										<div className={style["value__bottom-data"]}>
+											<p>1,241</p>
+											<p>100%</p>
+										</div>
 									</div>
 								</div>
-								<div
-									style={{
-										display: "flex",
-										gap: "8px",
-										alignItems: "center",
-										padding: "24px 0 24px 24px",
-										justifyContent: "space-between",
-									}}
-								>
-									<div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-										<div
-											style={{
-												width: "16px",
-												height: "16px",
-												borderRadius: "999px",
-												border: "1px solid grey",
-											}}
-										></div>
-										<p style={{ font: "400 14px Open Sans" }}>Forecast</p>
-									</div>
-
-									<div style={{ display: "flex" }}>
-										<p style={{ width: "60px" }}>906</p>
-										<p style={{ color: "grey" }}>73%</p>
+								<div className={style["value__header-block"]}>
+									<div className={style.value__wrraper}>
+										<div className={style["value__circle-block"]}>
+											<div
+												style={{
+													border: "1px solid grey",
+												}}
+											></div>
+											<p>Forecast</p>
+										</div>
+										<div className={style["value__bottom-data"]}>
+											<p>906</p>
+											<p>73%</p>
+										</div>
 									</div>
 								</div>
 							</div>

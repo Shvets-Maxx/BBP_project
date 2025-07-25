@@ -9,18 +9,23 @@ import {
 	CartesianGrid,
 	ResponsiveContainer,
 } from "recharts";
+import { useState, useEffect } from "react";
 
 export default function HeatMaps() {
-	// const data = [
-	// 	{ month: "May", organic: 10, ads: 0, gg: 23, forecast: 0 },
-	// 	{ month: "Jul", organic: 15, ads: 180, forecast: 0 },
-	// 	{ month: "Sep", organic: 18, ads: 40, forecast: 0 },
-	// 	{ month: "Oct", organic: 20, ads: 50, forecast: 0 },
-	// 	{ month: "Nov", organic: 18, ads: 45, forecast: 0 },
-	// 	{ month: "Jan", organic: 25, ads: 70, forecast: 0 },
-	// 	{ month: "Feb", organic: 22, ads: 85, forecast: 0 },
-	// 	{ month: "Mar", organic: 35, ads: 150, forecast: 15 },
-	// ];
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+	useEffect(() => {
+		const handleResize = () => setWindowWidth(window.innerWidth);
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
+	const margin =
+		windowWidth < 768
+			? { top: 0, right: -25, left: 0, bottom: 0 }
+			: { top: 0, right: -10, left: 0, bottom: 0 };
+	const barSize = windowWidth < 425 ? 15 : 30;
+
 	const data = [
 		{
 			month: "May",
@@ -101,18 +106,25 @@ export default function HeatMaps() {
 			<div className={style.statistics}>
 				<div className={style.statistics__block}>
 					<div className={style["statistics__title-block"]}>
-						<p>
-							Leads breakdown <span>(last 12 months)</span>
-						</p>
+						<div className={style["statistics__title-head"]}>
+							<p>Leads breakdown</p>
+							<p>(last 12 months)</p>
+						</div>
 						<p>1.2k</p>
 					</div>
 					<div className={style["statistics__main"]}>
 						<div className={style["statistics__chart-block"]}>
-							<ResponsiveContainer height={300}>
-								<BarChart barSize={30} height={360} barCategoryGap={40} data={data}>
+							<ResponsiveContainer height={310}>
+								<BarChart
+									margin={margin}
+									barSize={barSize}
+									barCategoryGap={40}
+									data={data}
+								>
 									<CartesianGrid strokeDasharray="10 10" vertical={false} />
 
 									<XAxis
+										padding={{ left: 0, right: -10 }}
 										axisLine={{ stroke: "#ccc" }}
 										tickLine={false}
 										dataKey="month"
@@ -165,186 +177,105 @@ export default function HeatMaps() {
 								</BarChart>
 							</ResponsiveContainer>
 						</div>
-						<div className={style["statistics__info-block"]}>
-							<div
-								style={{
-									borderBottom: "1.5px solid transparent",
-									borderImage:
-										"repeating-linear-gradient(to right, #c1c1c1 0 10px, transparent 10px 18px)",
-									borderImageSlice: "1",
-									padding: "0 0 24px 24px",
-									display: "flex",
-									flexDirection: "column",
-									gap: "10px",
-								}}
-							>
-								<div
-									style={{
-										display: "flex",
-										gap: "8px",
-										alignItems: "center",
-										justifyContent: "space-between",
-									}}
-								>
-									<div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+						<div className={style.value}>
+							<div className={style["value__header-block"]}>
+								<div className={style.value__wrraper}>
+									<div className={style["value__circle-block"]}>
 										<div
 											style={{
-												width: "16px",
-												height: "16px",
-												borderRadius: "999px",
 												background: "#ABD1DE",
 											}}
 										></div>
-										<p style={{ font: "400 14px Open Sans" }}>Calls</p>
+										<p>Calls</p>
 									</div>
-									<div style={{ display: "flex" }}>
-										<p style={{ width: "60px" }}>288</p>
-										<p style={{ color: "grey" }}>73%</p>
+									<div className={style["value__bottom-data"]}>
+										<p>288</p>
+										<p>73%</p>
 									</div>
 								</div>
-								<div
-									style={{
-										display: "flex",
-										gap: "8px",
-										alignItems: "center",
-										justifyContent: "space-between",
-									}}
-								>
-									<div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+								<div className={style.value__wrraper}>
+									<div className={style["value__circle-block"]}>
 										<div
 											style={{
-												width: "16px",
-												height: "16px",
-												borderRadius: "999px",
 												background: "#49AB3A",
 											}}
 										></div>
-										<p style={{ font: "400 14px Open Sans" }}>Website visitis</p>
+										<p>Website visitis</p>
 									</div>
-									<div style={{ display: "flex" }}>
-										<p style={{ width: "60px" }}>501</p>
-										<p style={{ color: "grey" }}>40%</p>
+									<div className={style["value__bottom-data"]}>
+										<p>501</p>
+										<p>40%</p>
 									</div>
 								</div>
-								<div
-									style={{
-										display: "flex",
-										gap: "8px",
-										alignItems: "center",
-										justifyContent: "space-between",
-									}}
-								>
-									<div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+								<div className={style.value__wrraper}>
+									<div className={style["value__circle-block"]}>
 										<div
 											style={{
-												width: "16px",
-												height: "16px",
-												borderRadius: "999px",
 												background: "#EDCE54",
 											}}
 										></div>
-										<p style={{ font: "400 14px Open Sans" }}>Messages</p>
+										<p>Messages</p>
 									</div>
-									<div style={{ display: "flex" }}>
-										<p style={{ width: "60px" }}>132</p>
-										<p style={{ color: "grey" }}>11%</p>
+									<div className={style["value__bottom-data"]}>
+										<p>132</p>
+										<p>11%</p>
 									</div>
 								</div>
-								<div
-									style={{
-										display: "flex",
-										gap: "8px",
-										alignItems: "center",
-										justifyContent: "space-between",
-									}}
-								>
-									<div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+								<div className={style.value__wrraper}>
+									<div className={style["value__circle-block"]}>
 										<div
 											style={{
-												width: "16px",
-												height: "16px",
-												borderRadius: "999px",
 												background: "#BE8A6C",
 											}}
 										></div>
-										<p style={{ font: "400 14px Open Sans" }}>CTA clicks</p>
+										<p>CTA clicks</p>
 									</div>
-									<div style={{ display: "flex" }}>
-										<p style={{ width: "60px" }}>10</p>
-										<p style={{ color: "grey" }}>1%</p>
+									<div className={style["value__bottom-data"]}>
+										<p>10</p>
+										<p>10%</p>
 									</div>
 								</div>
-								<div
-									style={{
-										display: "flex",
-										gap: "8px",
-										alignItems: "center",
-										justifyContent: "space-between",
-									}}
-								>
-									<div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+								<div className={style.value__wrraper}>
+									<div className={style["value__circle-block"]}>
 										<div
 											style={{
-												width: "16px",
-												height: "16px",
-												borderRadius: "999px",
 												background: "#EF4D56",
 											}}
 										></div>
-										<p style={{ font: "400 14px Open Sans" }}>Directions & Map views</p>
+										<p>Directions & Map views</p>
 									</div>
-									<div style={{ display: "flex" }}>
-										<p style={{ width: "60px" }}>300</p>
-										<p style={{ color: "grey" }}>25%</p>
+									<div className={style["value__bottom-data"]}>
+										<p>300</p>
+										<p>25%</p>
 									</div>
 								</div>
 							</div>
-							<div
-								style={{
-									display: "flex",
-									gap: "8px",
-									alignItems: "center",
-									borderBottom: "1.5px solid transparent",
-									borderImage:
-										"repeating-linear-gradient(to right, #c1c1c1 0 10px, transparent 10px 18px)",
-									borderImageSlice: "1",
-									padding: "24px 0 24px 24px",
-									justifyContent: "space-between",
-								}}
-							>
-								<div style={{ display: "flex", alignItems: "center" }}>
-									<p style={{ font: "400 14px Open Sans" }}>Total</p>
-								</div>
 
-								<div style={{ display: "flex" }}>
-									<p style={{ display: "flex", width: "60px" }}>1,241</p>
-									<p style={{ color: "grey" }}>100%</p>
+							<div className={style["value__header-block"]}>
+								<div className={style.value__wrraper}>
+									<div className={style["value__circle-block"]}>
+										<p>Total</p>
+									</div>
+									<div className={style["value__bottom-data"]}>
+										<p>1,241</p>
+										<p>100%</p>
+									</div>
 								</div>
 							</div>
-							<div
-								style={{
-									display: "flex",
-									gap: "8px",
-									alignItems: "center",
-									padding: "24px 0 24px 24px",
-									justifyContent: "space-between",
-								}}
-							>
-								<div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-									<div
-										style={{
-											width: "16px",
-											height: "16px",
-											borderRadius: "999px",
-											border: "1px solid grey",
-										}}
-									></div>
-									<p style={{ font: "400 14px Open Sans" }}>Forecast</p>
-								</div>
-
-								<div style={{ display: "flex" }}>
-									<p style={{ width: "60px" }}>906</p>
-									<p style={{ color: "grey" }}>73%</p>
+							<div className={style["value__header-block"]}>
+								<div className={style.value__wrraper}>
+									<div className={style["value__circle-block"]}>
+										<div
+											style={{
+												border: "1px solid grey",
+											}}
+										></div>
+										<p>Forecast</p>
+									</div>
+									<div className={style["value__bottom-data"]}>
+										<p>906</p>
+										<p>73%</p>
+									</div>
 								</div>
 							</div>
 						</div>

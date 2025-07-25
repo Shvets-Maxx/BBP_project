@@ -10,9 +10,6 @@
             gap: 16px
         &__block
             flex: 1
-            // padding: 24px
-            // background: rgb(255, 255, 255)
-            // border-radius: 10px
             display: flex
             flex-direction: column
         &__title-block
@@ -28,6 +25,8 @@
                 font: 400 14px 'Open Sans'
             p:last-child
                 font-weight: 700
+        &__barChart
+            margin-right: -20px !important
         &__rate
             display: flex
             gap: 16px
@@ -42,19 +41,69 @@
             width: 100%
             height: 320px
             padding-top: 24px
-        &__info-block
+        .value
             display: flex
             flex-direction: column
             border-left: 1.5px solid transparent
             border-image: repeating-linear-gradient(to bottom, #c1c1c1 0 10px, transparent 10px 18px)
             border-image-slice: 1
             flex-basis: 45%
+            &__header-block
+                
+                border-top: 1.5px solid transparent
+                border-image: repeating-linear-gradient(to right, #c1c1c1 0 10px, transparent 10px 18px)
+                border-image-slice: 1
+                border-style: solid
+                padding: 24px 0 24px 24px
+                gap: 8px
+                display: flex
+                flex-direction: column
+            &__wrraper
+                display: flex
+                gap: 8px
+                align-items: center
+                justify-content: space-between
+            &__circle-block
+                display: flex
+                align-items: center
+                gap: 10px
+                div
+                    width: 16px
+                    height: 16px
+                    border-radius: 999px
+                p
+                    font: 400 14px 'Open Sans'
+            &__bottom-data
+                display: flex
+                p
+                    font: 400 14px 'Open Sans'
+                p:first-child
+                    width: 60px
+                p:last-child
+                    color: grey
+
+
+
+
     :global(.mapboxgl-ctrl-compass) 
         display: none !important
         color: #70c95c
   
     :global(.mapboxgl-map) 
         height: 360px !important
+    :global(.recharts-text tspan) 
+        font: 400 14px 'Open Sans'
+        color: #92A1A8
+
+    @media (max-width: 768px)
+
+        .value__header-block
+            padding: 16px 0 16px 0 !important
+        .statistics__main
+            flex-direction: column
+            gap: 16px
+        .value
+            border-left: none !important
 
 
         
