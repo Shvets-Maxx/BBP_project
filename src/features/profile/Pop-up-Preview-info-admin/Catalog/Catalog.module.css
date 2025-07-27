@@ -3,6 +3,9 @@
   border-radius: 8px;
   width: 100%;
 }
+.catalog__swiper-block {
+  height: 100%;
+}
 .catalog__container {
   padding: 24px;
   display: flex;
@@ -132,38 +135,21 @@
 .catalog .clothes__arrow--open {
   transform: rotate(0deg);
 }
-@media (max-width: 1133px) {
-  .catalog__container {
-    gap: 16px;
-  }
-  .catalog .clothes__title p {
-    font-size: 24px;
-  }
-}
 @media (max-width: 1024px) {
   .catalog .catalog__container {
     padding: 16px;
   }
-  .catalog__swiper {
-    flex: none;
-    min-width: auto;
+  .catalog .catalog__container .clothes__title p {
+    font-size: 24px;
+  }
+  .catalog__container {
+    gap: 16px;
   }
 }
 @media (max-width: 978px) {
   .catalog__swiper {
     flex: 0 0 45%;
     min-width: 300px;
-  }
-}
-@media (max-width: 900px) {
-  .catalog__container {
-    gap: 16px;
-  }
-  .catalog__swiper {
-    flex: 0 0 45%;
-  }
-  .catalog .clothes__title p {
-    font-size: 24px;
   }
 }
 @media (max-width: 768px) {

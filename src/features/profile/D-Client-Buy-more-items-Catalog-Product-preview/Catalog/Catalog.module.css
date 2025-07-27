@@ -6,6 +6,9 @@
   gap: 32px;
   display: flex;
 }
+.catalog__swiper-block {
+  height: 100%;
+}
 .catalog .clothes {
   background: #fff;
   border-radius: 8px;
