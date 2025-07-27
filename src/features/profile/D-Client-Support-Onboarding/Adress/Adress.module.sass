@@ -9,7 +9,7 @@
         flex-direction: column
         background: #fff
         border-radius: 10px
-        padding: 20px
+        padding: 24px
         width: 100%
 
     &__title
@@ -28,30 +28,27 @@
     &__wrraper
         display: flex
         gap: 10px
-        p
+        > p
             font: 400 14px 'Open Sans'
             color: #92A1A8
-
+        img
+            margin-right: 8px
     &__arrow
         width: 24px
         height: 24px
         cursor: pointer
         transition: transform 0.3s ease
-
         &--open
             transform: rotate(180deg)
 
  
 
-    img
-      margin-right: 8px
     
     .onboarding
         &__dropdown
             display: flex
             flex-direction: column
             gap: 12px
-            
         &__wrraper
             color: black
             font: 400 18px 'Open Sans'
@@ -59,12 +56,25 @@
             align-items: center
             gap: 10px
             input
-                height: 20px
-                width: 20px
+                min-height: 20px
+                min-width: 20px
             input:hover
                 cursor: pointer
             span
                 font-weight: 700
+        
+    @media (max-width: 425px)
+        &__block
+            padding: 16px
+        &__title > p 
+            font-size: 20px
+        .onboarding__wrraper p 
+            font-size: 16px
+    @media (max-width: 1024px)
+        .onboarding__wrraper img
+            display: none
+        
+
 
        
 

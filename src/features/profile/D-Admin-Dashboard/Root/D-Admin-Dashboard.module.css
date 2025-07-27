@@ -40,6 +40,9 @@
   .dashboard {
     flex-direction: column;
   }
+  .dashboard__container {
+    padding: 0 24px;
+  }
 }
 @media (max-width: 1336px) {
   .dashboard__lineDiagram {
@@ -51,7 +54,7 @@
 }
 @media (max-width: 768px) {
   .dashboard__container {
-    padding: 24px 0 24px 0;
+    padding: 0;
   }
 }
 @media (max-width: 425px) {

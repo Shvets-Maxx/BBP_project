@@ -59,20 +59,23 @@
   .profileSettingContainer {
     flex-direction: column;
   }
-  .profileSettingContainer .profileSettingContainer__left-block {
+  .profileSettingContainer__left-block {
     min-width: auto;
   }
-  .profileSettingContainer .profileSettingContainer__section {
+  .profileSettingContainer__section {
     flex-direction: column;
+  }
+  .profileSettingContainer__container {
+    padding: 0 24px;
   }
 }
 @media (max-width: 768px) {
   .profileSettingContainer__container {
-    padding: 24px 0 24px 0;
+    padding: 0;
   }
 }
 @media (max-width: 425px) {
-  .profileSettingContainer .profileSettingContainer__block {
+  .profileSettingContainer__block {
     padding: 24px 16px 16px 16px;
   }
 }/*# sourceMappingURL=D-Client-Profile-settings.module.css.map */

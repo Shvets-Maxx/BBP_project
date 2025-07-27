@@ -2,14 +2,6 @@
   display: none;
 }
 
-@media (min-width: 1024px) {
-  .nav:nth-child(2) {
-    display: block;
-  }
-  .nav:nth-child(1) {
-    display: none;
-  }
-}
 @media (max-width: 1024px) {
   .nav:nth-child(1) {
     display: block;
@@ -142,6 +134,7 @@
 @media (max-width: 1024px) {
   .nav {
     max-width: none;
+    padding: 16px 28px;
   }
   .nav .nav__actions {
     gap: 0px;
@@ -171,18 +164,28 @@
   .nav .nav__list.active {
     left: 0;
   }
-}
-@media (max-width: 1024px) {
   .nav :global(.MuiButtonBase-root) {
     padding: 0 !important;
   }
 }
 @media (max-width: 425px) {
+  .nav {
+    padding: 10px 20px;
+  }
+  .nav .nav__list {
+    width: 100% !important;
+  }
+  .nav .nav__list li {
+    display: flex;
+    justify-content: center;
+  }
+  .nav .nav__list li a {
+    min-width: 190px;
+  }
   .nav__mainLogo img {
     width: 100px;
   }
 }
-
 .overlay {
   position: fixed;
   top: 0;
@@ -196,22 +199,6 @@
   animation: fadeIn 0.3s ease-in-out;
 }
 
-@media (max-width: 425px) {
-  .nav {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  .nav__list {
-    width: 100% !important;
-  }
-  .nav__list li {
-    display: flex;
-    justify-content: center;
-  }
-  .nav__list li a {
-    min-width: 190px;
-  }
-}
 @keyframes fadeIn {
   from {
     opacity: 0;

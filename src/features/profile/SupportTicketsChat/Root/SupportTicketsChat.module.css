@@ -29,13 +29,16 @@
   .chat {
     flex-direction: column;
   }
+  .chat__container {
+    padding: 0 24px;
+  }
 }
 @media (max-width: 768px) {
   .chat .responsive__fontSize {
     font-size: 20px;
   }
   .chat__container {
-    padding: 24px 0 24px 0;
+    padding: 0;
   }
 }
 @media (max-width: 425px) {

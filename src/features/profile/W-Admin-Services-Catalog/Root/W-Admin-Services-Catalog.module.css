@@ -55,13 +55,13 @@
   .profileSettingContainer {
     flex-direction: column;
   }
-  .profileSettingContainer .profileSettingContainer__search {
+  .profileSettingContainer__search {
     display: none;
   }
-  .profileSettingContainer .profileSettingContainer__responce {
+  .profileSettingContainer__responce {
     display: block;
   }
-  .profileSettingContainer .profileSettingContainer__section {
+  .profileSettingContainer__section {
     gap: 0px;
   }
   .profileSettingContainer__components {
@@ -78,17 +78,20 @@
   .profileSettingContainer .responsive__margin {
     margin-bottom: 0px;
   }
+  .profileSettingContainer__container {
+    padding: 0 24px;
+  }
 }
 @media (max-width: 500px) {
   .profileSettingContainer .responsive__fontSize {
     font-size: 20px;
   }
-  .profileSettingContainer .profileSettingContainer__container {
-    padding: 24px 0 24px 0;
+  .profileSettingContainer__container {
+    padding: 0;
   }
 }
 @media (max-width: 425px) {
-  .profileSettingContainer .profileSettingContainer__block {
+  .profileSettingContainer__block {
     padding: 24px 16px 16px 16px;
   }
 }/*# sourceMappingURL=W-Admin-Services-Catalog.module.css.map */
