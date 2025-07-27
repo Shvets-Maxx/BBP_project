@@ -124,7 +124,7 @@
   color: white;
 }
 .card .btn--primary:hover {
-  background: #ea531e;
+  background: rgb(233.5538461538, 83.4307692308, 30.4461538462);
 }
 .card .btn--cancel {
   background-color: #fcd9cf;

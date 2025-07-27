@@ -6,7 +6,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
-import style from "./style.module.scss";
+import "./style.scss";
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
@@ -16,7 +16,7 @@ export default function Swipers() {
 	const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
 
 	return (
-		<div className={style.swiper__container}>
+		<div className="swiper__container">
 			<Swiper
 				style={
 					{

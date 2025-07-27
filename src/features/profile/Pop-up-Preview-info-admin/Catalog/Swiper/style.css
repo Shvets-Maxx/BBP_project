@@ -1,13 +1,13 @@
-.Swiper__container {
+.Swiper__container1 {
   height: 565px;
 }
-.Swiper__container .swiper {
+.Swiper__container1 .swiper {
   width: 100%;
   height: 100%;
   border-radius: 8px;
   max-width: 370px;
 }
-.Swiper__container .swiper-slide {
+.Swiper__container1 .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #444;
@@ -17,12 +17,12 @@
   justify-content: center;
   align-items: center;
 }
-.Swiper__container .swiper-button-prev:after,
-.Swiper__container .swiper-button-next:after {
+.Swiper__container1 .swiper-button-prev:after,
+.Swiper__container1 .swiper-button-next:after {
   font-size: 20px !important;
   color: #000;
 }
-.Swiper__container .swiper-slide img {
+.Swiper__container1 .swiper-slide img {
   border-radius: 8px;
   display: block;
   width: 100%;
@@ -30,59 +30,59 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-.Swiper__container .swiper {
+.Swiper__container1 .swiper {
   width: 100%;
   height: 300px;
   margin-left: auto;
   margin-right: auto;
 }
-.Swiper__container .swiper-slide {
+.Swiper__container1 .swiper-slide {
   background-size: cover;
   background-position: center;
 }
-.Swiper__container .mySwiper2 {
+.Swiper__container1 .mySwiper2 {
   height: 80%;
   width: 100%;
 }
-.Swiper__container .mySwiper {
+.Swiper__container1 .mySwiper {
   height: 20%;
   box-sizing: border-box;
   padding: 10px 0;
   height: 21% !important;
 }
-.Swiper__container .mySwiper .swiper-slide {
+.Swiper__container1 .mySwiper .swiper-slide {
   width: 25%;
   height: 100%;
   opacity: 0.4;
 }
-.Swiper__container .mySwiper .swiper-slide-thumb-active {
+.Swiper__container1 .mySwiper .swiper-slide-thumb-active {
   opacity: 1;
 }
-.Swiper__container .swiper-slide img {
+.Swiper__container1 .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-@media (max-width: 1133px) {
-  .Swiper__container .Swiper__container {
+@media (max-width: 1024px) {
+  .Swiper__container1 {
     height: 506px;
   }
 }
 @media (max-width: 768px) {
-  .Swiper__container .Swiper__container {
+  .Swiper__container1 {
     width: 100%;
     height: 100vw;
     min-height: 500px;
   }
-  .Swiper__container .swiper {
+  .Swiper__container1 .swiper {
     width: 100% !important;
     max-width: none !important;
     min-width: 100%;
   }
-  .Swiper__container .mySwiper {
+  .Swiper__container1 .mySwiper {
     width: 100% !important;
     max-width: none !important;
   }
-}/*# sourceMappingURL=style.module.css.map */
+}/*# sourceMappingURL=style.css.map */
