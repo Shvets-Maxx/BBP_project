@@ -8,7 +8,7 @@
   flex-direction: column;
   background: #fff;
   border-radius: 10px;
-  padding: 20px;
+  padding: 24px;
   width: 100%;
 }
 .onboarding-container__title {
@@ -29,9 +29,12 @@
   display: flex;
   gap: 10px;
 }
-.onboarding-container__wrraper p {
+.onboarding-container__wrraper > p {
   font: 400 14px "Open Sans";
   color: #92A1A8;
+}
+.onboarding-container__wrraper img {
+  margin-right: 8px;
 }
 .onboarding-container__arrow {
   width: 24px;
@@ -41,9 +44,6 @@
 }
 .onboarding-container__arrow--open {
   transform: rotate(180deg);
-}
-.onboarding-container img {
-  margin-right: 8px;
 }
 .onboarding-container .onboarding__dropdown {
   display: flex;
@@ -58,12 +58,28 @@
   gap: 10px;
 }
 .onboarding-container .onboarding__wrraper input {
-  height: 20px;
-  width: 20px;
+  min-height: 20px;
+  min-width: 20px;
 }
 .onboarding-container .onboarding__wrraper input:hover {
   cursor: pointer;
 }
 .onboarding-container .onboarding__wrraper span {
   font-weight: 700;
+}
+@media (max-width: 425px) {
+  .onboarding-container__block {
+    padding: 16px;
+  }
+  .onboarding-container__title > p {
+    font-size: 20px;
+  }
+  .onboarding-container .onboarding__wrraper p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1024px) {
+  .onboarding-container .onboarding__wrraper img {
+    display: none;
+  }
 }/*# sourceMappingURL=Adress.module.css.map */

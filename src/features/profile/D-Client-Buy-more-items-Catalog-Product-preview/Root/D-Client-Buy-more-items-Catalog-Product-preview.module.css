@@ -40,13 +40,16 @@
   .profileSettingContainer {
     flex-direction: column;
   }
+  .profileSettingContainer__container {
+    padding: 0 24px;
+  }
 }
 @media (max-width: 768px) {
   .profileSettingContainer .responsive__fontSize {
     font-size: 20px;
   }
   .profileSettingContainer .profileSettingContainer__container {
-    padding: 24px 0 24px 0;
+    padding: 0;
   }
 }
 @media (max-width: 425px) {

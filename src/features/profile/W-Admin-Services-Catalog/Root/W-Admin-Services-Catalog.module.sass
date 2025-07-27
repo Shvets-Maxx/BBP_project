@@ -53,11 +53,11 @@
 
     @media (max-width: 1024px) 
         flex-direction: column
-        .profileSettingContainer__search
+        &__search
             display: none
-        .profileSettingContainer__responce
+        &__responce
             display: block
-        .profileSettingContainer__section
+        &__section
             gap: 0px
         &__components
             min-width: auto
@@ -70,17 +70,18 @@
             display: block
         .responsive__margin
             margin-bottom: 0px
+        &__container
+            padding:  0 24px
 
         
             
     @media (max-width: 500px) 
         .responsive__fontSize
             font-size: 20px
-        
-        .profileSettingContainer__container
-            padding: 24px 0 24px 0
+        &__container
+            padding: 0
     @media (max-width: 425px) 
-        .profileSettingContainer__block
+        &__block
             padding: 24px 16px 16px 16px
   
 

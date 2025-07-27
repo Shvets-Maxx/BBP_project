@@ -32,6 +32,12 @@
         gap: 16px
         width: 100%
         
+    @media (max-width: 1336px) 
+        &__lineDiagram
+            flex-direction: column
+        &__popularProducts
+            flex-direction: column
+
     @media (max-width: 1180px) 
         &__section-block
             flex-direction: column-reverse
@@ -40,18 +46,12 @@
         flex-direction: column
         &__block
             padding: 24px 
+        &__container
+            padding:  0 24px
         
-        
-
-    @media (max-width: 1336px) 
-        &__lineDiagram
-            flex-direction: column
-        &__popularProducts
-            flex-direction: column
-            
     @media (max-width: 768px) 
         &__container
-            padding: 24px 0 24px 0
+            padding:  0
         &__block
             padding: 24px 0 0  0px 
         

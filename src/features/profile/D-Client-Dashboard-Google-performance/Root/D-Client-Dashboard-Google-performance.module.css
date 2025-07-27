@@ -47,10 +47,13 @@
   .profileSettingContainer__section {
     flex-direction: row;
   }
+  .profileSettingContainer__container {
+    padding: 0 24px;
+  }
 }
 @media (max-width: 768px) {
   .profileSettingContainer__container {
-    padding: 24px 0 24px 0;
+    padding: 0;
   }
 }
 @media (max-width: 500px) {

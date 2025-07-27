@@ -33,6 +33,14 @@
   gap: 16px;
   width: 100%;
 }
+@media (max-width: 1336px) {
+  .container__lineDiagram {
+    flex-direction: column;
+  }
+  .container__popularProducts {
+    flex-direction: column;
+  }
+}
 @media (max-width: 1180px) {
   .container__section-block {
     flex-direction: column-reverse;
@@ -45,18 +53,13 @@
   .container__block {
     padding: 24px;
   }
-}
-@media (max-width: 1336px) {
-  .container__lineDiagram {
-    flex-direction: column;
-  }
-  .container__popularProducts {
-    flex-direction: column;
+  .container__container {
+    padding: 0 24px;
   }
 }
 @media (max-width: 768px) {
   .container__container {
-    padding: 24px 0 24px 0;
+    padding: 0;
   }
   .container__block {
     padding: 24px 0 0 0px;
